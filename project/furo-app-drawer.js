@@ -87,6 +87,7 @@ class FuroAppDrawer extends FBP(LitElement) {
    * open the drawer when it is in float mode
    */
   open() {
+
     this.isOpen = true;
     if (this.isFloating) {
       let drawer = this.shadowRoot.getElementById("drawer");
@@ -124,6 +125,10 @@ class FuroAppDrawer extends FBP(LitElement) {
       let backdrop = this.shadowRoot.getElementById("backdrop");
       backdrop.style.opacity = 0;
       backdrop.style.pointerEvents = "none";
+      //unregister trackend
+      // unregister movement tracker
+      this.removeEventListener("mouseup", this.trackEnd, {once: true});
+      this.removeEventListener("touchend", this.trackEnd, {once: true});
 
     }
   }
@@ -234,7 +239,6 @@ class FuroAppDrawer extends FBP(LitElement) {
             let delta = (distance) * 100 / width;
 
 
-
             if (this.isOpen) {
               // limit the dragging, it makes no sense to pull the drawer in to the content area
               if ((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)) {
@@ -242,12 +246,12 @@ class FuroAppDrawer extends FBP(LitElement) {
               }
               //drawer.style.transform = "translate3d(" + distance + "px, 0, 0)";
               if (this.isReverse) {
-                if(distance < 0){
+                if (distance < 0) {
                   distance = 0;
                 }
                 drawer.style.right = (-distance) + "px";
-              }else{
-                if(distance > 0){
+              } else {
+                if (distance > 0) {
                   distance = 0;
                 }
                 drawer.style.left = (distance) + "px";
@@ -283,10 +287,10 @@ class FuroAppDrawer extends FBP(LitElement) {
 
 
         // register move
-        window.addEventListener("mousemove", moveHandler, true);
-        window.addEventListener("touchmove", moveHandler, true);
+        this.addEventListener("mousemove", moveHandler, true);
+        this.addEventListener("touchmove", moveHandler, true);
 
-        let trackEnd = (e) => {
+        this.trackEnd = (e) => {
 
           drawer.style.transitionDuration = "";
           // If there's a animation timer, cancel it
@@ -328,14 +332,14 @@ class FuroAppDrawer extends FBP(LitElement) {
 
 
           // unregister
-          window.removeEventListener("mousemove", moveHandler, true);
-          window.removeEventListener("touchmove", moveHandler, true);
+          this.removeEventListener("mousemove", moveHandler, true);
+          this.removeEventListener("touchmove", moveHandler, true);
 
 
         };
         // unregister movement tracker
-        window.addEventListener("mouseup", trackEnd, {once: true});
-        window.addEventListener("touchend", trackEnd, {once: true});
+        this.addEventListener("mouseup", this.trackEnd, {once: true});
+        this.addEventListener("touchend", this.trackEnd, {once: true});
 
       }
     });
