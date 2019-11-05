@@ -4,11 +4,10 @@ import {FBP} from "@furo/fbp";
 
 /**
  * `view-404`
- * todo Describe your element
+ * This is the 404 view. It will be shown on main-stage when the route do not match
  *
- * @summary todo shortdescription
+ * @summary 404 view
  * @customElement
- * @demo demo-view-404
  * @appliesMixin FBP
  */
 class View404 extends FBP(LitElement) {

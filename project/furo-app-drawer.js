@@ -175,99 +175,146 @@ class FuroAppDrawer extends FBP(LitElement) {
     let backdrop = this.shadowRoot.getElementById("backdrop");
 
 
-    this._FBPAddWireHook("--swipestart", (e) => {
-      if(this.isFloating){
-      let start_x = e.screenX;
-      let start_time = performance.now();
-      let width = drawer.getBoundingClientRect().width;
-      // register move
-      let moveHandler = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        this.style.cursor = "grab";
-        let distance = e.screenX - start_x;
-        // update drawer position
-
-        let delta = (distance) * 100 / width;
-        if (this.isOpen) {
-          // elastic
-          if((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)){
-            delta = 0;
-          }
-          drawer.style = "transform: translate3d(" + delta + "%, 0, 0);transition-duration:0;";
-          backdrop.style = "opacity:" + ((100 + delta)/100);
-        } else {
+    this._FBPAddWireHook("--trackstart", (e) => {
+      if (this.isFloating) {
+        let start_x = this._getScreenX(e);
+        let start_time = performance.now();
+        let width = drawer.getBoundingClientRect().width;
 
 
-          // elastic
-          if(delta > 100){
-            delta = 100;
-          }
-          if(delta < -100){
-            delta = -100;
-          }
-
-          if(this.isReverse){
-            drawer.style = "transform: translate3d(" + (100 + delta ) + "%, 0, 0);transition-duration:0;";
-          }else{
-            drawer.style = "transform: translate3d(" + (delta - 100) + "%, 0, 0);transition-duration:0;";
-          }
-          // backdrop darkness
-          backdrop.style = "opacity:" + Math.abs(delta/100);
+        if (e instanceof MouseEvent) {
+          this.style.cursor = "grab";
         }
-      };
-      // register move
-      window.addEventListener("mousemove", moveHandler, true);
 
-      // unregister movement tracker
-      window.addEventListener("mouseup", (e) => {
-        let end_time = performance.now();
-        let distance = e.screenX - start_x;
-        if(e.changedTouches ){
-          distance = e.changedTouches[0].screenX  - start_x;
-        }
-        let duration = end_time - start_time;
 
-        // clear the styles, so that the css kicks in
-        drawer.style = "transition-duration: 200ms;";
-        backdrop.style = "";
+        // Setup a timer
+        let animationframetimeout;
+        // register move
+        let moveHandler = (e) => {
 
-        // quick movement
-        if (Math.abs(distance) > 30 && duration < 200) {
-          if (this.isOpen) {
-            if ((!this.isReverse && distance < 0) || (this.isReverse && distance > 0)) {
-              this.close();
+          // If there's a timer, cancel it
+          if (requestAnimationFrame) {
+            window.cancelAnimationFrame(animationframetimeout);
+          }
+
+          if (e instanceof MouseEvent) {
+            // prevent dragging of links in a drawer
+            e.preventDefault();
+          }
+
+          // Setup the new requestAnimationFrame()
+          animationframetimeout = window.requestAnimationFrame(() => {
+            let distance = this._getScreenX(e) - start_x;
+            // update drawer position
+            let delta = (distance) * 100 / width;
+            if (this.isOpen) {
+              // limit the dragging, it makes no sense to pull the drawer in to the content area
+              if ((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)) {
+                delta = 0;
+              }
+              drawer.style = "transform: translate3d(" + delta + "%, 0, 0);transition-duration:0;";
+              backdrop.style = "opacity:" + ((100 + delta) / 100);
+            } else {
+
+
+              // limit the dragging
+              if (delta > 100) {
+                delta = 100;
+              }
+              if (delta < -100) {
+                delta = -100;
+              }
+
+              if (this.isReverse) {
+                drawer.style = "transform: translate3d(" + (100 + delta) + "%, 0, 0);transition-duration:0;";
+              } else {
+                drawer.style = "transform: translate3d(" + (delta - 100) + "%, 0, 0);transition-duration:0;";
+              }
+              // backdrop darkness
+              backdrop.style = "opacity:" + Math.abs(delta / 100);
+            }
+
+
+          });
+        };
+
+
+        // register move
+        window.addEventListener("mousemove", moveHandler, true);
+        window.addEventListener("touchmove", moveHandler, true);
+
+        let trackEnd = (e) => {
+
+          // If there's a animation timer, cancel it
+          if (requestAnimationFrame) {
+            window.cancelAnimationFrame(animationframetimeout);
+          }
+
+          let end_time = performance.now();
+          let distance = this._getScreenX(e) - start_x;
+          let duration = end_time - start_time;
+
+          // quick movement
+          if (Math.abs(distance) > 30 && duration < 200) {
+            if (this.isOpen) {
+              if ((!this.isReverse && distance < 0) || (this.isReverse && distance > 0)) {
+                this.close();
+              }
+            } else {
+              this.open();
             }
           } else {
-            this.open();
-          }
-        } else {
-          // complete the movement, slow
-          let delta = (distance) * 100 / width;
-          if (delta > -40 && delta < 40) {
-            // restore initial pos
-            if(this.isOpen){
-              this.open();
-            }else{
-              this.close();
-            }
-          } else {
-            if(this.isOpen){
-              this.close();
-            }else{
-              this.open();
+            // complete the movement, slow
+            let delta = (distance) * 100 / width;
+            if (delta > -40 && delta < 40) {
+              // restore initial pos
+              if (this.isOpen) {
+                this.open();
+              } else {
+                this.close();
+              }
+            } else {
+              if (this.isOpen) {
+                this.close();
+              } else {
+                this.open();
+              }
             }
           }
-        }
+
+          // unregister
+          window.removeEventListener("mousemove", moveHandler, true);
+          window.removeEventListener("touchmove", moveHandler, true);
 
 
-        this.style.cursor = "";
-        // unregister
-        window.removeEventListener("mousemove", moveHandler, true);
+          // clear the styles, so that the css kicks in
+          setTimeout(()=>{
+            drawer.style = "transition-duration: 200ms;";
+            backdrop.style = "";
+            // remove the grab cursor
+            this.style.cursor = "";
 
-      }, {once: true});
+          },0);
+
+        };
+        // unregister movement tracker
+        window.addEventListener("mouseup", trackEnd, {once: true});
+        window.addEventListener("touchend", trackEnd, {once: true});
+
+
       }
     });
+  }
+
+
+  _getScreenX(e) {
+    let x;
+    if (e instanceof MouseEvent) {
+      x = e.screenX;
+    } else {
+      x = e.changedTouches[0].screenX;
+    }
+    return x;
   }
 
   /**
@@ -347,7 +394,7 @@ class FuroAppDrawer extends FBP(LitElement) {
             width: 16px;
             bottom: 0;
             left: 0;
-            
+
         }
 
         :host([reverse]) #drag {
@@ -370,7 +417,7 @@ class FuroAppDrawer extends FBP(LitElement) {
     return html`
 
       <furo-horizontal-flex ?reverse="${this.isReverse}">
-        <div class="drawer" @-mousedown="--swipestart(*)">
+        <div class="drawer" @-touchstart="--trackstart(*)" @-mousedown="--trackstart(*)">
           <slot name="drawer"></slot>
         </div>
         <div flex>
@@ -378,7 +425,7 @@ class FuroAppDrawer extends FBP(LitElement) {
         </div>
       </furo-horizontal-flex>
       <div id="backdrop" @-click="--backdropClicked"></div>
-      <div id="drag" @-mousedown="--swipestart(*)"></div>
+      <div id="drag" @-touchstart="--trackstart(*)" @-mousedown="--trackstart(*)"></div>
     `;
   }
 }
