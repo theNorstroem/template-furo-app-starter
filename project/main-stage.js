@@ -75,14 +75,12 @@ class MainStage extends FBP(LitElement) {
 
       <furo-app-drawer name="main-drawer" ƒ-close="--locationChanged">
         <main-menu slot="drawer"></main-menu>
-
         <furo-pages ƒ-inject-location="--locationChanged" default="dashboard" @-response-error="--responseError">
           <view-dashboard name="dashboard"></view-dashboard>
           <view-tree name="tree"></view-tree>
           <view-auth name="auth"></view-auth>
           <view-404 name="404"></view-404>
         </furo-pages>
-        
       </furo-app-drawer>
 
 

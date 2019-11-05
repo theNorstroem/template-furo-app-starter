@@ -180,6 +180,28 @@ class MainMenu extends FBP(LitElement) {
       </ul>
       
         
+      <div class="label">Main Nav</div>
+      <ul>
+        <li><a href="/tree">
+          <furo-icon icon="apps"></furo-icon>
+          tree</a></li>
+        <li><a href="/tree">
+          <furo-icon icon="apps"></furo-icon>
+          dashboard</a></li>
+      </ul>
+      
+        
+      <div class="label">Main Nav</div>
+      <ul>
+        <li><a href="/tree">
+          <furo-icon icon="apps"></furo-icon>
+          tree</a></li>
+        <li><a href="/tree">
+          <furo-icon icon="apps"></furo-icon>
+          dashboard</a></li>
+      </ul>
+      
+        
 
     `;
   }

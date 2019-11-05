@@ -22,7 +22,6 @@ class FuroAppDrawer extends FBP(LitElement) {
      */
     this.floatBreakpoint = 960;
 
-
     // return this to node which want to connect
     this.addEventListener("connect-to-drawer-requested", (e) => {
       if (e.detail.name === this.name) {
@@ -91,11 +90,16 @@ class FuroAppDrawer extends FBP(LitElement) {
     this.isOpen = true;
     if (this.isFloating) {
       let drawer = this.shadowRoot.getElementById("drawer");
-      let width = drawer.getBoundingClientRect().width;
       //drawer.style.transform = "translate3d(0, 0, 0)";
-      drawer.style.left = 0;
-      let backdrop = this.shadowRoot.getElementById("backdrop");
+      if (this.isReverse) {
+        //drawer.style.transform = "translate3d("+ width +"px, 0, 0)";
+        drawer.style.right = 0;
+      } else {
 
+        drawer.style.left = 0;
+        //drawer.style.transform = "translate3d(-"+ width +"px, 0, 0)";
+      }
+      let backdrop = this.shadowRoot.getElementById("backdrop");
       backdrop.style.opacity = 1;
       backdrop.style.pointerEvents = "auto";
     }
@@ -111,13 +115,12 @@ class FuroAppDrawer extends FBP(LitElement) {
       let width = drawer.getBoundingClientRect().width;
       if (this.isReverse) {
         //drawer.style.transform = "translate3d("+ width +"px, 0, 0)";
-
+        drawer.style.right = -width + "px";
       } else {
+
         drawer.style.left = -width + "px";
         //drawer.style.transform = "translate3d(-"+ width +"px, 0, 0)";
       }
-
-
       let backdrop = this.shadowRoot.getElementById("backdrop");
       backdrop.style.opacity = 0;
       backdrop.style.pointerEvents = "none";
@@ -171,6 +174,7 @@ class FuroAppDrawer extends FBP(LitElement) {
       this.close();
     });
 
+    // register resize listener
     if (!this.noauto) {
       if (window.ResizeObserver) {
         let ro = new ResizeObserver(entries => {
@@ -228,13 +232,26 @@ class FuroAppDrawer extends FBP(LitElement) {
             let distance = this._getScreenX(e) - start_x;
             // update drawer position
             let delta = (distance) * 100 / width;
+
+
+
             if (this.isOpen) {
               // limit the dragging, it makes no sense to pull the drawer in to the content area
               if ((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)) {
                 delta = 0;
               }
               //drawer.style.transform = "translate3d(" + distance + "px, 0, 0)";
-              drawer.style.left = (distance) + "px";
+              if (this.isReverse) {
+                if(distance < 0){
+                  distance = 0;
+                }
+                drawer.style.right = (-distance) + "px";
+              }else{
+                if(distance > 0){
+                  distance = 0;
+                }
+                drawer.style.left = (distance) + "px";
+              }
               backdrop.style.opacity = Math.floor((100 + delta)) / 100;
             } else {
 
@@ -251,7 +268,7 @@ class FuroAppDrawer extends FBP(LitElement) {
 
               if (this.isReverse) {
                 //drawer.style.transform = "translate3d(" + (100 + delta) + "%, 0, 0)";
-                drawer.style.left = (width + distance) + "px";
+                drawer.style.right = -(width + distance) + "px";
               } else {
                 //drawer.style.transform = "translate3d(" + (delta - 100) + "%, 0, 0)";
                 drawer.style.left = (distance - width) + "px";
@@ -320,7 +337,6 @@ class FuroAppDrawer extends FBP(LitElement) {
         window.addEventListener("mouseup", trackEnd, {once: true});
         window.addEventListener("touchend", trackEnd, {once: true});
 
-
       }
     });
   }
@@ -383,10 +399,9 @@ class FuroAppDrawer extends FBP(LitElement) {
         #drag {
             position: absolute;
             top: 0;
-            width: 16px;
+            width: 18px;
             bottom: 0;
             left: 0;
-
         }
 
         :host([reverse]) #drag {
