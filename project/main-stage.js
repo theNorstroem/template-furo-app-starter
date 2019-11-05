@@ -50,8 +50,8 @@ class MainStage extends FBP(LitElement) {
           }
 
           furo-pages {
-              height: 100%;
-              overflow: auto;
+              height: 100vh;
+              overflow: hidden;
           }
 
           side-navigation {

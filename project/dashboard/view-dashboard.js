@@ -84,6 +84,7 @@ class ViewDashboard extends FBP(LitElement) {
           <furo-card title="Card">Line <br>Line <br>Line <br>Line <br></furo-card>
           <furo-card title="Card">Line <br>Line <br>Line <br>Line <br></furo-card>
           <furo-card title="Card">Line <br>Line <br>Line <br>Line <br></furo-card>
+          <furo-card title="Card">Line <br>Line <br>Line <br>Line <br></furo-card>
         </div>
       </furo-vertical-flex>
     `;

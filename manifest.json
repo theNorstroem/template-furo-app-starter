@@ -1,6 +1,6 @@
 {
- "name": "furo base components",
- "short_name": "furo",
+ "name": "example starter app",
+ "short_name": "furo example",
  "icons": [
   {
    "src": "/assets/icons/android-chrome-192x192.png",

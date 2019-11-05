@@ -38,10 +38,6 @@ class FuroAppDrawer extends FBP(LitElement) {
   static get properties() {
     return {
       /**
-       * Use method open or set this attribute to open a drawer in float mode
-       */
-      isOpen: {type: Boolean, reflect: true, attribute: "open"},
-      /**
        * Use method floatDrawer or set this attribute to enable float mode
        */
       _isFloating: {type: Boolean, reflect: true, attribute: "float"},
@@ -93,6 +89,16 @@ class FuroAppDrawer extends FBP(LitElement) {
    */
   open() {
     this.isOpen = true;
+    if (this.isFloating) {
+      let drawer = this.shadowRoot.getElementById("drawer");
+      let width = drawer.getBoundingClientRect().width;
+      //drawer.style.transform = "translate3d(0, 0, 0)";
+      drawer.style.left = 0;
+      let backdrop = this.shadowRoot.getElementById("backdrop");
+
+      backdrop.style.opacity = 1;
+      backdrop.style.pointerEvents = "auto";
+    }
   }
 
   /**
@@ -100,6 +106,23 @@ class FuroAppDrawer extends FBP(LitElement) {
    */
   close() {
     this.isOpen = false;
+    if (this.isFloating) {
+      let drawer = this.shadowRoot.getElementById("drawer");
+      let width = drawer.getBoundingClientRect().width;
+      if (this.isReverse) {
+        //drawer.style.transform = "translate3d("+ width +"px, 0, 0)";
+
+      } else {
+        drawer.style.left = -width + "px";
+        //drawer.style.transform = "translate3d(-"+ width +"px, 0, 0)";
+      }
+
+
+      let backdrop = this.shadowRoot.getElementById("backdrop");
+      backdrop.style.opacity = 0;
+      backdrop.style.pointerEvents = "none";
+
+    }
   }
 
   /**
@@ -145,7 +168,7 @@ class FuroAppDrawer extends FBP(LitElement) {
      * close the menu
      */
     this._FBPAddWireHook("--backdropClicked", (e) => {
-      this.isOpen = false;
+      this.close();
     });
 
     if (!this.noauto) {
@@ -172,7 +195,7 @@ class FuroAppDrawer extends FBP(LitElement) {
     }
 
 
-    let drawer = this.shadowRoot.querySelector(".drawer");
+    let drawer = this.shadowRoot.getElementById("drawer");
     let backdrop = this.shadowRoot.getElementById("backdrop");
 
 
@@ -181,17 +204,14 @@ class FuroAppDrawer extends FBP(LitElement) {
         let start_x = this._getScreenX(e);
         let start_time = performance.now();
         let width = drawer.getBoundingClientRect().width;
-
-
-        if (e instanceof MouseEvent) {
-          this.style.cursor = "grab";
-        }
+        drawer.style.transitionDuration = "0ms";
 
 
         // Setup a timer
         let animationframetimeout;
         // register move
         let moveHandler = (e) => {
+
 
           // If there's a timer, cancel it
           if (requestAnimationFrame) {
@@ -213,26 +233,31 @@ class FuroAppDrawer extends FBP(LitElement) {
               if ((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)) {
                 delta = 0;
               }
-              drawer.style = "transform: translate3d(" + delta + "%, 0, 0);transition-duration:0;";
-              backdrop.style = "opacity:" + ((100 + delta) / 100);
+              //drawer.style.transform = "translate3d(" + distance + "px, 0, 0)";
+              drawer.style.left = (distance) + "px";
+              backdrop.style.opacity = Math.floor((100 + delta)) / 100;
             } else {
 
 
               // limit the dragging
               if (delta > 100) {
                 delta = 100;
+                distance = width;
               }
               if (delta < -100) {
                 delta = -100;
+                distance = -width;
               }
 
               if (this.isReverse) {
-                drawer.style = "transform: translate3d(" + (100 + delta) + "%, 0, 0);transition-duration:0;";
+                //drawer.style.transform = "translate3d(" + (100 + delta) + "%, 0, 0)";
+                drawer.style.left = (width + distance) + "px";
               } else {
-                drawer.style = "transform: translate3d(" + (delta - 100) + "%, 0, 0);transition-duration:0;";
+                //drawer.style.transform = "translate3d(" + (delta - 100) + "%, 0, 0)";
+                drawer.style.left = (distance - width) + "px";
               }
               // backdrop darkness
-              backdrop.style = "opacity:" + Math.abs(delta / 100);
+              backdrop.style.opacity = Math.abs(delta / 100);
             }
 
 
@@ -246,6 +271,7 @@ class FuroAppDrawer extends FBP(LitElement) {
 
         let trackEnd = (e) => {
 
+          drawer.style.transitionDuration = "";
           // If there's a animation timer, cancel it
           if (requestAnimationFrame) {
             window.cancelAnimationFrame(animationframetimeout);
@@ -283,19 +309,11 @@ class FuroAppDrawer extends FBP(LitElement) {
             }
           }
 
+
           // unregister
           window.removeEventListener("mousemove", moveHandler, true);
           window.removeEventListener("touchmove", moveHandler, true);
 
-
-          // clear the styles, so that the css kicks in
-          setTimeout(()=>{
-            drawer.style = "transition-duration: 200ms;";
-            backdrop.style = "";
-            // remove the grab cursor
-            this.style.cursor = "";
-
-          },0);
 
         };
         // unregister movement tracker
@@ -341,38 +359,12 @@ class FuroAppDrawer extends FBP(LitElement) {
             height: 100%;
         }
 
-        /* put the floating drawer outside the visible area */
-        :host([float]) .drawer {
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            transform: translate3d(-100%, 0, 0);
 
-        }
-
-        .drawer {
+        #drawer {
             border-right: 1px solid var(--separator, rgb(228, 228, 228));
+            transition-duration: 200ms;
         }
 
-        /* put drawer to the right side on reverse mode */
-        :host([float][reverse]) .drawer {
-            left: unset;
-            right: 0;
-            transform: translate3d(100%, 0, 0);
-        }
-
-        /* put the floating drawer to the visible area */
-        :host([float][open]) .drawer {
-            transform: translate3d(0, 0, 0);
-        }
-
-        /* enable the pointer events on backdrop for @-click */
-        :host([float][open]) #backdrop {
-            opacity: 1;
-            pointer-events: auto;
-        }
 
         /* disable pointer events */
         #backdrop {
@@ -384,7 +376,6 @@ class FuroAppDrawer extends FBP(LitElement) {
             right: 0;
             bottom: 0;
             left: 0;
-            opacity: 0;
             background: var(--furo-app-drawer-backdrop, rgba(0, 0, 0, 0.5));
         }
 
@@ -403,6 +394,23 @@ class FuroAppDrawer extends FBP(LitElement) {
             right: 0;
         }
 
+        /* put the floating drawer outside the visible area */
+        :host([float]) #drawer {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        /* put drawer to the right side on reverse mode */
+        :host([float][reverse]) #drawer {
+            left: unset;
+            right: 0;
+
+        }
+
+
 
     `
   }
@@ -418,7 +426,7 @@ class FuroAppDrawer extends FBP(LitElement) {
     return html`
 
       <furo-horizontal-flex ?reverse="${this.isReverse}">
-        <div class="drawer" @-touchstart="--trackstart(*)" @-mousedown="--trackstart(*)">
+        <div id="drawer" @-touchstart="--trackstart(*)" @-mousedown="--trackstart(*)">
           <slot name="drawer"></slot>
         </div>
         <div flex>

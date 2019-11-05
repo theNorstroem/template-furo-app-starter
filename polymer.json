@@ -1,15 +1,13 @@
 {
   "entrypoint": "index.html",
-  "shell": "_page/furo-shell.js",
+  "shell": "shell/app-shell.js",
   "fragments": [
 
   ],
   "sources": [
     "favicon.ico",
     "assets/**/*",
-    "_page/markdown/**/*",
-    "_page/images/**/*",
-    "_page/assets/**/*",
+    "assets/**/*",
     "mockdata/**/*"
   ],
   "extraDependencies": [
