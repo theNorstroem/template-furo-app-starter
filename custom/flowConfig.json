@@ -1,0 +1,5 @@
+[
+    ["*", "unauthorized", "auth"],
+    ["auth", "login-successfull", "dashboard"],
+    ["*", "response-error", "view_error"]
+]
