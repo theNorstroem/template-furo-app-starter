@@ -8,9 +8,10 @@ import '@furo/input/furo-button';
 import '@furo/route/furo-location';
 import '@furo/route/furo-pages';
 import '@furo/route/furo-app-flow';
-import "../project_components/furo-app-drawer"
+import '@furo/layout/furo-app-drawer';
+import '@furo/layout/furo-app-bar-top';
 import "./menu/main-menu"
-import "../project_components/furo-app-bar-top"
+
 
 // import the views
 import "./dashboard/view-dashboard"

@@ -12,13 +12,12 @@
   "main": "furo-catalog.js",
   "scripts": {
     "start": "npm run doc && polymer serve",
-    "doc": "polymer analyze *.js > analysis.json",
     "build": "polymer build",
     "lint": "polymer lint */**.js",
     "test": "polymer test"
   },
   "dependencies": {
-    "@furo/collection": "*"
+    "@furo/collection": "0.22.17"
   },
   "devDependencies": {
     "@polymer/test-fixture": "^4.0.2",

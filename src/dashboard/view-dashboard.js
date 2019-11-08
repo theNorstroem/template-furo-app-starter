@@ -4,7 +4,9 @@ import {FBP} from "@furo/fbp";
 import "@furo/layout/furo-vertical-flex"
 import "@furo/form"
 import "@furo/input"
-import "../../project_components/furo-form"
+import "@furo/form/furo-form"
+import "@furo/input/furo-icon-button"
+
 /**
  * `view-dashboard`
  * todo Describe your element
