@@ -63,14 +63,14 @@ class MainMenu extends FBP(LitElement) {
             font-size: 20px;
             height: 40px;
             line-height: 56px;
-            padding-left: var(--spacing, 16px);
+            padding-left: var(--spacing-s, 16px);
         }
 
         .secondary {
             font-size: 14px;
             height: 24px;
             letter-spacing: 0.1px;
-            padding-left: var(--spacing, 16px);
+            padding-left: var(--spacing-s, 16px);
             color: var(--secondary-color, var(--on-primary-light, #777777));
             line-height: 20px;
         }
@@ -83,7 +83,7 @@ class MainMenu extends FBP(LitElement) {
             list-style: none;
             margin: 0;
             margin-bottom: 14px;
-            padding: var(--spacing-s) 4px;
+            padding: var(--spacing-xs) 8px;
             border-bottom: 1px solid var(--separator, rgb(228, 228, 228));
         }
 
@@ -118,7 +118,7 @@ class MainMenu extends FBP(LitElement) {
             font-size: 14px;
             height: 24px;
             letter-spacing: 0.1px;
-            padding-left: var(--spacing, 16px);
+            padding-left: var(--spacing-s, 16px);
             color: var(--secondary-color, var(--on-primary-light, #777777));
             line-height: 20px;
             
