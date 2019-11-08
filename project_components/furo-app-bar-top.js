@@ -109,7 +109,6 @@ class FuroAppBarTop extends FBP(LitElement) {
             background: linear-gradient(315deg, var(--primary-light) 0%, var(--primary-dark) 100%);
             box-shadow: 0 -15px 10px -15px rgba(0, 0, 0, 0.12);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-            padding-left: 8px;
             font-size: 20px;
         }
 
@@ -123,13 +122,13 @@ class FuroAppBarTop extends FBP(LitElement) {
         }
 
         ::slotted(*) {
-            margin-left: 8px;
+            margin-left: 16px;
             margin-right: 16px;
         }
 
         ::slotted(furo-icon-button), furo-icon-button.navigation {
             cursor: pointer;
-            margin: 16px 16px 16px 8px;
+            margin: 4px 0;
         }
 
         furo-icon-button.navigation {

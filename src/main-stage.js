@@ -1,16 +1,16 @@
 import {LitElement, html, css} from 'lit-element';
 import {FBP} from "@furo/fbp";
 import {Theme} from "@furo/framework/theme"
-import {Styling} from "../custom/styling";
+import {Styling} from "../configs/styling";
 
 
 import '@furo/input/furo-button';
 import '@furo/route/furo-location';
 import '@furo/route/furo-pages';
 import '@furo/route/furo-app-flow';
-import "./furo-app-drawer"
+import "../project_components/furo-app-drawer"
 import "./menu/main-menu"
-import "./furo-app-bar-top"
+import "../project_components/furo-app-bar-top"
 
 // import the views
 import "./dashboard/view-dashboard"
@@ -46,7 +46,8 @@ class MainStage extends FBP(LitElement) {
           :host {
               height: 100%;
               display: block;
-              
+              background: var(--background);
+              color: var(--on-background);
           }
 
           furo-pages {

@@ -1,9 +1,9 @@
 import {LitElement, html, css} from 'lit-element';
 import {Theme} from "@furo/framework/theme"
 import {FBP} from "@furo/fbp";
-import '../custom/init'
+import '../configs/init'
 import '@webcomponents/shadycss/entrypoints/apply-shim.js';
-import "../project/main-stage.js"
+import "../src/main-stage.js"
 /**
  * `main-app`
  *

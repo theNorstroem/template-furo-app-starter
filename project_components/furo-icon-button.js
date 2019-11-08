@@ -29,8 +29,24 @@ class FuroIconButton extends FBP(LitElement) {
       /**
        * The icon
        */
-      icon: {type: String}
+      icon: {type: String},
+      /**
+       * Focus the element automatically
+       */
+      autofocus: {
+        type: Boolean,
+        reflect: true
+      }
     };
+  }
+
+
+  /**
+   * Set the focus to the button
+   * @param e
+   */
+  focus(e) {
+    this._FBPTriggerWire("--focus");
   }
 
   /**
@@ -52,6 +68,9 @@ class FuroIconButton extends FBP(LitElement) {
         :host {
             display: inline-block;
             position: relative;
+            width: 48px;
+            height: 48px;
+            box-sizing: border-box;
         }
 
         :host([hidden]) {
@@ -64,9 +83,39 @@ class FuroIconButton extends FBP(LitElement) {
             outline: none;
             border: none;
             color: inherit;
-            padding: 0;
+            padding: 12px;
+            width: 48px;
+            height: 48px;
+            box-sizing: border-box;
             display: block;
+            background-color: transparent;
         }
+
+        furo-ripple{
+            border-radius: 50%;
+            margin: 4px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .bg{
+            border-radius: 50%;
+            position: absolute;
+            top:4px;
+            left:4px;
+            bottom: 4px;
+            right: 4px;
+        }
+        :host(:focus-within) .bg {
+            background-color: var(--surface-light);
+            opacity: 0.2;
+        }
+        :host(:hover) .bg{
+            background-color: var(--surface-dark);
+            opacity: 0.2;
+        }
+
+
     `
   }
 
@@ -79,7 +128,8 @@ class FuroIconButton extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <button>
+<div class="bg"></div>
+      <button ƒ-focus="--focus" ?autofocus=${this.autofocus} ?disabled=${this.disabled} ?danger=${this.danger}>
         <furo-icon icon="${this.icon}"></furo-icon>
          <furo-ripple></furo-ripple>      
       </button>

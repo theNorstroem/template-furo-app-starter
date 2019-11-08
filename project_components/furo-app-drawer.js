@@ -21,6 +21,7 @@ class FuroAppDrawer extends FBP(LitElement) {
      * @type {number}
      */
     this.floatBreakpoint = 960;
+    this._movementDetectionRange = 10;
 
     // return this to node which want to connect
     this.addEventListener("connect-to-drawer-requested", (e) => {
@@ -125,10 +126,14 @@ class FuroAppDrawer extends FBP(LitElement) {
       let backdrop = this.shadowRoot.getElementById("backdrop");
       backdrop.style.opacity = 0;
       backdrop.style.pointerEvents = "none";
-      //unregister trackend
+
       // unregister movement tracker
+      this.removeEventListener("mousemove", this.moveHandler, true);
+      this.removeEventListener("touchmove", this.moveHandler, true);
+      //unregister trackend
       this.removeEventListener("mouseup", this.trackEnd, {once: true});
       this.removeEventListener("touchend", this.trackEnd, {once: true});
+
 
     }
   }
@@ -187,7 +192,9 @@ class FuroAppDrawer extends FBP(LitElement) {
           for (let entry of entries) {
             const cr = entry.contentRect;
             this.isFloating = cr.width <= this.floatBreakpoint;
-
+          }
+          if(this.isFloating){
+            this.close();
           }
         });
         ro.observe(this);
@@ -199,6 +206,9 @@ class FuroAppDrawer extends FBP(LitElement) {
         window.addEventListener("resize", (e) => {
           let cr = this.getBoundingClientRect();
           this.isFloating = cr.width <= this.floatBreakpoint;
+          if(this.isFloating){
+            this.close();
+          }
         })
       }
     }
@@ -211,15 +221,18 @@ class FuroAppDrawer extends FBP(LitElement) {
     this._FBPAddWireHook("--trackstart", (e) => {
       if (this.isFloating) {
         let start_x = this._getScreenX(e);
+        let start_y = this._getScreenY(e);
         let start_time = performance.now();
         let width = drawer.getBoundingClientRect().width;
+        let trackingEnabled = false;
+        let trackingFixed = false;
         drawer.style.transitionDuration = "0ms";
 
 
         // Setup a timer
         let animationframetimeout;
         // register move
-        let moveHandler = (e) => {
+        this.moveHandler = (e) => {
 
 
           // If there's a timer, cancel it
@@ -232,13 +245,31 @@ class FuroAppDrawer extends FBP(LitElement) {
             e.preventDefault();
           }
 
+          let distance = this._getScreenX(e) - start_x;
+          let y = this._getScreenY(e) - start_y;
+
+          // start tracking if angle is in a 45 deg horizontal
+          if (!trackingFixed && Math.abs(distance) < this._movementDetectionRange && Math.abs(y) < this._movementDetectionRange) {
+              trackingEnabled = (Math.abs(y) < Math.abs(distance));
+              return
+          }
+
           // Setup the new requestAnimationFrame()
           animationframetimeout = window.requestAnimationFrame(() => {
-            let distance = this._getScreenX(e) - start_x;
+
+            if (!trackingEnabled) {
+              return;
+            }
+            trackingFixed = true;
+            // correct the 10 pixels from tracking enable
+            if(!this.isReverse){
+              distance += this._movementDetectionRange;
+            }else{
+              distance -= this._movementDetectionRange;
+            }
+
             // update drawer position
             let delta = (distance) * 100 / width;
-
-
             if (this.isOpen) {
               // limit the dragging, it makes no sense to pull the drawer in to the content area
               if ((!this.isReverse && delta > 0) || (this.isReverse && delta < 0)) {
@@ -287,10 +318,11 @@ class FuroAppDrawer extends FBP(LitElement) {
 
 
         // register move
-        this.addEventListener("mousemove", moveHandler, true);
-        this.addEventListener("touchmove", moveHandler, true);
+        this.addEventListener("mousemove", this.moveHandler, true);
+        this.addEventListener("touchmove", this.moveHandler, true);
 
         this.trackEnd = (e) => {
+
 
           drawer.style.transitionDuration = "";
           // If there's a animation timer, cancel it
@@ -312,6 +344,10 @@ class FuroAppDrawer extends FBP(LitElement) {
               this.open();
             }
           } else {
+
+            if (!trackingEnabled) {
+              return
+            }
             // complete the movement, slow
             let delta = (distance) * 100 / width;
             if (delta > -40 && delta < 40) {
@@ -356,6 +392,16 @@ class FuroAppDrawer extends FBP(LitElement) {
     return x;
   }
 
+  _getScreenY(e) {
+    let y;
+    if (e instanceof MouseEvent) {
+      y = e.screenY;
+    } else {
+      y = e.changedTouches[0].screenY;
+    }
+    return y;
+  }
+
   /**
    * Themable Styles
    * @private
@@ -383,6 +429,7 @@ class FuroAppDrawer extends FBP(LitElement) {
         #drawer {
             border-right: 1px solid var(--separator, rgb(228, 228, 228));
             transition-duration: 200ms;
+            background: var(--surface-light);
         }
 
 
@@ -396,6 +443,7 @@ class FuroAppDrawer extends FBP(LitElement) {
             right: 0;
             bottom: 0;
             left: 0;
+            opacity: 0;
             background: var(--furo-app-drawer-backdrop, rgba(0, 0, 0, 0.5));
         }
 
