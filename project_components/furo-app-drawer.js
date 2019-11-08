@@ -219,6 +219,12 @@ class FuroAppDrawer extends FBP(LitElement) {
 
 
     this._FBPAddWireHook("--trackstart", (e) => {
+      // unregister
+      this.removeEventListener("mousemove", this.moveHandler, true);
+      this.removeEventListener("touchmove", this.moveHandler, true);
+      if (e instanceof MouseEvent) {
+        this.pauseEvent(e);
+      }
       if (this.isFloating) {
         let start_x = this._getScreenX(e);
         let start_y = this._getScreenY(e);
@@ -235,12 +241,14 @@ class FuroAppDrawer extends FBP(LitElement) {
         this.moveHandler = (e) => {
 
 
+
           // If there's a timer, cancel it
           if (requestAnimationFrame) {
             window.cancelAnimationFrame(animationframetimeout);
           }
 
           if (e instanceof MouseEvent) {
+            this.pauseEvent(e);
             // prevent dragging of links in a drawer
             e.preventDefault();
           }
@@ -368,8 +376,8 @@ class FuroAppDrawer extends FBP(LitElement) {
 
 
           // unregister
-          this.removeEventListener("mousemove", moveHandler, true);
-          this.removeEventListener("touchmove", moveHandler, true);
+          this.removeEventListener("mousemove", this.moveHandler, true);
+          this.removeEventListener("touchmove", this.moveHandler, true);
 
 
         };
@@ -379,6 +387,14 @@ class FuroAppDrawer extends FBP(LitElement) {
 
       }
     });
+  }
+
+  pauseEvent (e){
+    if(e.stopPropagation) e.stopPropagation();
+    if(e.preventDefault) e.preventDefault();
+    e.cancelBubble=true;
+    e.returnValue=false;
+    return false;
   }
 
 

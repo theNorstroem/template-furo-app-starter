@@ -122,8 +122,8 @@ class FuroAppBarTop extends FBP(LitElement) {
         }
 
         ::slotted(*) {
-            margin-left: 16px;
-            margin-right: 16px;
+            margin-left: var(--spacing-s, 16px);
+            margin-right: var(--spacing-s, 16px);
         }
 
         ::slotted(furo-icon-button), furo-icon-button.navigation {

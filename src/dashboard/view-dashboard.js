@@ -87,6 +87,8 @@ class ViewDashboard extends FBP(LitElement) {
         </furo-app-bar-top>
         <div flex scroll class="content">
           <furo-form header-text="Simple form design" secondary-text="Please fill in the form and click save. " ƒ-start-activity="--start">
+           
+            
             <h2>Simple form design</h2>
             <secondary>Please fill in the form and click save. </secondary>
             
@@ -94,7 +96,7 @@ class ViewDashboard extends FBP(LitElement) {
             <!-- Inside a furo-form-layouter the elements are always full-width -->
             <!-- Full width, one column layout-->
             <furo-form-layouter two>
-              <furo-date-input autofocus condensed   hint="Only possible in current year" max="2019-12-31" min="2019-01-01" label="valid from"></furo-date-input>
+              <furo-date-input  condensed   hint="Only possible in current year" max="2019-12-31" min="2019-01-01" label="valid from"></furo-date-input>
               <furo-select-input condensed label="Mutation reason" value="New" list="New, mutation, remake"></furo-select-input>
               
             </furo-form-layouter>
@@ -114,8 +116,8 @@ class ViewDashboard extends FBP(LitElement) {
               <furo-empty-spacer></furo-empty-spacer>
               <furo-button unelevated danger="" label="Danger"></furo-button>
             </furo-horizontal-flex>
-            
-           
+
+          
           </furo-form>
         </div>
       </furo-vertical-flex>
