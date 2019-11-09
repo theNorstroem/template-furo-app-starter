@@ -40,6 +40,9 @@ class MainStage extends FBP(LitElement) {
     /**
      * Register hook on wire --locationChanged to
      * Lazy load parts of the page
+     *
+     * DO NOT FORGET TO REGISTER THE LAZY LOADED PARTS IN ~/polymer.json => fragments[...]
+     *
      */
     this._FBPAddWireHook("--locationChanged", (e) => {
       switch (e.pathSegments[0]) {

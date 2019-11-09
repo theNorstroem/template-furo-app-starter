@@ -2,7 +2,8 @@
   "entrypoint": "index.html",
   "shell": "shell/app-shell.js",
   "fragments": [
-
+    "src/views/view-tree.js",
+    "src/views/view-formsample.js"
   ],
   "sources": [
     "favicon.ico",
