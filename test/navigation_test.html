@@ -18,7 +18,7 @@
   <template>
     <test-bind>
     <template>
-     <app-shell></app-shell>
+     <app-shell   style="width: 1200px"></app-shell>
      </template>
     </test-bind>
   </template>
@@ -35,13 +35,17 @@
   describe('navigation_test tests ', function () {
 
 
-    let element = {};
+    let app = {};
+    let mainStage, appDrawer
 
     beforeEach(async () => {
       let fix = fixture('basic');
-      element = fix[1];
-      await element.updateComplete;
-
+      app = fix[1];
+      await app.updateComplete;
+      mainStage = app.shadowRoot.querySelector('main-stage');
+      await mainStage.updateComplete;
+      appDrawer = mainStage.shadowRoot.querySelector('furo-app-drawer');
+      await appDrawer.updateComplete;
     });
 
 
@@ -50,13 +54,10 @@
       return axeReport(fixture('basic'));
     });
 
-    it('should start with a 404, because the test url make no sense for the app', (done) => {
-      setTimeout(()=>{
-        assert.equal(element.nodeName.toLowerCase(), "app-shell");
+    it('should start with a 404, because the test suite url make no sense for the app', (done) => {
+        assert.equal(app.nodeName.toLowerCase(), "app-shell");
+        assert.equal(appDrawer.nodeName.toLowerCase(), "furo-app-drawer");
         done()
-      },8000);
-
-
     });
 
 

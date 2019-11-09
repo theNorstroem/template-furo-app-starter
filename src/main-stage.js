@@ -13,11 +13,14 @@ import '@furo/layout/furo-app-bar-top';
 import "./menu/main-menu"
 
 
-// import the views
-import "./dashboard/view-dashboard"
-import "./tree/view-tree"
-import "./auth/view-auth"
-import "./404/view-404"
+/**
+ * Static imports of the views
+ * The lazy imports a below in _FBPReady
+ */
+
+import "./views/view-dashboard"
+import "./views/view-auth"
+import "./views/view-404"
 
 /**
  * `main-stage`
@@ -29,6 +32,26 @@ class MainStage extends FBP(LitElement) {
 
   constructor() {
     super();
+  }
+
+
+  _FBPReady() {
+    super._FBPReady();
+    /**
+     * Register hook on wire --locationChanged to
+     * Lazy load parts of the page
+     */
+    this._FBPAddWireHook("--locationChanged", (e) => {
+      switch (e.pathSegments[0]) {
+        case "tree":
+          import("./views/view-tree");
+          break;
+        case "form":
+          import ("./views/view-formsample");
+          break;
+
+      }
+    });
   }
 
   /**
@@ -81,6 +104,7 @@ class MainStage extends FBP(LitElement) {
           <view-dashboard name="dashboard"></view-dashboard>
           <view-tree name="tree"></view-tree>
           <view-auth name="auth"></view-auth>
+          <view-formsample name="form"></view-formsample>
           <view-404 name="404"></view-404>
         </furo-pages>
       </furo-app-drawer>

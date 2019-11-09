@@ -146,132 +146,25 @@ class MainMenu extends FBP(LitElement) {
 
 
       <ul>
+       
         <li><a href="/dashboard">
-          dashboarddashboard d ashboard</a></li>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
+          <furo-icon icon="dashboard"></furo-icon>
           dashboard</a></li>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-      <div class="label">Main Nav</div>
-      <ul>
         <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
+          <furo-icon icon="list"></furo-icon>
+          tree sample</a></li>
+        <li><a href="/form">
+          <furo-icon icon="receipt"></furo-icon>
+          form sample</a></li>
+        <li><a href="/auth">
+          <furo-icon icon="perm-identity"></furo-icon>
+          Auth</a></li>
+        <li><a href="/unknown">
+          <furo-icon icon="extension"></furo-icon>
+          link to nowhere</a></li>
       </ul>
       
         
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
-      
-        
-      <div class="label">Main Nav</div>
-      <ul>
-        <li><a href="/dashboard">
-          <furo-icon icon="apps"></furo-icon>
-          tree</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="apps"></furo-icon>
-          dashboard</a></li>
-      </ul>
       
         
 
