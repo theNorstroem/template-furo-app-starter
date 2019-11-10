@@ -5,6 +5,7 @@ import "@furo/layout/furo-vertical-flex"
 import "@furo/input/furo-icon-button"
 
 import "../formsample/sample-form"
+
 /**
  * `view-formsample`
  * todo Describe your element
@@ -51,20 +52,28 @@ class ViewFormsample extends FBP(LitElement) {
     return Theme.getThemeForComponent(this.name) || css`
         :host {
             display: block;
-            height: 100%;
+            height: 100vh;
             overflow: hidden;
-           
+            background-color: var(--surface);
+            color: var(--on-surface);
+
         }
 
         :host([hidden]) {
             display: none;
         }
-        .content{
-            padding: var(--spacing-s);
-            background-color: var(--surface);
-            color: var(--on-surface);
+
+        /* Padding-top of 0 for better scrolling effect, the padding is added in .form */
+        .content {
+            padding: 0 var(--spacing-s) var(--spacing-s) var(--spacing-s);
+            box-sizing: border-box;
         }
         
+        .form {
+            padding: var(--spacing-s) 0;
+            
+        }
+
     `
   }
 
@@ -78,14 +87,25 @@ class ViewFormsample extends FBP(LitElement) {
     // language=HTML
     return html`
       <furo-vertical-flex>
-        <furo-app-bar-top drawer="main-drawer" >
+        <furo-app-bar-top drawer="main-drawer" ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
+          
           <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
         </furo-app-bar-top>
-        <div flex scroll class="content">
-          <sample-form></sample-form>
-        </div>
+        <furo-vertical-flex flex class="content">
+          <sample-form flex scroll class="form"></sample-form>
+          <div>
+            <furo-horizontal-flex space="" slot="action">
+              <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
+              <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
+
+              <furo-empty-spacer></furo-empty-spacer>
+              <furo-button unelevated danger="" label="Danger"></furo-button>
+            </furo-horizontal-flex>
+          </div>
+        </furo-vertical-flex>
+
       </furo-vertical-flex>
     `;
   }

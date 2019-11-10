@@ -68,14 +68,14 @@ class SampleForm extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <furo-form header-text="Header Text of the form" secondary-text="This is the secondary text" ƒ-start-activity="--start">
+      <furo-form header-text="Header Text of the form" secondary-text="This is the secondary text">
         <p>Some text can be helpful sometimes</p>
         <h2>Give a h2 to label a group</h2>
         <secondary>A form-layouter can have custom breakpoints. This one has a breakpoint of 608. Resize your screen to see the effect</secondary>
         
         <!-- Inside a furo-form-layouter the elements are always full-width -->
         <!-- Full width, one column layout-->
-        <furo-form-layouter two breakpoint-big="608">
+        <furo-form-layouter two breakpoint-big="608" >
           <furo-date-input  condensed   hint="Only possible in current year" max="2019-12-31" min="2019-01-01" label="valid from"></furo-date-input>
           <furo-select-input condensed label="Mutation reason" value="New" list="New, mutation, remake"></furo-select-input>
 
@@ -83,7 +83,7 @@ class SampleForm extends FBP(LitElement) {
         <h2>Form layout with 4 elements in a row</h2>
         <secondary>A form-layouter can have one, two or four columns. </secondary>
         <!-- Full width, four column layout-->
-        <furo-form-layouter four>
+        <furo-form-layouter four >
           <furo-search-input condensed double label="Search" hint="This is a search input with double size"></furo-search-input>
           <furo-text-input condensed label="Special hint"></furo-text-input>
           <furo-text-input condensed label="Third field"></furo-text-input>
@@ -91,13 +91,7 @@ class SampleForm extends FBP(LitElement) {
           <furo-number-input condensed label="Number"></furo-number-input>
         </furo-form-layouter>
 
-        <furo-horizontal-flex space="" slot="action">
-          <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
-          <furo-button unelevated accent="" label="accent"></furo-button>
-          <furo-button  unelevated label="Default"></furo-button>
-          <furo-empty-spacer></furo-empty-spacer>
-          <furo-button unelevated danger="" label="Danger"></furo-button>
-        </furo-horizontal-flex>
+       
 
 
       </furo-form>

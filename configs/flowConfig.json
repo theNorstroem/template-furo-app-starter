@@ -1,5 +1,5 @@
 [
     ["*", "unauthorized", "auth"],
     ["auth", "login-successfull", "dashboard"],
-    ["*", "response-error", "view_error"]
+    ["*", "form-requested", "form"]
 ]
