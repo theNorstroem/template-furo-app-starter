@@ -93,10 +93,11 @@ class ViewFormsample extends FBP(LitElement) {
     // language=HTML
     return html`
       <furo-vertical-flex>
-        <furo-app-bar-top drawer="main-drawer" ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
+        <furo-app-bar-top drawer="main-drawer" extended ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
           <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
+          <div slot="extended">Sample Form:  Juheee , this is a lot of text and should break to a second line</div>
         </furo-app-bar-top>
         <furo-banner-display></furo-banner-display>
         <furo-vertical-flex flex class="content">
