@@ -3,6 +3,8 @@ import {Theme} from "@furo/framework/theme"
 import {FBP} from "@furo/fbp";
 import "@furo/layout/furo-vertical-flex"
 import "@furo/input/furo-icon-button"
+import "@furo/notification/furo-banner-display"
+import "@furo/notification/furo-banner"
 
 import "../formsample/sample-form"
 
@@ -56,7 +58,6 @@ class ViewFormsample extends FBP(LitElement) {
             overflow: hidden;
             background-color: var(--surface);
             color: var(--on-surface);
-
         }
 
         :host([hidden]) {
@@ -73,6 +74,11 @@ class ViewFormsample extends FBP(LitElement) {
             padding: var(--spacing-s) 0;
             
         }
+        
+        /** set the banner icon color to danger color */
+        furo-banner-display{
+            --furo-icon-fill-color:var(--danger);
+        }
 
     `
   }
@@ -88,11 +94,11 @@ class ViewFormsample extends FBP(LitElement) {
     return html`
       <furo-vertical-flex>
         <furo-app-bar-top drawer="main-drawer" ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
-          
           <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
         </furo-app-bar-top>
+        <furo-banner-display></furo-banner-display>
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll class="form"></sample-form>
           <div>
@@ -101,12 +107,13 @@ class ViewFormsample extends FBP(LitElement) {
               <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
 
               <furo-empty-spacer></furo-empty-spacer>
-              <furo-button unelevated danger="" label="Danger"></furo-button>
+              <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
             </furo-horizontal-flex>
           </div>
         </furo-vertical-flex>
-
       </furo-vertical-flex>
+
+      <furo-banner ƒ-show="--networkError" text="--setBannerText1\nline" icon="perm-scan-wifi"></furo-banner>
     `;
   }
 }

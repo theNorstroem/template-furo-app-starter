@@ -6,6 +6,7 @@ import "@furo/form"
 import "@furo/input"
 import "@furo/form/furo-form"
 import "@furo/input/furo-icon-button"
+import "@furo/notification/furo-snackbar"
 
 /**
  * `view-dashboard`
@@ -92,10 +93,9 @@ class ViewDashboard extends FBP(LitElement) {
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="search" @-click="--float"></furo-icon-button>
           <furo-icon-button icon="filter-list" @-click="--op"></furo-icon-button>
-
+          <furo-snackbar position-right action-button-text="ignore" timeout-in-ms="8000" label-text="Filter is not implemented yet" ƒ-show="--op"></furo-snackbar>
         </furo-app-bar-top>
         <div flex scroll class="content">
-
           <furo-card>
             <img src="/assets/images/hamburg.png" slot="media" alt="">
             <h1>Info</h1>

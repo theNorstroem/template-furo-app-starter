@@ -91,6 +91,12 @@ class SampleForm extends FBP(LitElement) {
           <furo-number-input condensed label="Number"></furo-number-input>
         </furo-form-layouter>
 
+        <h2>Textarea</h2>
+        <p>Textareas works best with other textarea elements or when they are used alone.</p>
+        <furo-form-layouter two>
+          <furo-textarea-input label="pro" float rows="5"></furo-textarea-input>
+          <furo-textarea-input label="contra" float rows="5"></furo-textarea-input>
+        </furo-form-layouter>
        
 
 

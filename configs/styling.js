@@ -12,7 +12,7 @@ export class Styling {
                 --primary-light: #2267A3;
                 --primary: #025297;
                 --primary-dark: #014178;
-                --primary-variant: #BDD1E1;
+                --primary-variant: #2587a3;
                 --on-primary: #ffffff;
 
                 --secondary-light: #fdd756;

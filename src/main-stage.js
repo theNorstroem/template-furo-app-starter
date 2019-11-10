@@ -10,6 +10,7 @@ import '@furo/route/furo-pages';
 import '@furo/route/furo-app-flow';
 import '@furo/layout/furo-app-drawer';
 import '@furo/layout/furo-app-bar-top';
+import '@furo/notification/furo-snackbar-display';
 import "./menu/main-menu"
 
 
@@ -112,7 +113,7 @@ class MainStage extends FBP(LitElement) {
         </furo-pages>
       </furo-app-drawer>
 
-
+      <furo-snackbar-display></furo-snackbar-display>
       <furo-location @-location-changed="--locationChanged"></furo-location>
       <furo-app-flow ƒ-emit="" event="response-error"></furo-app-flow>
     `;
