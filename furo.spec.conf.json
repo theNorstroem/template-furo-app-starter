@@ -1,11 +1,7 @@
 {
   "init": {
     "packages": [
-      "person",
-      "project",
-      "task",
-      "tree",
-      "experiment"
+      "tree"
     ],
     "excludes": [],
     "default_type_for_identities": "string"
@@ -14,8 +10,8 @@
   "__custom_tepmplate_dir": "./path/to/your/tpldir",
   "swagger": true,
   "grpc_gateway": true,
-  "java": true,
-  "build_output_dir": "./build",
+  "java": false,
+  "build_output_dir": "./_specbuild",
   "furo_env_name": "data_environment.js",
   "_hooks": {
     "type_completed": "./sample-hook.js",
@@ -23,7 +19,7 @@
     "build_completed": "./sample-hook.js"
   },
   "bundled": {
-    "build": true,
+    "build": false,
     "package_name": "taskmanager",
     "service_name": "BundledService",
     "proto_options": {

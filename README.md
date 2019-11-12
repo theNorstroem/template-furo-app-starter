@@ -1,18 +1,13 @@
 # my-app
 Starter example app
 
-### Run the documentation system
-```bash
-npm run start
+## Setup
+Before you start the server you have to generate the API specs
+To do this, run `npm run build:spec` to generate the needed environment files
 
-info:   Files in this directory are available under the following URLs
-applications: http://127.0.0.1:8000
-reusable components: http://127.0.0.1:8000/components/@company/packagename/
-    
-```
-This will create the analysis.json and start the server (polymer-cli).
+The specs in this demo are pointing to **/api**, so you do not need an api server to see the client.  
 
-> click on the applications link to view your documentation and demo in the browser.
+## Starting the server
 
 ### Running the tests
 Open `http://127.0.0.1:8000/test/` to run your tests direct in the browser. 
