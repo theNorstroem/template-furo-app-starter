@@ -114,7 +114,7 @@ class ViewFormsample extends FBP(LitElement) {
         </furo-vertical-flex>
       </furo-vertical-flex>
 
-      <furo-banner ƒ-show="--networkError" text="--setBannerText1\nline" icon="perm-scan-wifi"></furo-banner>
+      <furo-banner ƒ-show="--networkError" text="--setBannerText1\nline More and more and more content" icon="perm-scan-wifi"></furo-banner>
     `;
   }
 }

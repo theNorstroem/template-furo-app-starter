@@ -1,5 +1,5 @@
 # my-app
-
+Starter example app
 
 ### Run the documentation system
 ```bash
