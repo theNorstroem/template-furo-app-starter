@@ -8,11 +8,25 @@ To do this, run `npm run build:spec` to generate the needed environment files
 The specs in this demo are pointing to **/api**, so you do not need an api server to see the client.  
 
 ## Starting the server
+To start a static server just type `npm run serve` or `polymer serve`.
+
+## Starting development
+The files for your project are located in `/src`.  The starter pack contains some example views (pages).
+
+## Configuration
+In `/configs` you will find some config files for a usual app.
+
+- `flowConfig.json` : This ist the configuration for the adaptive "routing".
+- `init.js` : initialize application env, theme, api
+- `styling.js` : In this file you can style the app (setting colors and spacing ,...).
+- `iconset.js` : In this file you can add your icons to the default iconx
+
 
 ### Running the tests
 Open `http://127.0.0.1:8000/test/` to run your tests direct in the browser. 
 
-To run the automated test use `npm run test`. This will take some time...
+The tests are located in `/test`. Like every other folder, you are free to move them, as long you update the dependencies and configs.
+To run the automated test use `npm run test`. This will take some time... (when you have added your testsuites ;-))
 
 ```bash
 npm run test

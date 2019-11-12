@@ -25,11 +25,11 @@ import {SocialIcons} from "@furo/layout/iconsets/socialIcons";
 import {HardwareIcons} from "@furo/layout/iconsets/hardwareIcons";
 import {ImageIcons} from "@furo/layout/iconsets/imageIcons";
 
-
+// Private icons
 import {ExampleCustomIconset} from "./iconset"
-
-
+// Privat icons
 Iconset.registerIconset("myapp", ExampleCustomIconset);
+
 Iconset.registerIconset("default", FuroBaseIcons);
 Iconset.registerIconset("av", AvIcons);
 Iconset.registerIconset("communication", CommunicationIcons);

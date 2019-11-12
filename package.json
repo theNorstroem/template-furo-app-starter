@@ -12,7 +12,7 @@
   "main": "furo-catalog.js",
   "scripts": {
     "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
-    "start": "npm run doc && polymer serve",
+    "start": "polymer serve",
     "build": "polymer build",
     "lint": "polymer lint */**.js",
     "test": "polymer test"
