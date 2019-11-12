@@ -1,14 +1,16 @@
 // -- initialize application env, theme, api
 
-import  {Init,Iconset} from "@furo/framework/furo.js";
+import {Init, Iconset} from "@furo/framework/furo.js";
 
 /**
-import {Services, Types} from "@furo/specs/build/data_environment.js"
+ * Use the installed spec if you finaly have a seperate spec project (recomended)
+ */
+//import {Services, Types} from "/node_modules/YOURspecs/build/data_environment.js"
+import {Services, Types} from "/_specbuild/data_environment.js"
 
+// register the available types (only needed if you work with @furo/data... components  )
 Init.registerApiServices(Services);
 Init.registerApiTypes(Types);
-*/
-
 
 
 //Attention: Styling is defined in main-stage
