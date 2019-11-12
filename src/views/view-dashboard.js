@@ -56,6 +56,7 @@ class ViewDashboard extends FBP(LitElement) {
             display: block;
             height: 100%;
             overflow: hidden;
+            
 
         }
 
@@ -65,7 +66,7 @@ class ViewDashboard extends FBP(LitElement) {
 
         .content {
             padding: var(--spacing-s);
-            background-color: var(--surface);
+            background-color: var(--background);
             color: var(--on-surface);
         }
 
@@ -108,7 +109,7 @@ class ViewDashboard extends FBP(LitElement) {
             <p>Routing example with app-flow</p>
             <furo-app-flow event="form-requested" ƒ-trigger="--form"></furo-app-flow>
             <furo-horizontal-flex slot="action">
-              <furo-button primary @-click="--form">register</furo-button>
+              <furo-button primary ƒ-focus="--pageActivated" @-click="--form">register</furo-button>
             </furo-horizontal-flex>
           </furo-card>
 

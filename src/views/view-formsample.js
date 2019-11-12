@@ -5,6 +5,7 @@ import "@furo/layout/furo-vertical-flex"
 import "@furo/input/furo-icon-button"
 import "@furo/notification/furo-banner-display"
 import "@furo/notification/furo-banner"
+import "@furo/util/furo-keydown"
 
 import "../formsample/sample-form"
 
@@ -99,22 +100,25 @@ class ViewFormsample extends FBP(LitElement) {
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
           <div slot="extended">Sample Form:  Juheee , this is a lot of text and should break to a second line</div>
         </furo-app-bar-top>
-        <furo-banner-display></furo-banner-display>
+        <furo-banner-display autofocus></furo-banner-display>
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll class="form"></sample-form>
           <div>
             <furo-horizontal-flex space="" slot="action">
-              <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
-              <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
-
+              <furo-button unelevated primary="" ƒ-focus="--shortcutPrimary" label="primary" @-click="--start"></furo-button>
+              <furo-button unelevated accent="" ƒ-focus="--confirmed" label="accent" @-click="--stop"></furo-button>
               <furo-empty-spacer></furo-empty-spacer>
-              <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
+              <furo-button unelevated danger="" ƒ-focus="--dismissed" label="Danger" @-click="--networkError"></furo-button>
+              <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
+                           @-dismissed="--dismissed" text="--setBannerText1\nline More and more and more content"
+                           icon="perm-scan-wifi"></furo-banner>
             </furo-horizontal-flex>
           </div>
         </furo-vertical-flex>
       </furo-vertical-flex>
 
-      <furo-banner ƒ-show="--networkError" text="--setBannerText1\nline More and more and more content" icon="perm-scan-wifi"></furo-banner>
+      <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
+      
     `;
   }
 }

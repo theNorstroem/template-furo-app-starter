@@ -9,7 +9,7 @@ export class Styling {
 
                 /* Inspired by https://material.io/design/color/the-color-system.html#color-theme-creation */
                 /* https://material.io/design/material-theming/implementing-your-theme.html#color */
-                --primary-light: #2267A3;
+                --primary-light: #227cb9;
                 --primary: #025297;
                 --primary-dark: #014178;
                 --primary-variant: #2587a3;
@@ -29,9 +29,9 @@ export class Styling {
                 --background: #eeeeee;
                 --on-background: #212121;
 
-                --surface-light: #FFFFFF;
-                --surface: #FEFEFE;
-                --surface-dark: #FCFCFC;
+                --surface: #FFFFFF;
+                --surface-light: #f3f3f3;
+                --surface-dark: #f0f0f0;
                 --on-surface: #212121;
                 --separator: #E4E4E4;
 
@@ -62,7 +62,7 @@ export class Styling {
                 --spacing-xxl: 96px;
 
                 --split-master-width: 320px;
-                --furo-card-background: var(--surface-light);
+                
                 --furo-app-drawer-backdrop: rgba(55, 55, 55, 0.5);
                 --furo-data-table-select-color: var(--surface-light);
                 --furo-data-table-background: white;
