@@ -97,11 +97,6 @@ class MainStage extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-
-
-
-
-
       <furo-app-drawer name="main-drawer" ƒ-close="--locationChanged">
         <main-menu slot="drawer"></main-menu>
         <furo-pages ƒ-inject-location="--locationChanged" default="dashboard" @-response-error="--responseError">
