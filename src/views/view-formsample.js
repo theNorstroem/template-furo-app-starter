@@ -65,15 +65,17 @@ class ViewFormsample extends FBP(LitElement) {
             display: none;
         }
 
-        /* Padding-top of 0 for better scrolling effect, the padding is added in .form */
         .content {
-            padding: 0 var(--spacing-s) var(--spacing-s) var(--spacing-s);
+            padding: 0;
             box-sizing: border-box;
         }
         
         .form {
-            padding: var(--spacing-s) 0;
-            
+            padding: var(--spacing-s);
+        }
+        
+        .action {
+            padding: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
         }
         
         /** set the banner icon color to danger color */
@@ -95,7 +97,7 @@ class ViewFormsample extends FBP(LitElement) {
     return html`
       <furo-vertical-flex>
         <furo-app-bar-top drawer="main-drawer" extended ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
-          
+          <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
           <div slot="extended">Sample Form:  Juheee , this is a lot of text and should break to a second line</div>
@@ -103,21 +105,19 @@ class ViewFormsample extends FBP(LitElement) {
         <furo-banner-display autofocus></furo-banner-display>
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll class="form"></sample-form>
-          <div>
-            <furo-horizontal-flex space="" slot="action">
-              <furo-button unelevated primary="" ƒ-focus="--shortcutPrimary" label="primary" @-click="--start"></furo-button>
-              <furo-button unelevated accent="" ƒ-focus="--confirmed" label="accent" @-click="--stop"></furo-button>
+              <furo-button-bar class="action">
+              <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
+              <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
+
               <furo-empty-spacer></furo-empty-spacer>
-              
-              <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
-                           @-dismissed="--dismissed" text="*important:*\nThis will delete *all* your changes. \nPlease contact support!"
-                           icon="perm-scan-wifi"></furo-banner>
-              <furo-button unelevated danger="" ƒ-focus="--dismissed" label="Danger" @-click="--networkError"></furo-button>
-            </furo-horizontal-flex>
-          </div>
+              <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
+              </furo-button-bar>
+          
         </furo-vertical-flex>
       </furo-vertical-flex>
-
+      <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
+                   @-dismissed="--dismissed" text="--setBannerText1\nline More and more and more content"
+                   icon="perm-scan-wifi"></furo-banner>
       <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
       
     `;
