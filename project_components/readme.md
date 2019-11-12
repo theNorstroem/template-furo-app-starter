@@ -10,3 +10,5 @@ lot of maintenance work for you.
 The furo element generator can help you to create a installable component.
 
 Learn more about the generator [here](https://furo.pro/guide/md/starterpacks/). 
+
+
