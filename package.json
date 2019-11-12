@@ -17,7 +17,8 @@
     "test": "polymer test"
   },
   "dependencies": {
-    "@furo/collection": "0.22.20"
+    "@furo/collection": "^0.22.20",
+    "@furo/specs": "^0.42.0"
   },
   "devDependencies": {
     "@polymer/test-fixture": "^4.0.2",

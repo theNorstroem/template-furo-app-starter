@@ -95,7 +95,7 @@ class ViewFormsample extends FBP(LitElement) {
     return html`
       <furo-vertical-flex>
         <furo-app-bar-top drawer="main-drawer" extended ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
-          <div>Sample Form</div>
+          
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
           <div slot="extended">Sample Form:  Juheee , this is a lot of text and should break to a second line</div>
@@ -108,10 +108,11 @@ class ViewFormsample extends FBP(LitElement) {
               <furo-button unelevated primary="" ƒ-focus="--shortcutPrimary" label="primary" @-click="--start"></furo-button>
               <furo-button unelevated accent="" ƒ-focus="--confirmed" label="accent" @-click="--stop"></furo-button>
               <furo-empty-spacer></furo-empty-spacer>
-              <furo-button unelevated danger="" ƒ-focus="--dismissed" label="Danger" @-click="--networkError"></furo-button>
+              
               <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
-                           @-dismissed="--dismissed" text="--setBannerText1\nline More and more and more content"
+                           @-dismissed="--dismissed" text="*important:*\nThis will delete *all* your changes. \nPlease contact support!"
                            icon="perm-scan-wifi"></furo-banner>
+              <furo-button unelevated danger="" ƒ-focus="--dismissed" label="Danger" @-click="--networkError"></furo-button>
             </furo-horizontal-flex>
           </div>
         </furo-vertical-flex>
