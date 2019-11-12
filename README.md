@@ -2,10 +2,15 @@
 Starter example app
 
 ## Setup
-Before you start the server you have to generate the API specs
+### Step 1
+run `npm install` to install the dependencies
+
+### Step 2
+Before you start the server you have to generate the API specs.
 To do this, run `npm run build:spec` to generate the needed environment files
 
-The specs in this demo are pointing to **/api**, so you do not need an api server to see the client.  
+The specs in this demo are pointing to static json files in  **/api**, so you do not need an api server to see the client working.  
+
 
 ## Starting the server
 To start a static server just type `npm run serve` or `polymer serve`.
@@ -55,3 +60,6 @@ Lines        : 100% ( 6/6 )
 ```
 
 > If you are on a windows systems, do not forget to remove safari and add **edge** in the *wct.conf.json*.
+
+## Build
+...
