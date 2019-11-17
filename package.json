@@ -12,7 +12,8 @@
   "main": "furo-catalog.js",
   "scripts": {
     "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
-    "start": "polymer serve",
+    "start:polymer": "polymer serve",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "build": "polymer build",
     "lint": "polymer lint */**.js",
     "test": "polymer test"
@@ -26,14 +27,15 @@
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "axe-core": "^3.2.2",
     "chai": "^4.2.0",
+    "es-dev-server": "^1.23.1",
     "mocha": "^6.1.4",
+    "polymer-cli": "^1.9.10",
     "pwa-helpers": "^0.9.1",
     "sinon": "^7.3.2",
-    "wct-mocha": "^1.0.1",
-    "polymer-cli": "^1.9.10",
-    "web-component-tester": "6.9.2",
     "wct-istanbub": "^0.2.9",
-    "wct-test-reporter": "0.0.1"
+    "wct-mocha": "^1.0.1",
+    "wct-test-reporter": "0.0.1",
+    "web-component-tester": "6.9.2"
   },
   "publishConfig": {
     "access": "public"
