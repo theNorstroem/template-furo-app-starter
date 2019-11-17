@@ -58,16 +58,18 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
-    "plugins": ["lit"],
-    "env": {"browser": true},
+    "plugins": [
+      "lit"
+    ],
+    "env": {
+      "browser": true
+    },
     "extends": [
       "@open-wc/eslint-config",
       "eslint-config-prettier",
       "plugin:lit/recommended"
     ],
-
     "rules": {
-
       "import/no-extraneous-dependencies": [
         "error",
         {
