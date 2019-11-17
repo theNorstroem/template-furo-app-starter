@@ -62,7 +62,6 @@ class ViewTree extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <not-impoer></not-impoer>
       <furo-app-bar-top drawer="main-drawer">
         <div>Tree</div>
         <furo-empty-spacer></furo-empty-spacer>
