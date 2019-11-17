@@ -116,7 +116,7 @@ class ViewFormsample extends FBP(LitElement) {
         </furo-vertical-flex>
       </furo-vertical-flex>
       <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
-                   @-dismissed="--dismissed" text="**important:**\n\nAccenting \n - will \n - cause a *lot* of trouble\n\nNew Line\nddde"
+                   @-dismissed="--dismissed" text="# Important:\n\nDo not forgett to \n - insert the username \n - set a **valid** date\n\nThank you.\n\nthe team"
                    icon="perm-scan-wifi"></furo-banner>
       <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
       

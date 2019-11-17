@@ -21,10 +21,18 @@ The files for your project are located in `/src`.  The starter pack contains som
 ## Configuration
 In `/configs` you will find some config files for a usual app.
 
-- `flowConfig.json` : This ist the configuration for the adaptive "routing".
-- `init.js` : initialize application env, theme, api
-- `styling.js` : In this file you can style the app (setting colors and spacing ,...).
-- `iconset.js` : In this file you can add your icons to the default iconx
+### - `flowConfig.json` : 
+This ist the configuration for the adaptive "routing".
+
+### - `init.js` : 
+initialize application env, theme, api
+
+### - `styling.js` : 
+In this file you can style the app (setting colors and spacing ,...).
+
+### - `iconset.js` : 
+In this file you can add your custom icons to the default icon set
+
 
 
 ### Running the tests
@@ -62,4 +70,12 @@ Lines        : 100% ( 6/6 )
 > If you are on a windows systems, do not forget to remove safari and add **edge** in the *wct.conf.json*.
 
 ## Build
-...
+Build tools take your code and make it production-ready. Among the things you may need build tools to do:
+
+- Transform ES6 code to ES5 for legacy browsers, including transforming JavaScript modules into other formats.
+- Bundle modules together can improve performance by reducing the number of files that need to be transferred.
+- Minify JavaScript, HTML, and CSS.
+
+Many build tools can do this for you. Currently we recommend the Polymer CLI or webpack.
+
+[Read more about building your app on the lit-html page...](https://lit-html.polymer-project.org/guide/tools#build)
