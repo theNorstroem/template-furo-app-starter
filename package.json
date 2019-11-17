@@ -13,7 +13,7 @@
   "scripts": {
     "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
     "start:polymer": "polymer serve",
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "start": "es-dev-server --open",
     "build": "polymer build",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
@@ -22,7 +22,7 @@
     "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "test": "wct",
-    "test:live": "es-dev-server --app-index index.html --node-resolve --watch --open /test/index.html"
+    "test:live": "es-dev-server --open /test/index.html"
   },
   "dependencies": {
     "@furo/collection": "*",
