@@ -38,6 +38,8 @@
     "axe-core": "^3.2.2",
     "chai": "^4.2.0",
     "es-dev-server": "^1.23.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-lit": "^1.2.0",
     "husky": "^1.0.0",
     "lint-staged": "^8.0.0",
     "mocha": "^6.1.4",
@@ -47,8 +49,7 @@
     "wct-istanbub": "^0.2.9",
     "wct-mocha": "^1.0.1",
     "wct-test-reporter": "0.0.1",
-    "web-component-tester": "6.9.2",
-    "eslint": "^6.1.0"
+    "web-component-tester": "6.9.2"
   },
   "publishConfig": {
     "access": "public"
@@ -57,18 +58,26 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
+    "plugins": ["lit"],
+    "env": {"browser": true},
     "extends": [
       "@open-wc/eslint-config",
-      "eslint-config-prettier"
+      "eslint-config-prettier",
+      "plugin:lit/recommended"
     ],
+
     "rules": {
+
       "import/no-extraneous-dependencies": [
         "error",
         {
           "devDependencies": false,
           "optionalDependencies": false,
           "peerDependencies": false,
-          "packageDir": ["./node_modules/@furo/collection", "./node_modules/@furo/framework"]
+          "packageDir": [
+            "./node_modules/@furo/collection",
+            "./node_modules/@furo/framework"
+          ]
         }
       ]
     }
