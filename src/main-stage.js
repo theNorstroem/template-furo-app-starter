@@ -1,27 +1,25 @@
-import {LitElement, html, css} from 'lit-element';
-import {FBP} from "@furo/fbp";
-import {Theme} from "@furo/framework/theme"
-import {Styling} from "../configs/styling";
+import { LitElement, html, css } from 'lit-element';
+import { FBP } from '@furo/fbp';
+import { Theme } from '@furo/framework/theme.js';
+import { Styling } from '../configs/styling.js';
 
-
-import '@furo/input/furo-button';
-import '@furo/route/furo-location';
-import '@furo/route/furo-pages';
-import '@furo/route/furo-app-flow';
-import '@furo/layout/furo-app-drawer';
-import '@furo/layout/furo-app-bar-top';
-import '@furo/notification/furo-snackbar-display';
-import "./menu/main-menu"
-
+import '@furo/input/furo-button.js';
+import '@furo/route/furo-location.js';
+import '@furo/route/furo-pages.js';
+import '@furo/route/furo-app-flow.js';
+import '@furo/layout/furo-app-drawer.js';
+import '@furo/layout/furo-app-bar-top.js';
+import '@furo/notification/furo-snackbar-display.js';
+import './menu/main-menu.js';
 
 /**
  * Static imports of the views
  * The lazy imports a below in _FBPReady
  */
 
-import "./views/view-dashboard"
-import "./views/view-auth"
-import "./views/view-404"
+import './views/view-dashboard.js';
+import './views/view-auth.js';
+import './views/view-404.js';
 
 /**
  * `main-stage`
@@ -30,12 +28,6 @@ import "./views/view-404"
  * @appliesMixin FBP
  */
 class MainStage extends FBP(LitElement) {
-
-  constructor() {
-    super();
-  }
-
-
   _FBPReady() {
     super._FBPReady();
     /**
@@ -45,15 +37,15 @@ class MainStage extends FBP(LitElement) {
      * DO NOT FORGET TO REGISTER THE LAZY LOADED PARTS IN ~/polymer.json => fragments[...]
      *
      */
-    this._FBPAddWireHook("--locationChanged", (e) => {
+    this._FBPAddWireHook('--locationChanged', e => {
       switch (e.pathSegments[0]) {
-        case "tree":
-          import("./views/view-tree");
+        case 'tree':
+          import('./views/view-tree');
           break;
-        case "form":
-          import ("./views/view-formsample");
+        case 'form':
+          import('./views/view-formsample');
           break;
-
+        default:
       }
     });
   }
@@ -64,30 +56,31 @@ class MainStage extends FBP(LitElement) {
    * @return {CSSResult}
    */
   static get styles() {
-
-    let theme = Theme.getThemeForComponent(this.name);
+    const theme = Theme.getThemeForComponent(this.name);
     if (theme) {
-      return [theme, Styling.theme]
-    } else {
-      // language=CSS
-      return [css`
-          :host {
-              height: 100%;
-              display: block;
-              background: var(--background);
-              color: var(--on-background);
-          }
-
-          furo-pages {
-              height: 100vh;
-              overflow: hidden;
-          }
-
-          side-navigation {
-              background-color: var(--llm-color);
-          }
-      `, Styling.theme]
+      return [theme, Styling.theme];
     }
+    // language=CSS
+    return [
+      css`
+        :host {
+          height: 100%;
+          display: block;
+          background: var(--background);
+          color: var(--on-background);
+        }
+
+        furo-pages {
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        side-navigation {
+          background-color: var(--llm-color);
+        }
+      `,
+      Styling.theme,
+    ];
   }
 
   /**
@@ -99,7 +92,11 @@ class MainStage extends FBP(LitElement) {
     return html`
       <furo-app-drawer name="main-drawer" ƒ-close="--locationChanged">
         <main-menu slot="drawer"></main-menu>
-        <furo-pages ƒ-inject-location="--locationChanged" default="dashboard" @-response-error="--responseError">
+        <furo-pages
+          ƒ-inject-location="--locationChanged"
+          default="dashboard"
+          @-response-error="--responseError"
+        >
           <view-dashboard name="dashboard"></view-dashboard>
           <view-tree name="tree"></view-tree>
           <view-auth name="auth"></view-auth>
@@ -113,7 +110,6 @@ class MainStage extends FBP(LitElement) {
       <furo-app-flow ƒ-emit="" event="response-error"></furo-app-flow>
     `;
   }
-
 }
 
 window.customElements.define('main-stage', MainStage);

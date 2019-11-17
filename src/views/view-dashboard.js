@@ -1,12 +1,12 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from "@furo/framework/theme"
-import {FBP} from "@furo/fbp";
-import "@furo/layout/furo-vertical-flex"
-import "@furo/form"
-import "@furo/input"
-import "@furo/form/furo-form"
-import "@furo/input/furo-icon-button"
-import "@furo/notification/furo-snackbar"
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
+import '@furo/layout/furo-vertical-flex.js';
+import '@furo/form';
+import '@furo/input';
+import '@furo/form/furo-form.js';
+import '@furo/input/furo-icon-button.js';
+import '@furo/notification/furo-snackbar.js';
 
 /**
  * `view-dashboard`
@@ -18,11 +18,6 @@ import "@furo/notification/furo-snackbar"
  * @appliesMixin FBP
  */
 class ViewDashboard extends FBP(LitElement) {
-
-  constructor() {
-    super();
-  }
-
   /**
    * @private
    * @return {Object}
@@ -32,7 +27,7 @@ class ViewDashboard extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean}
+      myBool: { type: Boolean },
     };
   }
 
@@ -41,7 +36,7 @@ class ViewDashboard extends FBP(LitElement) {
    */
   _FBPReady() {
     super._FBPReady();
-    //this._FBPTraceWires()
+    // this._FBPTraceWires()
   }
 
   /**
@@ -51,34 +46,33 @@ class ViewDashboard extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return (
+      Theme.getThemeForComponent(this.name) ||
+      css`
         :host {
-            display: block;
-            height: 100%;
-            overflow: hidden;
-            
-
+          display: block;
+          height: 100%;
+          overflow: hidden;
         }
 
         :host([hidden]) {
-            display: none;
+          display: none;
         }
 
         .content {
-            padding: var(--spacing-s);
-            background-color: var(--background);
-            color: var(--on-surface);
+          padding: var(--spacing-s);
+          background-color: var(--background);
+          color: var(--on-surface);
         }
 
         furo-card {
-            margin: 0 var(--spacing) var(--spacing) 0;
-            width: 280px;
-            float: left;
+          margin: 0 var(--spacing) var(--spacing) 0;
+          width: 280px;
+          float: left;
         }
-
-    `
+      `
+    );
   }
-
 
   /**
    * @private
@@ -94,17 +88,23 @@ class ViewDashboard extends FBP(LitElement) {
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="search" @-click="--float"></furo-icon-button>
           <furo-icon-button icon="filter-list" @-click="--op"></furo-icon-button>
-          <furo-snackbar position-right action-button-text="ignore" timeout-in-ms="8000" label-text="Filter is not implemented yet" ƒ-show="--op"></furo-snackbar>
+          <furo-snackbar
+            position-right
+            action-button-text="ignore"
+            timeout-in-ms="8000"
+            label-text="Filter is not implemented yet"
+            ƒ-show="--op"
+          ></furo-snackbar>
         </furo-app-bar-top>
         <div flex scroll class="content">
           <furo-card>
-            <img src="/assets/images/hamburg.png" slot="media" alt="">
+            <img src="/assets/images/hamburg.png" slot="media" alt="" />
             <h1>Info</h1>
             <p>Some text</p>
           </furo-card>
-          
+
           <furo-card>
-            <img src="/assets/images/hamburg.png" slot="media" alt="">
+            <img src="/assets/images/hamburg.png" slot="media" alt="" />
             <h1>App-flow</h1>
             <p>Routing example with app-flow</p>
             <furo-app-flow event="form-requested" ƒ-trigger="--form"></furo-app-flow>
@@ -116,14 +116,14 @@ class ViewDashboard extends FBP(LitElement) {
           <furo-card>
             <h1>Simulate unauthorized</h1>
             <p>Click on the button to emmit a unauthorized event.</p>
-            <p>The unathorized event is catched in the app-shell and triggers an app-flow event which causses the router
-              to navigate to the <strong>/auth</strong> page.</p>
+            <p>
+              The unathorized event is catched in the app-shell and triggers an app-flow event which
+              causses the router to navigate to the <strong>/auth</strong> page.
+            </p>
             <furo-horizontal-flex slot="action">
               <furo-button danger @-click="^^unauthorized">Unauth</furo-button>
             </furo-horizontal-flex>
           </furo-card>
-
-
         </div>
       </furo-vertical-flex>
     `;

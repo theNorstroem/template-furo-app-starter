@@ -15,19 +15,31 @@
     "start:polymer": "polymer serve",
     "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "build": "polymer build",
-    "lint": "polymer lint */**.js",
-    "test": "polymer test"
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "test": "wct",
+    "test:live": "es-dev-server --app-index index.html --node-resolve --watch --open /test/index.html"
   },
   "dependencies": {
     "@furo/collection": "*",
     "@furo/specs": "*"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@open-wc/eslint-config": "^1.0.0",
+    "@open-wc/prettier-config": "^0.1.10",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "axe-core": "^3.2.2",
     "chai": "^4.2.0",
     "es-dev-server": "^1.23.1",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
     "mocha": "^6.1.4",
     "polymer-cli": "^1.9.10",
     "pwa-helpers": "^0.9.1",
@@ -35,12 +47,43 @@
     "wct-istanbub": "^0.2.9",
     "wct-mocha": "^1.0.1",
     "wct-test-reporter": "0.0.1",
-    "web-component-tester": "6.9.2"
+    "web-component-tester": "6.9.2",
+    "eslint": "^6.1.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=8.0"
+    "node": ">=10.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": false,
+          "optionalDependencies": false,
+          "peerDependencies": false,
+          "packageDir": ["./node_modules/@furo/collection", "./node_modules/@furo/framework"]
+        }
+      ]
+    }
+  },
+  "prettier": "@open-wc/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

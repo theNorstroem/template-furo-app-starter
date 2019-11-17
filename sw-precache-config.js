@@ -15,13 +15,11 @@
  */
 
 module.exports = {
-  staticFileGlobs: [
-    'manifest.json'
-  ],
+  staticFileGlobs: ['manifest.json'],
   runtimeCaching: [
     {
       urlPattern: /\/@webcomponents\/webcomponentsjs\//,
-      handler: 'fastest'
-    }
-  ]
+      handler: 'fastest',
+    },
+  ],
 };

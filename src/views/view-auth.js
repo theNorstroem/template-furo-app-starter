@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import {Theme} from "@furo/framework/theme"
-import {FBP} from "@furo/fbp";
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 
 /**
  * `view-auth`
@@ -12,30 +12,25 @@ import {FBP} from "@furo/fbp";
  * @appliesMixin FBP
  */
 class ViewAuth extends FBP(LitElement) {
-
-    constructor() {
-        super();
-    }
-
-    /**
-     * @private
-     * @return {Object}
-     */
-    static get properties() {
-        return {
-            /**
-             * Description
-             */
-            myBool: {type: Boolean}
-        };
-    }
+  /**
+   * @private
+   * @return {Object}
+   */
+  static get properties() {
+    return {
+      /**
+       * Description
+       */
+      myBool: { type: Boolean },
+    };
+  }
 
   /**
-  * flow is ready lifecycle method
-  */
-  _FBPReady(){
+   * flow is ready lifecycle method
+   */
+  _FBPReady() {
     super._FBPReady();
-    //this._FBPTraceWires()
+    // this._FBPTraceWires()
   }
 
   /**
@@ -45,17 +40,19 @@ class ViewAuth extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return (
+      Theme.getThemeForComponent(this.name) ||
+      css`
         :host {
-            display: block;
+          display: block;
         }
 
         :host([hidden]) {
-            display: none;
+          display: none;
         }
-    `
+      `
+    );
   }
-
 
   /**
    * @private

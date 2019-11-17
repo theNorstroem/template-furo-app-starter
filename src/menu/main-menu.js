@@ -1,6 +1,6 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from "@furo/framework/theme"
-import {FBP} from "@furo/fbp";
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 
 /**
  * `main-menu`
@@ -12,11 +12,6 @@ import {FBP} from "@furo/fbp";
  * @appliesMixin FBP
  */
 class MainMenu extends FBP(LitElement) {
-
-  constructor() {
-    super();
-  }
-
   /**
    * @private
    * @return {Object}
@@ -26,7 +21,7 @@ class MainMenu extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean}
+      myBool: { type: Boolean },
     };
   }
 
@@ -35,7 +30,7 @@ class MainMenu extends FBP(LitElement) {
    */
   _FBPReady() {
     super._FBPReady();
-    //this._FBPTraceWires()
+    // this._FBPTraceWires()
   }
 
   /**
@@ -45,91 +40,91 @@ class MainMenu extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return (
+      Theme.getThemeForComponent(this.name) ||
+      css`
         :host {
-            display: block;
-            width: 256px;
-            background-color: var(--surface);
-            color: var(--on-surface);
-            height: 100%;
-            overflow: auto;
+          display: block;
+          width: 256px;
+          background-color: var(--surface);
+          color: var(--on-surface);
+          height: 100%;
+          overflow: auto;
         }
 
         :host([hidden]) {
-            display: none;
+          display: none;
         }
 
         .title {
-            font-size: 20px;
-            height: 40px;
-            line-height: 56px;
-            padding-left: var(--spacing-s, 16px);
+          font-size: 20px;
+          height: 40px;
+          line-height: 56px;
+          padding-left: var(--spacing-s, 16px);
         }
 
         .secondary {
-            font-size: 14px;
-            height: 24px;
-            letter-spacing: 0.1px;
-            padding-left: var(--spacing-s, 16px);
-            color: var(--secondary-color, var(--on-primary-light, #777777));
-            line-height: 20px;
+          font-size: 14px;
+          height: 24px;
+          letter-spacing: 0.1px;
+          padding-left: var(--spacing-s, 16px);
+          color: var(--secondary-color, var(--on-primary-light, #777777));
+          line-height: 20px;
         }
 
         .head {
-            height: 64px;
+          height: 64px;
         }
 
         ul {
-            list-style: none;
-            margin: 0;
-            margin-bottom: 14px;
-            padding: var(--spacing-xs) 8px;
-            border-bottom: 1px solid var(--separator, rgb(228, 228, 228));
+          list-style: none;
+          margin: 0;
+          margin-bottom: 14px;
+          padding: var(--spacing-xs) 8px;
+          border-bottom: 1px solid var(--separator, rgb(228, 228, 228));
         }
 
         li {
-            min-height: 40px;
-            line-height: 40px;
-            margin-bottom: 4px;
-            letter-spacing: .01785714em;
-            font-size: .875rem;
-            font-weight: 500;
-            padding: 0 var(--spacing-xs);
-            transition: all 0.2s;
+          min-height: 40px;
+          line-height: 40px;
+          margin-bottom: 4px;
+          letter-spacing: 0.01785714em;
+          font-size: 0.875rem;
+          font-weight: 500;
+          padding: 0 var(--spacing-xs);
+          transition: all 0.2s;
         }
-        li:hover{
-            background-color: var(--secondary);
-            border-radius: 4px;
-            color: var(--on-secondary);
-            cursor: pointer;
+        li:hover {
+          background-color: var(--secondary);
+          border-radius: 4px;
+          color: var(--on-secondary);
+          cursor: pointer;
         }
-        a{
-            color: inherit;
-            height: 100%;
-            width: 100%;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        a {
+          color: inherit;
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .label {
-            font-size: 14px;
-            height: 24px;
-            letter-spacing: 0.1px;
-            padding-left: var(--spacing-s, 16px);
-            color: var(--secondary-color, var(--on-primary-light, #777777));
-            line-height: 20px;
-            
-
+          font-size: 14px;
+          height: 24px;
+          letter-spacing: 0.1px;
+          padding-left: var(--spacing-s, 16px);
+          color: var(--secondary-color, var(--on-primary-light, #777777));
+          line-height: 20px;
         }
-        furo-icon{
-            margin-right: 24px;
+        furo-icon {
+          margin-right: 24px;
         }
-    `
+      `
+    );
   }
-
 
   /**
    * @private
@@ -144,30 +139,38 @@ class MainMenu extends FBP(LitElement) {
         <div class="secondary">Secondary</div>
       </div>
 
-
       <ul>
-       
-        <li><a href="/dashboard">
-          <furo-icon icon="dashboard"></furo-icon>
-          dashboard</a></li>
-        <li><a href="/tree">
-          <furo-icon icon="list"></furo-icon>
-          tree sample</a></li>
-        <li><a href="/form">
-          <furo-icon icon="receipt"></furo-icon>
-          form sample</a></li>
-        <li><a href="/auth">
-          <furo-icon icon="perm-identity"></furo-icon>
-          Auth</a></li>
-        <li><a href="/unknown">
-          <furo-icon icon="extension"></furo-icon>
-          link to nowhere</a></li>
+        <li>
+          <a href="/dashboard">
+            <furo-icon icon="dashboard"></furo-icon>
+            dashboard</a
+          >
+        </li>
+        <li>
+          <a href="/tree">
+            <furo-icon icon="list"></furo-icon>
+            tree sample</a
+          >
+        </li>
+        <li>
+          <a href="/form">
+            <furo-icon icon="receipt"></furo-icon>
+            form sample</a
+          >
+        </li>
+        <li>
+          <a href="/auth">
+            <furo-icon icon="perm-identity"></furo-icon>
+            Auth</a
+          >
+        </li>
+        <li>
+          <a href="/unknown">
+            <furo-icon icon="extension"></furo-icon>
+            link to nowhere</a
+          >
+        </li>
       </ul>
-      
-        
-      
-        
-
     `;
   }
 }

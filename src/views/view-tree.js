@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import {Theme} from "@furo/framework/theme"
-import {FBP} from "@furo/fbp";
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 
 /**
  * `view-tree`
@@ -12,30 +12,25 @@ import {FBP} from "@furo/fbp";
  * @appliesMixin FBP
  */
 class ViewTree extends FBP(LitElement) {
-
-    constructor() {
-        super();
-    }
-
-    /**
-     * @private
-     * @return {Object}
-     */
-    static get properties() {
-        return {
-            /**
-             * Description
-             */
-            myBool: {type: Boolean}
-        };
-    }
+  /**
+   * @private
+   * @return {Object}
+   */
+  static get properties() {
+    return {
+      /**
+       * Description
+       */
+      myBool: { type: Boolean },
+    };
+  }
 
   /**
-  * flow is ready lifecycle method
-  */
-  _FBPReady(){
+   * flow is ready lifecycle method
+   */
+  _FBPReady() {
     super._FBPReady();
-    //this._FBPTraceWires()
+    // this._FBPTraceWires()
   }
 
   /**
@@ -45,17 +40,19 @@ class ViewTree extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return (
+      Theme.getThemeForComponent(this.name) ||
+      css`
         :host {
-            display: block;
+          display: block;
         }
 
         :host([hidden]) {
-            display: none;
+          display: none;
         }
-    `
+      `
+    );
   }
-
 
   /**
    * @private
@@ -65,14 +62,13 @@ class ViewTree extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-
-      <furo-app-bar-top  drawer="main-drawer">
+      <not-impoer></not-impoer>
+      <furo-app-bar-top drawer="main-drawer">
         <div>Tree</div>
         <furo-empty-spacer></furo-empty-spacer>
       </furo-app-bar-top>
-     
+
       <p>Hej, tree demo here</p>
-     
     `;
   }
 }

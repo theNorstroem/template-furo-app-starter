@@ -1,13 +1,13 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from "@furo/framework/theme"
-import {FBP} from "@furo/fbp";
-import "@furo/layout/furo-vertical-flex"
-import "@furo/input/furo-icon-button"
-import "@furo/notification/furo-banner-display"
-import "@furo/notification/furo-banner"
-import "@furo/util/furo-keydown"
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
+import '@furo/layout/furo-vertical-flex.js';
+import '@furo/input/furo-icon-button.js';
+import '@furo/notification/furo-banner-display.js';
+import '@furo/notification/furo-banner.js';
+import '@furo/util/furo-keydown.js';
 
-import "../formsample/sample-form"
+import '../formsample/sample-form.js';
 
 /**
  * `view-formsample`
@@ -19,11 +19,6 @@ import "../formsample/sample-form"
  * @appliesMixin FBP
  */
 class ViewFormsample extends FBP(LitElement) {
-
-  constructor() {
-    super();
-  }
-
   /**
    * @private
    * @return {Object}
@@ -33,7 +28,7 @@ class ViewFormsample extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean}
+      myBool: { type: Boolean },
     };
   }
 
@@ -42,7 +37,7 @@ class ViewFormsample extends FBP(LitElement) {
    */
   _FBPReady() {
     super._FBPReady();
-    this._FBPTraceWires()
+    this._FBPTraceWires();
   }
 
   /**
@@ -52,40 +47,41 @@ class ViewFormsample extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return (
+      Theme.getThemeForComponent(this.name) ||
+      css`
         :host {
-            display: block;
-            height: 100vh;
-            overflow: hidden;
-            background-color: var(--surface);
-            color: var(--on-surface);
+          display: block;
+          height: 100vh;
+          overflow: hidden;
+          background-color: var(--surface);
+          color: var(--on-surface);
         }
 
         :host([hidden]) {
-            display: none;
+          display: none;
         }
 
         .content {
-            padding: 0;
-            box-sizing: border-box;
+          padding: 0;
+          box-sizing: border-box;
         }
-        
+
         .form {
-            padding: var(--spacing-s);
+          padding: var(--spacing-s);
         }
-        
+
         .action {
-            padding: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
+          padding: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
         }
-        
+
         /** set the banner icon color to danger color */
-        furo-banner-display{
-            --furo-icon-fill-color:var(--danger);
+        furo-banner-display {
+          --furo-icon-fill-color: var(--danger);
         }
-
-    `
+      `
+    );
   }
-
 
   /**
    * @private
@@ -96,30 +92,50 @@ class ViewFormsample extends FBP(LitElement) {
     // language=HTML
     return html`
       <furo-vertical-flex>
-        <furo-app-bar-top drawer="main-drawer" extended ƒ-start-activity="--start" ƒ-stop-activity="--stop" navigation-icon="arrow-back" @-navigation-clicked="^^navigate-back-clicked">
+        <furo-app-bar-top
+          drawer="main-drawer"
+          extended
+          ƒ-start-activity="--start"
+          ƒ-stop-activity="--stop"
+          navigation-icon="arrow-back"
+          @-navigation-clicked="^^navigate-back-clicked"
+        >
           <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
-          <div slot="extended">Sample Form:  Juheee , this is a lot of text and should break to a second line</div>
+          <div slot="extended">
+            Sample Form: Juheee , this is a lot of text and should break to a second line
+          </div>
         </furo-app-bar-top>
         <furo-banner-display autofocus></furo-banner-display>
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll class="form"></sample-form>
-              <furo-button-bar class="action">
-              <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
-              <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
+          <furo-button-bar class="action">
+            <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
+            <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
 
-              <furo-empty-spacer></furo-empty-spacer>
-              <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
-              </furo-button-bar>
-          
+            <furo-empty-spacer></furo-empty-spacer>
+            <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
+          </furo-button-bar>
         </furo-vertical-flex>
       </furo-vertical-flex>
-      <furo-banner ƒ-show="--networkError" confirm-button-text="confirm to accent" @-confirmed="--confirmed"
-                   @-dismissed="--dismissed" text="# Important:\n\nDo not forgett to \n - insert the username \n - set a **valid** date\n\nThank you.\n\nthe team"
-                   icon="perm-scan-wifi"></furo-banner>
+      <furo-banner
+        ƒ-show="--networkError"
+        confirm-button-text="confirm to accent"
+        @-confirmed="--confirmed"
+        @-dismissed="--dismissed"
+        text="# Important:
+
+Do not forgett to 
+ - insert the username 
+ - set a **valid** date
+
+Thank you.
+
+the team"
+        icon="perm-scan-wifi"
+      ></furo-banner>
       <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
-      
     `;
   }
 }
