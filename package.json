@@ -15,7 +15,7 @@
     "start": "es-dev-server --open",
     "start:polymer": "polymer serve",
     "build": "polymer build",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint": "npm run format && npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format": "npm run format:eslint && npm run format:prettier",
