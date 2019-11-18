@@ -21,8 +21,14 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
-    "test": "wct",
-    "test:live": "es-dev-server --open /test/index.html"
+    "test": "karma start --coverage",
+    "test:live": "es-dev-server --open /test/index.html",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:update-snapshots": "karma start --update-snapshots",
+    "test:prune-snapshots": "karma start --prune-snapshots",
+    "test:compatibility": "karma start --compatibility all --coverage",
+    "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
+    "test:bs": "karma start karma.bs.config.js --compatibility all --coverage"
   },
   "dependencies": {
     "@furo/collection": "*",
@@ -33,23 +39,22 @@
     "@commitlint/config-conventional": "^8.2.0",
     "@open-wc/eslint-config": "^1.0.0",
     "@open-wc/prettier-config": "^0.1.10",
+    "@open-wc/semantic-dom-diff": "^0.15.3",
+    "@open-wc/testing": "^2.0.0",
+    "@open-wc/testing-karma": "^3.1.54",
+    "@open-wc/testing-karma-bs": "^1.0.0",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "axe-core": "^3.2.2",
-    "chai": "^4.2.0",
     "es-dev-server": "^1.23.1",
     "eslint": "^6.6.0",
     "eslint-plugin-lit": "^1.2.0",
     "husky": "^1.0.0",
+    "karma": "^4.4.1",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
     "lint-staged": "^8.0.0",
     "mocha": "^6.1.4",
-    "polymer-cli": "^1.9.10",
-    "pwa-helpers": "^0.9.1",
-    "sinon": "^7.3.2",
-    "wct-istanbub": "^0.2.9",
-    "wct-mocha": "^1.0.1",
-    "wct-test-reporter": "0.0.1",
-    "web-component-tester": "6.9.2"
+    "webpack-merge": "^4.1.5"
   },
   "publishConfig": {
     "access": "public"
@@ -58,6 +63,9 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
+    "globals": {
+      "assert": "writable"
+    },
     "plugins": [
       "lit"
     ],
@@ -73,12 +81,13 @@
       "import/no-extraneous-dependencies": [
         "error",
         {
-          "devDependencies": false,
+          "devDependencies": true,
           "optionalDependencies": false,
           "peerDependencies": false,
           "packageDir": [
             "./node_modules/@furo/collection",
             "./node_modules/@furo/framework"
+
           ]
         }
       ]
