@@ -1,7 +1,7 @@
 .furo
 .idea
-coverage/
-build/
+coverage
+build
 node_modules/
 _specbuild
 __tmp

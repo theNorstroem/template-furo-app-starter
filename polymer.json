@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "shell/app-shell.js",
+  "shell": "src/app-shell.js",
   "fragments": [
     "src/views/view-tree.js",
     "src/views/view-formsample.js"
@@ -8,8 +8,7 @@
   "sources": [
     "favicon.ico",
     "assets/**/*",
-    "assets/**/*",
-    "mockdata/**/*"
+    "configs/**/*"
   ],
   "extraDependencies": [
     "manifest.json",

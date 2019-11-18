@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
 import { FBP } from '@furo/fbp';
 import '../configs/init.js';
 
@@ -20,10 +19,6 @@ class AppShell extends FBP(LitElement) {
    * @return {CSSResult}
    */
   static get styles() {
-    const theme = Theme.getThemeForComponent(this.name);
-    if (theme) {
-      return [theme];
-    }
     // language=CSS
     return [
       css`
