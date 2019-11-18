@@ -13,7 +13,7 @@ The specs in this demo are pointing to static json files in  **/api**, so you do
 
 
 ## Starting the server
-To start a static server just type `npm run serve` or `polymer serve`.
+To start a static server just type `npm run start` or `polymer serve`.
 
 ## Starting development
 The files for your project are located in `/src`.  The starter pack contains some example views (pages).
