@@ -4,6 +4,21 @@
     "display_name": "Project tree",
     "id": "1",
     "root": {
+      "description": "Project Root Node",
+      "display_name": "Project root node",
+      "has_error": false,
+      "icon": "dashboard",
+      "id": "2",
+      "key_words": "",
+      "link": {
+        "href": "/mockdata/projects/1/get.json",
+        "method": "GET",
+        "rel": "self",
+        "type": "project.ProjectEntity"
+      },
+      "open": true,
+      "panel": "view",
+      "secondary_text": "Secondary node description",
       "children": [
         {
           "description": "Rework documentation",
@@ -22,22 +37,7 @@
           "panel": "view",
           "secondary_text": "Secondary node description"
         }
-      ],
-      "description": "Project Root Node",
-      "display_name": "Project root node",
-      "has_error": false,
-      "icon": "dashboard",
-      "id": "2",
-      "key_words": "",
-      "link": {
-        "href": "/mockdata/projects/1/get.json",
-        "method": "GET",
-        "rel": "self",
-        "type": "project.ProjectEntity"
-      },
-      "open": true,
-      "panel": "view",
-      "secondary_text": "Secondary node description"
+      ]
     }
   },
   "links": [

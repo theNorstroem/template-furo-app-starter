@@ -17,6 +17,7 @@ import './menu/main-menu.js';
  * The lazy imports a below in _FBPReady
  */
 
+import './views/view-somecontent.js';
 import './views/view-dashboard.js';
 import './views/view-auth.js';
 import './views/view-404.js';
@@ -91,7 +92,7 @@ class MainStage extends FBP(LitElement) {
     // language=HTML
     return html`
       <furo-app-drawer name="main-drawer" ƒ-close="--locationChanged">
-        <main-menu slot="drawer"></main-menu>
+        <main-menu slot="drawer" header-text="Title" secondary-text="Secondary text"></main-menu>
         <furo-pages
           ƒ-inject-location="--locationChanged"
           default="dashboard"
@@ -101,6 +102,7 @@ class MainStage extends FBP(LitElement) {
           <view-tree name="tree"></view-tree>
           <view-auth name="auth"></view-auth>
           <view-formsample name="form"></view-formsample>
+          <view-somecontent name="somecontent"></view-somecontent>
           <view-404 name="404"></view-404>
         </furo-pages>
       </furo-app-drawer>

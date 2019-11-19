@@ -9,12 +9,15 @@ export class Styling {
         /* https://material.io/design/material-theming/implementing-your-theme.html#color */
         --primary-light: #227cb9;
         --primary: #025297;
+        /* --xxx-rgb is used for the states  */
+        --primary-rgb: 2, 82, 151;
         --primary-dark: #014178;
         --primary-variant: #2587a3;
         --on-primary: #ffffff;
 
         --secondary-light: #fdd756;
         --secondary: #fecf2f;
+        --secondary-rgb: 254, 207, 47;
         --secondary-dark: #ffc911;
         --secondary-variant: #faedc1;
         --on-secondary: #212121;
@@ -31,7 +34,21 @@ export class Styling {
         --surface-light: #f3f3f3;
         --surface-dark: #f0f0f0;
         --on-surface: #212121;
+        --on-surface-rgb: 33, 33, 33;
         --separator: #e4e4e4;
+
+        /* States */
+        --state-hover: 0.04;
+        --state-selected: 0.08;
+        --state-selected-hover: 0.12;
+        --state-active: 0.1;
+        --state-focus: 0.12;
+        --state-selected-focus: 0.2;
+        --state-disabled: 0.38;
+
+        /* Emphasis, used for secondary text,... */
+        --medium-emphasis-surface: 0.6;
+        --medium-emphasis-primary: 0.74;
 
         /* Input, Forms, Toast*/
         --error: #ea1c24;
@@ -59,6 +76,7 @@ export class Styling {
         --spacing-xxl: 96px;
 
         --split-master-width: 320px;
+        --navigation-drawer-width: 256px;
 
         --furo-app-drawer-backdrop: rgba(55, 55, 55, 0.5);
         --furo-data-table-select-color: var(--surface-light);

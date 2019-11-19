@@ -98,13 +98,13 @@ class ViewDashboard extends FBP(LitElement) {
           ></furo-snackbar>
         </furo-app-bar-top>
         <div flex scroll class="content">
-          <furo-card>
+          <furo-card class="selected">
             <img src="/assets/images/hamburg.png" slot="media" alt="" />
             <h1>${i18n.t('save')}</h1>
             <p>Some text</p>
           </furo-card>
 
-          <furo-card>
+          <furo-card disabled>
             <img src="/assets/images/hamburg.png" slot="media" alt="" />
             <h1>App-flow</h1>
             <p>Routing example with app-flow</p>
