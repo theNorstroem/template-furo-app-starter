@@ -49,14 +49,14 @@ class View404 extends FBP(LitElement) {
         :host([hidden]) {
           display: none;
         }
-        div._404{
-            margin: 96px auto;
-            font-size: 156px;
-            text-align: center;
+        div._404 {
+          margin: 96px auto;
+          font-size: 156px;
+          text-align: center;
         }
-        p{
-            font-size: 48px;
-            text-align: center;
+        p {
+          font-size: 48px;
+          text-align: center;
         }
       `
     );
