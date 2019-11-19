@@ -49,6 +49,15 @@ class View404 extends FBP(LitElement) {
         :host([hidden]) {
           display: none;
         }
+        div._404{
+            margin: 96px auto;
+            font-size: 156px;
+            text-align: center;
+        }
+        p{
+            font-size: 48px;
+            text-align: center;
+        }
       `
     );
   }
@@ -61,7 +70,9 @@ class View404 extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <h1>404</h1>
+      <div class="_404">404</div>
+      <p>This is an app, you shouldn't see this page with internal navigation.</p>
+      <p>There's really nothing to see here, <a href="/"> please go back to the start</a></p>
     `;
   }
 }
