@@ -25,8 +25,6 @@ describe('view-formsample', () => {
     await viewForm.updateComplete;
   });
 
-
-
   it('should open the form', done => {
     viewForm._FBPAddWireHook('--pageActivated', e => {
       const els = viewForm.shadowRoot.querySelectorAll('*');
@@ -36,5 +34,4 @@ describe('view-formsample', () => {
     });
     window.history.pushState(null, 'form', '/form');
   });
-
 });

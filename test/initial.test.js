@@ -22,7 +22,6 @@ describe('my-test', () => {
     mainMenu = appDrawer.querySelector('main-menu');
   });
 
-
   it('should open the form', done => {
     window.history.pushState(null, 'form', '/form');
     mainStage._FBPAddWireHook('--locationChanged', e => {

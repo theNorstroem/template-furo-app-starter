@@ -45,52 +45,19 @@ class ViewSomecontent extends FBP(LitElement) {
       css`
         :host {
           display: block;
+          height: 100vh;
+          overflow: hidden;
+          background-color: var(--surface);
+          color: var(--on-surface);
+          padding: var(--spacing-s);
         }
 
         :host([hidden]) {
           display: none;
         }
 
-        button {
-          height: 48px;
-          width: 120px;
-          color: var(--primary);
-          font-weight: 600;
-          font-size: 20px;
-          background: none;
-          outline: none;
-          border: none;
-        }
-
-        button:hover {
-          background-color: rgba(var(--primary-rgb), var(--state-hover));
-        }
-
-        button.selected {
-          background-color: rgba(var(--primary-rgb), var(--state-selected));
-          color: var(--primary);
-        }
-
-        button.selected:focus {
-          background-color: rgba(var(--primary-rgb), var(--state-selected-focus));
-        }
-
-        button.selected:hover {
-          background-color: rgba(var(--primary-rgb), var(--state-selected-hover));
-        }
-
-        button:focus {
-          background-color: rgba(var(--primary-rgb), var(--state-focus));
-        }
-
-        button:active,
-        button.selected:active {
-          background-color: rgba(var(--primary-rgb), var(--state-active));
-        }
-
-        button[disabled] {
-          color: rgba(255, 255, 255, var(--state-disabled));
-          background-color: rgba(var(--primary-rgb), var(--state-disabled));
+        :host *:first-child {
+          margin-top: 0;
         }
       `
     );
@@ -104,11 +71,15 @@ class ViewSomecontent extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <p>Hej, welcome</p>
-
-      <button>Default</button>
-      <button class="selected">Selected</button>
-      <button disabled>Disabled</button>
+      <h1>Hej, welcome</h1>
+      <p>without app-bar-top</p>
+      <pre>
+        /* set this to disable margins on the first thing on the view */
+         :host *:first-child{
+              margin-top: 0;
+          }
+      </pre
+      >
     `;
   }
 }
