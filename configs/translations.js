@@ -1,22 +1,20 @@
 export const Translations = {
   en: {},
-  en_us: {},
-  de_de: {
-    save: 'Aktualisieren',
+  'en-US': {},
+  'de-DE': {
     reload: 'Neu laden',
     cancel: 'Abbrechen',
     delete: 'Löschen',
-    release: 'Freigeben',
-    discardAbeyance: 'Verwerfen',
   },
-  de_ch: {
-    save: 'Aktualisieren',
+  de: {
+    save: 'Speichern',
     reload: 'Neu laden',
     cancel: 'Abbrechen',
     delete: 'Löschen',
-    release: 'Freigeben',
-    discardAbeyance: 'Verwerfen',
   },
-  it_ch: {},
-  fr_ch: {},
+  'it-CH': {},
+  'fr-CH': {},
 };
+
+// wire the defaults
+Translations['de-CH'] = Translations['de-DE'];

@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
+import { i18n, Theme } from '@furo/framework/furo.js';
 import { FBP } from '@furo/fbp';
+
 import '@furo/layout/furo-vertical-flex.js';
 import '@furo/form';
 import '@furo/input';
@@ -99,7 +100,7 @@ class ViewDashboard extends FBP(LitElement) {
         <div flex scroll class="content">
           <furo-card>
             <img src="/assets/images/hamburg.png" slot="media" alt="" />
-            <h1>Info</h1>
+            <h1>${i18n.t('save')}</h1>
             <p>Some text</p>
           </furo-card>
 

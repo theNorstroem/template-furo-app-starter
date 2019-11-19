@@ -1,6 +1,6 @@
 // -- initialize application env, theme, api
 
-import { Init, i18n, Iconset, Theme } from '@furo/framework/furo.js';
+import { Init, i18n, Iconset, Theme, Env } from '@furo/framework/furo.js';
 
 // Attention: Styling is defined in main-stage
 import { FuroBaseIcons } from '@furo/layout/iconsets/baseIcons.js';
@@ -35,6 +35,9 @@ Init.registerApiTypes(Types);
 // -- Attention: Styling is defined in main-stage, this is themeing
 Theme.registerThemeset(MyThemeset);
 i18n.registerResBundle(Translations);
+
+// Translate messages in specs
+Init.translateStaticTypeMessages(Env.locale);
 
 // Privat icons
 Iconset.registerIconset('myapp', ExampleCustomIconset);
