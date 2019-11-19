@@ -22,14 +22,6 @@ describe('my-test', () => {
     mainMenu = appDrawer.querySelector('main-menu');
   });
 
-  it('should open the form with click', done => {
-    mainMenu.shadowRoot.children[1].children[2].children[0].click();
-    mainStage._FBPAddWireHook('--locationChanged', e => {
-      assert.equal(window.location.pathname, '/form');
-      assert.equal(e.path, '/form');
-      done();
-    });
-  });
 
   it('should open the form', done => {
     window.history.pushState(null, 'form', '/form');

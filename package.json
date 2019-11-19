@@ -22,7 +22,6 @@
     "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "test": "karma start --coverage",
-    "test:live": "es-dev-server --open /test/index.html",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",
