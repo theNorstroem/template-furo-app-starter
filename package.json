@@ -13,6 +13,7 @@
   "scripts": {
     "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
     "start": "es-dev-server --open",
+    "start:build": "cd dist && es-dev-server --port 8888 --open",
     "start:polymer": "polymer serve",
     "build": "rimraf dist && rollup -c rollup.config.js",
     "lint": "npm run lint:eslint && npm run lint:prettier",
@@ -27,8 +28,7 @@
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:compatibility": "karma start --compatibility all --coverage",
     "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
-    "test:bs": "karma start karma.bs.config.js --compatibility all --coverage",
-    "start:build": "cd dist && es-dev-server --open"
+    "test:bs": "karma start karma.bs.config.js --compatibility all --coverage"
   },
   "dependencies": {
     "@furo/collection": "*",
@@ -66,6 +66,7 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
+
     "globals": {
       "assert": "writable"
     },
@@ -84,7 +85,7 @@
       "import/no-extraneous-dependencies": [
         "error",
         {
-          "devDependencies": true,
+          "devDependencies": false,
           "optionalDependencies": false,
           "peerDependencies": false,
           "packageDir": [
@@ -95,6 +96,7 @@
       ]
     }
   },
+
   "prettier": "@open-wc/prettier-config",
   "husky": {
     "hooks": {
