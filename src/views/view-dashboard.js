@@ -88,20 +88,20 @@ class ViewDashboard extends FBP(LitElement) {
           <div>Dashboard</div>
           <furo-empty-spacer></furo-empty-spacer>
           <furo-icon-button icon="search" @-click="--float"></furo-icon-button>
-          <furo-icon-button icon="filter-list" @-click="--op"></furo-icon-button>
+          <furo-icon-button icon="settings" @-click="--op"></furo-icon-button>
           <furo-snackbar
             position-right
             action-button-text="ignore"
             timeout-in-ms="8000"
-            label-text="Filter is not implemented yet"
+            label-text="Settings page is not implemented yet. This message destroys itself in 8 seconds"
             ƒ-show="--op"
           ></furo-snackbar>
         </furo-app-bar-top>
         <div flex scroll class="content">
           <furo-card class="selected">
             <img src="/assets/images/hamburg.png" slot="media" alt="" />
-            <h1>${i18n.t('save')}</h1>
-            <p>Some text</p>
+            <h1>${i18n.t('untranslated text')}</h1>
+            <p>${i18n.t('lorem')}</p>
           </furo-card>
 
           <furo-card disabled>
