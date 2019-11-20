@@ -19,8 +19,6 @@
 
   <link rel="icon" href="/assets/icons/favicon.ico">
 
-  <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   <script>
     window.APPROOT = {rootPath: '/'};
     if ('serviceWorker' in navigator) {
@@ -39,9 +37,14 @@
 
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {
+
       window.addEventListener('load', function (registration) {
-        navigator.serviceWorker.register('/service-worker.js', {
-          scope: APPROOT.rootPath
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
         });
       });
     }

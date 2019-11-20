@@ -24,8 +24,8 @@ class AppShell extends FBP(LitElement) {
       css`
         :host {
           display: block;
-          height: 100vh;
           overflow: hidden;
+          height: 100vh;
         }
       `,
     ];

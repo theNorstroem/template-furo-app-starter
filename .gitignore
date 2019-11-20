@@ -2,6 +2,7 @@
 .idea
 coverage
 build
+dist
 node_modules/
 _specbuild
 __tmp
