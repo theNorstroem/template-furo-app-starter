@@ -33,7 +33,7 @@ export default [
     ],
   },
 
-  // leave the second config untouched
+  // Add plugin to the second config (generateSW when everything is done)
   {
     ...config[1],
     plugins: [...config[1].plugins, generateSW(workboxConfig)],
