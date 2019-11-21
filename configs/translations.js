@@ -7,12 +7,14 @@ export const Translations = {
     delete: 'Löschen',
     lorem:
       'This text translates lorem to: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ',
+    install: "Installieren",
   },
   de: {
     save: 'Speichern',
     reload: 'Neu laden',
     cancel: 'Abbrechen',
     delete: 'Löschen',
+    install: "Installieren",
   },
   'it-CH': {},
   'fr-CH': {},
