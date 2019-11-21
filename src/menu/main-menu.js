@@ -234,6 +234,12 @@ class MainMenu extends FBP(LitElement) {
             some content</a
           >
         </li>
+        <li>
+          <a href="/examplelayout">
+            <furo-icon icon="view-day"></furo-icon>
+            layout example</a
+          >
+        </li>
       </ul>
       <furo-location @-location-changed="--lc"></furo-location>
     `;

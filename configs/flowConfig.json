@@ -1,5 +1,6 @@
 [
     ["*", "unauthorized", "auth"],
     ["auth", "login-successfull", "dashboard"],
+    ["*", "view-dashboard-requested", "dashboard"],
     ["*", "form-requested", "form"]
 ]

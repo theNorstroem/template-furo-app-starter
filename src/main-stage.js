@@ -41,10 +41,13 @@ class MainStage extends FBP(LitElement) {
     this._FBPAddWireHook('--locationChanged', e => {
       switch (e.pathSegments[0]) {
         case 'tree':
-          import('./views/view-tree');
+          import('./views/view-tree.js');
           break;
         case 'form':
-          import('./views/view-formsample');
+          import('./views/view-formsample.js');
+          break;
+        case 'examplelayout':
+          import('./views/view-layout-example.js');
           break;
         default:
       }
@@ -103,6 +106,7 @@ class MainStage extends FBP(LitElement) {
           <view-auth name="auth"></view-auth>
           <view-formsample name="form"></view-formsample>
           <view-somecontent name="somecontent"></view-somecontent>
+          <view-layout-example name="examplelayout"></view-layout-example>
           <view-404 name="404"></view-404>
         </furo-pages>
       </furo-app-drawer>
