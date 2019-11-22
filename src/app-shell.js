@@ -44,7 +44,6 @@ class AppShell extends FBP(LitElement) {
         @-unauthorized="--unauthorized"
         @-navigate-back-clicked="--navBack"
       ></main-stage>
-
       <furo-app-flow-router
         ƒ-.config="--flowConfigLoaded"
         ƒ-trigger="--flowEvent"

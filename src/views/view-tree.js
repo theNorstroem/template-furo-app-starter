@@ -93,7 +93,6 @@ class ViewTree extends FBP(LitElement) {
         <furo-vertical-flex flex class="stage">
           <div flex scroll>
             <h1>todo: tree example</h1>
-             
           </div>
           <div>footer</div>
         </furo-vertical-flex>
