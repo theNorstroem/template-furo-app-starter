@@ -202,7 +202,7 @@ class MainMenu extends FBP(LitElement) {
           >
         </li>
         <li>
-          <a href="/tree">
+          <a href="/tree?t=3">
             <furo-icon icon="list"></furo-icon>
             tree sample</a
           >

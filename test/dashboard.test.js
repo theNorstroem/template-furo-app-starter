@@ -6,17 +6,19 @@ describe('view-dashboard', () => {
   let dashboard;
   let contentArea;
   beforeEach(async () => {
-    dashboard = await fixture(html`<view-dashboard style="height: 100vh"></view-dashboard>`);
+    dashboard = await fixture(
+      html`
+        <view-dashboard style="height: 100vh"></view-dashboard>
+      `,
+    );
     await dashboard.updateComplete;
-    contentArea = dashboard.shadowRoot.querySelector(".content");
+    contentArea = dashboard.shadowRoot.querySelector('.content');
   });
 
   it('should have 3 cards', done => {
+    const els = contentArea.querySelectorAll('furo-card');
+    assert.equal(els.length, 3);
 
-      const els = contentArea.querySelectorAll('furo-card');
-      assert.equal(els.length, 3);
-
-      done();
-
+    done();
   });
 });

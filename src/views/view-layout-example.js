@@ -46,8 +46,6 @@ class ViewLayoutExample extends FBP(LitElement) {
           display: block;
           height: 100vh;
           overflow: hidden;
-          background-color: var(--surface);
-          color: var(--on-surface);
         }
 
         :host([hidden]) {
