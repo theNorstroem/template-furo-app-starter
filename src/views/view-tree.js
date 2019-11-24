@@ -64,17 +64,12 @@ class ViewTree extends FBP(LitElement) {
           box-sizing: border-box;
           background-color: var(--surface);
           color: var(--on-surface);
-        }
-
-        /* add padding to the scrolling part, so the scrollbar stays on right side and have no padding.
-           Remove the padding, if the scrolling component handles the spacing itself.
-         */
-        .stage > *[scroll] {
           padding: var(--spacing-s);
         }
 
+
         /* clear margin top for the first element in stage, so the contents begins always at the same position */
-        .stage > *[scroll] *:first-child {
+        .stage >  *:first-child {
           margin-top: 0;
         }
         furo-tree{
