@@ -67,12 +67,11 @@ class ViewTree extends FBP(LitElement) {
           padding: var(--spacing-s);
         }
 
-
         /* clear margin top for the first element in stage, so the contents begins always at the same position */
-        .stage >  *:first-child {
+        .stage > *:first-child {
           margin-top: 0;
         }
-        furo-tree{
+        furo-tree {
           border-right: 1px solid var(--separator);
         }
       `
@@ -96,7 +95,7 @@ class ViewTree extends FBP(LitElement) {
         <furo-split-view flex>
           <furo-tree
             slot="master"
-            ƒ-bind-data="--treeObj"
+            ƒ-bind-data="--treeObj(*)"
             qp="t"
             ƒ-location-in="--qp"
             @-node-selected="--nodeSelected"
@@ -121,7 +120,7 @@ class ViewTree extends FBP(LitElement) {
 
       <!-- Use the --FBPready wire to load the tree data once, --pageActivated will not work on the first time because of lazy loading  -->
       <furo-fetch-json
-        src="/configs/staticTreeSample.json"
+        src="/configs/minimalTreeSample.json"
         ƒ-fetch="--FBPready"
         @-data="--data"
       ></furo-fetch-json>

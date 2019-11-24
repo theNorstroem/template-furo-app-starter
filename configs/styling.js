@@ -7,11 +7,11 @@ export class Styling {
       :host {
         /* Inspired by https://material.io/design/color/the-color-system.html#color-theme-creation */
         /* https://material.io/design/material-theming/implementing-your-theme.html#color */
-        --primary-light: #227cb9;
-        --primary: #025297;
+        --primary-light: #c158dc;
+        --primary: #8e24aa;
         /* --xxx-rgb is used for the states  */
-        --primary-rgb: 2, 82, 151;
-        --primary-dark: #014178;
+        --primary-rgb: 142, 36, 170;
+        --primary-dark: #5c007a;
         --primary-variant: #2587a3;
         --on-primary: #ffffff;
 
