@@ -13,6 +13,7 @@
     "children": [
       {
         "display_name": "Apply new documentation structure",
+        "secondary_text": "Secondary node description",
         "icon": "create",
         "id": "3",
         "link": {

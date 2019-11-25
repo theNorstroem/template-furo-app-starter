@@ -108,12 +108,11 @@ class MainMenu extends FBP(LitElement) {
           font-weight: 500;
           padding: 0 var(--spacing-xs);
           transition: all 0.2s;
+          border-radius: 4px;
         }
 
         li:hover {
-          background-color: var(--primary);
           border-radius: 4px;
-          color: var(--on-secondary);
           cursor: pointer;
         }
 
@@ -202,7 +201,7 @@ class MainMenu extends FBP(LitElement) {
           >
         </li>
         <li>
-          <a href="/tree?t=3">
+          <a href="/tree">
             <furo-icon icon="list"></furo-icon>
             tree sample</a
           >
