@@ -9,7 +9,7 @@
     "link": {
       "href": "/"
     },
-    "open": true,
+    "open": false,
     "children": [
       {
         "display_name": "Group Label",
@@ -22,7 +22,7 @@
           "rel": "self",
           "type": "task.TaskEntity"
         },
-        "open": true,
+        "open": false,
         "children": [
           {
             "display_name": "Sub",
@@ -52,7 +52,7 @@
           {
             "display_name": "Sub Menu",
             "icon": "apps",
-            "id": "5",
+            "id": "6",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -65,7 +65,7 @@
                 "display_name": "Sub",
                 "secondary_text": "Secondary node description",
                 "icon": "apps",
-                "id": "4",
+                "id": "74",
                 "link": {
                   "href": "/mockdata/tasks/1/get.json",
                   "method": "GET",
@@ -77,7 +77,7 @@
               {
                 "display_name": "Sub Menu",
                 "icon": "apps",
-                "id": "5",
+                "id": "85",
                 "link": {
                   "href": "/mockdata/tasks/1/get.json",
                   "method": "GET",
@@ -89,7 +89,7 @@
               {
                 "display_name": "Other item",
                 "icon": "apps",
-                "id": "6",
+                "id": "96",
                 "link": {
                   "href": "/mockdata/tasks/1/get.json",
                   "method": "GET",
@@ -103,7 +103,7 @@
           {
             "display_name": "Sub Menu",
             "icon": "apps",
-            "id": "5",
+            "id": "115",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -115,7 +115,7 @@
           {
             "display_name": "Other item",
             "icon": "apps",
-            "id": "6",
+            "id": "116",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -130,20 +130,20 @@
         "display_name": "Group Label",
         "icon": "",
         "is_group_label": true,
-        "id": "3",
+        "id": "123",
         "link": {
           "href": "/mockdata/tasks/1/get.json",
           "method": "GET",
           "rel": "self",
           "type": "task.TaskEntity"
         },
-        "open": true,
+        "open": false,
         "children": [
           {
             "display_name": "Sub",
             "secondary_text": "Secondary node description",
             "icon": "apps",
-            "id": "4",
+            "id": "x4",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -155,7 +155,7 @@
           {
             "display_name": "Sub Menu",
             "icon": "apps",
-            "id": "5",
+            "id": "1135",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -167,7 +167,7 @@
           {
             "display_name": "Other item",
             "icon": "apps",
-            "id": "6",
+            "id": "1326",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -182,20 +182,20 @@
         "display_name": "Group Label",
         "icon": "",
         "is_group_label": true,
-        "id": "3",
+        "id": "3123",
         "link": {
           "href": "/mockdata/tasks/1/get.json",
           "method": "GET",
           "rel": "self",
           "type": "task.TaskEntity"
         },
-        "open": true,
+        "open": false,
         "children": [
           {
             "display_name": "Sub",
             "secondary_text": "Secondary node description",
             "icon": "apps",
-            "id": "4",
+            "id": "12224",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -207,7 +207,7 @@
           {
             "display_name": "Sub Menu",
             "icon": "apps",
-            "id": "5",
+            "id": "2225",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
@@ -219,7 +219,7 @@
           {
             "display_name": "Other item",
             "icon": "apps",
-            "id": "6",
+            "id": "3336",
             "link": {
               "href": "/mockdata/tasks/1/get.json",
               "method": "GET",
