@@ -205,6 +205,12 @@ class MainMenu extends FBP(LitElement) {
             <furo-icon icon="list"></furo-icon>
             tree sample</a
           >
+        </li> 
+        <li>
+          <a href="/tree-inline/xxx">
+            <furo-icon icon="list"></furo-icon>
+            tree inline</a
+          >
         </li>
       </ul>
       <div class="label">other stuff</div>

@@ -43,6 +43,9 @@ class MainStage extends FBP(LitElement) {
         case 'tree':
           import('./views/view-tree.js');
           break;
+          case 'tree-inline':
+          import('./views/view-tree-inline.js');
+          break;
         case 'form':
           import('./views/view-formsample.js');
           break;
@@ -103,6 +106,7 @@ class MainStage extends FBP(LitElement) {
         >
           <view-dashboard name="dashboard"></view-dashboard>
           <view-tree name="tree"></view-tree>
+          <view-tree-inline name="tree-inline"></view-tree-inline>
           <view-auth name="auth"></view-auth>
           <view-formsample name="form"></view-formsample>
           <view-somecontent name="somecontent"></view-somecontent>
