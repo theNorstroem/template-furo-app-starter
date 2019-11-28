@@ -7,6 +7,7 @@ import '@furo/data/furo-data-object.js';
 import '@furo/util/furo-fetch-json.js';
 import '@furo/navigation/furo-tree.js';
 import '@furo/route/furo-qp-changer.js';
+import "../formsample/sample-form.js"
 
 /**
  * `view-tree`
@@ -75,6 +76,10 @@ class ViewTreeInline extends FBP(LitElement) {
         furo-tree {
           border-right: 1px solid var(--separator);
         }
+        .action {
+          padding: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
+          background-color: var(--surface);
+        }
       `
     );
   }
@@ -103,11 +108,16 @@ class ViewTreeInline extends FBP(LitElement) {
             <furo-empty-spacer></furo-empty-spacer>
           </furo-app-bar-top>
           <furo-vertical-scroller class="stage">
-            <div style="height: 2100px; border: 1px dashed blue">
-              <pre>1300px placeholder to show the scrolling</pre>
-            </div>
+            <sample-form flex scroll class="form"></sample-form>
+
           </furo-vertical-scroller>
-          <div>Footer</div>
+          <furo-button-bar class="action">
+            <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
+            <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
+
+            <furo-empty-spacer></furo-empty-spacer>
+            <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
+          </furo-button-bar>
         </furo-vertical-flex>
       </furo-split-view>
 
