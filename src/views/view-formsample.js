@@ -125,7 +125,6 @@ class ViewFormsample extends FBP(LitElement) {
         @-confirmed="--confirmed"
         @-dismissed="--dismissed"
         text="# Important:
-
 Do not forgett to 
  - insert the username 
  - set a **valid** date

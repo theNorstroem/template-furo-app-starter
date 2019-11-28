@@ -1,6 +1,6 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from '@furo/framework/theme.js';
-import {FBP} from '@furo/fbp';
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 import '@furo/layout/furo-vertical-scroller.js';
 import '@furo/layout/furo-split-view.js';
 import '@furo/data/furo-data-object.js';
@@ -27,7 +27,7 @@ class ViewTree extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean},
+      myBool: { type: Boolean },
     };
   }
 
@@ -95,14 +95,14 @@ class ViewTree extends FBP(LitElement) {
 
         <furo-split-view flex>
           <furo-tree
-                  header-text="Override"
-                  slot="master"
-                  hide-root-node
-                  ƒ-bind-data="--treeObj(*)"
-                  qp="t"
-                  ƒ-location-in="--qp"
-                  @-node-selected="--nodeSelected"
-                  @-qp-change-requested="--qpchangerequest"
+            header-text="Override"
+            slot="master"
+            hide-root-node
+            ƒ-bind-data="--treeObj(*)"
+            qp="t"
+            ƒ-location-in="--qp"
+            @-node-selected="--nodeSelected"
+            @-qp-change-requested="--qpchangerequest"
           ></furo-tree>
 
           <furo-vertical-scroller class="stage">
@@ -116,16 +116,16 @@ class ViewTree extends FBP(LitElement) {
 
       <!-- retreive data -->
       <furo-data-object
-              type="tree.Tree"
-              ƒ-inject-raw="--data"
-              @-object-ready="--treeObj"
+        type="tree.Tree"
+        ƒ-inject-raw="--data"
+        @-object-ready="--treeObj"
       ></furo-data-object>
 
       <!-- Use the --FBPready wire to load the tree data once, --pageActivated will not work on the first time because of lazy loading  -->
       <furo-fetch-json
-              src="/configs/minimalTreeSample.json"
-              ƒ-fetch="--FBPready"
-              @-data="--data"
+        src="/configs/minimalTreeSample.json"
+        ƒ-fetch="--FBPready"
+        @-data="--data"
       ></furo-fetch-json>
 
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>
