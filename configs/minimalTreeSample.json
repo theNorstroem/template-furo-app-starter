@@ -4,6 +4,7 @@
   "id": "1",
   "root": {
     "display_name": "Root node",
+    "secondary_text": "Secondary node description",
     "icon": "dashboard",
     "id": "2",
     "link": {
