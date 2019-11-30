@@ -61,7 +61,6 @@ class ViewTreeInline extends FBP(LitElement) {
         }
 
         .stage {
-          padding: 0;
           box-sizing: border-box;
           background-color: var(--surface);
           color: var(--on-surface);
@@ -95,7 +94,7 @@ class ViewTreeInline extends FBP(LitElement) {
       <furo-split-view flex>
         <furo-tree
                 slot="master"
-                hide-root-node
+                
                 ƒ-bind-data="--treeObj"
                 qp="t"
                 ƒ-location-in="--qp"

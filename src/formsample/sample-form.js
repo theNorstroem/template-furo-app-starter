@@ -34,6 +34,19 @@ class SampleForm extends FBP(LitElement) {
   _FBPReady() {
     super._FBPReady();
     // this._FBPTraceWires()
+    /**
+     * Register hook on wire --tab to
+     *
+     */
+    this._FBPAddWireHook("--tab",(e)=>{
+          this.triggerTab(e);
+
+    });
+  }
+
+  triggerTab(e){
+
+    debugger
   }
 
   /**
@@ -113,6 +126,7 @@ class SampleForm extends FBP(LitElement) {
           <furo-textarea-input label="contra" float rows="5"></furo-textarea-input>
         </furo-form-layouter>
       </furo-form>
+      <furo-keydown   key="n" @-key="--tab"></furo-keydown>
     `;
   }
 }

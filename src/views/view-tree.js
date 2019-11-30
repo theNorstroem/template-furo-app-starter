@@ -100,7 +100,7 @@ class ViewTree extends FBP(LitElement) {
         <furo-split-view flex>
           <furo-tree
             slot="master"
-            hide-root-node
+            root-as-header
             ƒ-bind-data="--treeObj"
             qp="t"
             ƒ-location-in="--qp"

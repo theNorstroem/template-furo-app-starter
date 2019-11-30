@@ -51,6 +51,7 @@
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^1.3.0",
+    "koa-proxies": "^0.9.0",
     "lint-staged": "^8.0.0",
     "mocha": "^6.1.4",
     "rimraf": "^2.6.3",
@@ -66,7 +67,6 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
-
     "globals": {
       "assert": "writable"
     },
@@ -96,7 +96,6 @@
       ]
     }
   },
-
   "prettier": "@open-wc/prettier-config",
   "husky": {
     "hooks": {
