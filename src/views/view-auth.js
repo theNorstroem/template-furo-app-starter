@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
-import { FBP } from '@furo/fbp';
+import {LitElement, html, css} from 'lit-element';
+import {Theme} from '@furo/framework/theme.js';
+import {FBP} from '@furo/fbp';
 
 /**
  * `view-auth`
@@ -21,7 +21,7 @@ class ViewAuth extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: { type: Boolean },
+      myBool: {type: Boolean},
     };
   }
 
@@ -45,10 +45,17 @@ class ViewAuth extends FBP(LitElement) {
       css`
         :host {
           display: block;
+          height: 100vh;
         }
 
         :host([hidden]) {
           display: none;
+        }
+        furo-card{
+          width: 360px;
+        }
+        furo-horizontal-flex[slot="action"]{
+          margin-left: 8px;
         }
       `
     );
@@ -62,7 +69,25 @@ class ViewAuth extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <p>Hej, log in pls</p>
+      <furo-vertical-flex>
+        <furo-empty-spacer></furo-empty-spacer>
+        <furo-horizontal-flex>
+          <furo-empty-spacer></furo-empty-spacer>
+          <furo-card header-text="Login" secondary-text="Enter the username and password">
+            <furo-form-layouter one>
+              <furo-text-input leading-icon="account-box" autofocus label="Username" value="demo"></furo-text-input>
+              <furo-password-input leading-icon="lock-outline" value="1234" hint="Look under your keyboard or on postit below monitor" label="super secret password" ƒ-make-visible="--showPasswordClicked" ƒ-make-invisible="--hidePasswordClicked"></furo-password-input>
+
+            </furo-form-layouter>
+            <furo-horizontal-flex space="" slot="action">
+            <furo-button primary unelevated>Login</furo-button>
+            </furo-horizontal-flex>
+          </furo-card>
+          <furo-empty-spacer></furo-empty-spacer>
+        </furo-horizontal-flex>
+        <furo-empty-spacer></furo-empty-spacer>
+
+      </furo-vertical-flex>
     `;
   }
 }
