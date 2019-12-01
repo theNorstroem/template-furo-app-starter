@@ -57,7 +57,7 @@ class MainMenu extends FBP(LitElement) {
        * Fired when drawer name is set
        * detail payload: {name}
        */
-      let customEvent = new Event('connect-to-drawer-requested', {composed: true, bubbles: true});
+      const customEvent = new Event('connect-to-drawer-requested', {composed: true, bubbles: true});
       customEvent.detail = {name: this.drawer};
       this.dispatchEvent(customEvent);
 
@@ -76,19 +76,21 @@ class MainMenu extends FBP(LitElement) {
    */
   focus(){
     // focus the selected element
-    let li = this.shadowRoot.querySelector('li[selected]');
+    const li = this.shadowRoot.querySelector('li[selected]');
     if(li){
       li.querySelector("a").focus();
     }else{
       this.shadowRoot.querySelector('a').focus();
     }
   }
+
   /**
    * Themable Styles
    * @private
    * @return {CSSResult}
    */
   static get styles() {
+
     // language=CSS
     return (
       Theme.getThemeForComponent(this.name) ||
