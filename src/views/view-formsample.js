@@ -119,6 +119,7 @@ class ViewFormsample extends FBP(LitElement) {
               @-click="--start"
             ></furo-button>
             <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
+            <furo-button unelevated label="unelevated default" @-click="--stop"></furo-button>
 
             <furo-empty-spacer></furo-empty-spacer>
             <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>

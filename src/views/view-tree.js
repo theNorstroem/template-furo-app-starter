@@ -120,7 +120,7 @@ class ViewTree extends FBP(LitElement) {
           ></furo-tree>
 
           <furo-vertical-scroller class="stage">
-            <h1>Type Scale H1</h1>
+            <h1>H1 is huge</h1>
             <p>Body text</p>
             <h2>Type Scale H2</h2>
             <div style="height: 1300px; border: 1px dashed blue">
