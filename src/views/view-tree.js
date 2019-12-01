@@ -126,6 +126,7 @@ class ViewTree extends FBP(LitElement) {
             <div style="height: 1300px; border: 1px dashed blue">
               <pre>1300px placeholder to show the scrolling</pre>
             </div>
+            <p>End of content</p>
           </furo-vertical-scroller>
         </furo-split-view>
       </furo-vertical-flex>
