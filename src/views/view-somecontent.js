@@ -59,6 +59,18 @@ class ViewSomecontent extends FBP(LitElement) {
         :host *:first-child {
           margin-top: 0;
         }
+        h1{
+          font-family: "Roboto", "Noto", sans-serif;
+          font-size: 96px;
+          letter-spacing: -1.5px;
+          font-weight: 200;
+        }
+        h2{
+          font-family: "Roboto", "Noto", sans-serif;
+          font-size: 60px;
+          letter-spacing: -0.5px;
+          font-weight: 400;
+        }
       `
     );
   }
@@ -72,14 +84,10 @@ class ViewSomecontent extends FBP(LitElement) {
     // language=HTML
     return html`
       <h1>Hej, welcome</h1>
-      <p>without app-bar-top</p>
-      <pre>
-        /* set this to disable margins on the first thing on the view */
-         :host *:first-child{
-              margin-top: 0;
-          }
-      </pre
-      >
+      <p>This is a blank page without app-bar-top</p>
+      <h2>Open the menu drawer: </h2>
+     <p>Send a <code>open-drawer-menu-clicked</code> event, by clicking on the button, to open the menu. There is a listener in <code>main-stage</code> which opens the menu </p>
+     <furo-button raised @-click="^^open-drawer-menu-clicked" autofocus ƒ-focus="--pageActivated">open Menu</furo-button>
     `;
   }
 }

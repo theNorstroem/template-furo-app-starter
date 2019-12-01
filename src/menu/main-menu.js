@@ -23,6 +23,10 @@ class MainMenu extends FBP(LitElement) {
        */
       headerText: { type: String, attribute: 'header-text' },
       secondaryText: { type: String, attribute: 'secondary-text' },
+      /**
+       * drawer to connect the ƒ-show-navigation-icon="--drawerFloats" ƒ-hide-navigation-icon="--drawerPinned"
+       */
+      drawer: {type: String}
     };
   }
 
@@ -46,6 +50,31 @@ class MainMenu extends FBP(LitElement) {
         }
       });
     });
+
+    if (this.drawer) {
+      /**
+       * @event connect-to-drawer-requested
+       * Fired when drawer name is set
+       * detail payload: {name}
+       */
+      let customEvent = new Event('connect-to-drawer-requested', {composed: true, bubbles: true});
+      customEvent.detail = {name: this.drawer};
+      this.dispatchEvent(customEvent);
+
+      this._drawer = customEvent.detail.drawer;
+      if (this._drawer) {
+        // add regular event listener to the drawer
+        this._drawer.addEventListener("drawer-opened", () => {
+          // focus the selected element
+          let li = this.shadowRoot.querySelector('li[selected]');
+          if(li){
+            li.querySelector("a").focus();
+          }
+        });
+
+
+      }
+    }
   }
 
   /**
@@ -237,7 +266,7 @@ class MainMenu extends FBP(LitElement) {
         <li>
           <a href="/somecontent">
             <furo-icon icon="warning"></furo-icon>
-            some content</a
+            Blank page</a
           >
         </li>
         <li>
