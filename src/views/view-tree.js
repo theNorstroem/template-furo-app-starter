@@ -63,7 +63,7 @@ class ViewTree extends FBP(LitElement) {
           box-sizing: border-box;
           background-color: var(--surface);
           color: var(--on-surface);
-          padding: var(--spacing-s);
+          padding: 0 var(--spacing-s);
         }
 
         /* clear margin top for the first element in stage, so the contents begins always at the same position */
@@ -78,6 +78,19 @@ class ViewTree extends FBP(LitElement) {
         furo-split-view{
           overflow: hidden;
         }
+        h1{
+          font-family: "Roboto", "Noto", sans-serif;
+          font-size: 96px;
+          letter-spacing: -1.5px;
+          font-weight: 200;
+        }
+        h2{
+          font-family: "Roboto", "Noto", sans-serif;
+          font-size: 60px;
+          letter-spacing: -0.5px;
+          font-weight: 400;
+        }
+       
       `
     );
   }
@@ -108,7 +121,9 @@ class ViewTree extends FBP(LitElement) {
           ></furo-tree>
 
           <furo-vertical-scroller class="stage">
-            <h1>todo: tree example</h1>
+            <h1>Type Scale H1</h1>
+            <p>Body text</p>
+            <h2>Type Scale H2</h2>
             <div style="height: 1300px; border: 1px dashed blue">
               <pre>1300px placeholder to show the scrolling</pre>
             </div>

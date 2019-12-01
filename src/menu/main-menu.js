@@ -76,6 +76,7 @@ class MainMenu extends FBP(LitElement) {
           height: 40px;
           line-height: 56px;
           padding-left: var(--spacing-s, 16px);
+          letter-spacing: 0.15px;
         }
 
         .secondary {

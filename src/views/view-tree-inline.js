@@ -64,7 +64,7 @@ class ViewTreeInline extends FBP(LitElement) {
           box-sizing: border-box;
           background-color: var(--surface);
           color: var(--on-surface);
-          padding: var(--spacing-s);
+          padding: 0 var(--spacing-s);
         }
 
         /* clear margin top for the first element in stage, so the contents begins always at the same position */
