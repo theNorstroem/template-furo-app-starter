@@ -111,7 +111,13 @@ class ViewFormsample extends FBP(LitElement) {
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll class="form"></sample-form>
           <furo-button-bar class="action">
-            <furo-button unelevated ƒ-focus="--shortcutPrimary" primary="" label="primary" @-click="--start"></furo-button>
+            <furo-button
+              unelevated
+              ƒ-focus="--shortcutPrimary"
+              primary=""
+              label="primary"
+              @-click="--start"
+            ></furo-button>
             <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
 
             <furo-empty-spacer></furo-empty-spacer>

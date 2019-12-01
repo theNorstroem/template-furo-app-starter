@@ -43,7 +43,7 @@ class MainStage extends FBP(LitElement) {
         case 'tree':
           import('./views/view-tree.js');
           break;
-          case 'tree-inline':
+        case 'tree-inline':
           import('./views/view-tree-inline.js');
           break;
         case 'form':
@@ -97,8 +97,18 @@ class MainStage extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <furo-app-drawer name="main-drawer" ƒ-close="--locationChanged" ƒ-open="--openNavClicked" @-open-drawer-menu-clicked="--openNavClicked">
-        <main-menu slot="drawer" drawer="main-drawer" header-text="Title" secondary-text="Secondary text"></main-menu>
+      <furo-app-drawer
+        name="main-drawer"
+        ƒ-close="--locationChanged"
+        ƒ-open="--openNavClicked"
+        @-open-drawer-menu-clicked="--openNavClicked"
+      >
+        <main-menu
+          slot="drawer"
+          drawer="main-drawer"
+          header-text="Title"
+          secondary-text="Secondary text"
+        ></main-menu>
         <furo-pages
           ƒ-inject-location="--locationChanged"
           default="dashboard"

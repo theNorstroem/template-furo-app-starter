@@ -26,7 +26,7 @@ class MainMenu extends FBP(LitElement) {
       /**
        * drawer to connect the ƒ-show-navigation-icon="--drawerFloats" ƒ-hide-navigation-icon="--drawerPinned"
        */
-      drawer: {type: String}
+      drawer: { type: String },
     };
   }
 
@@ -57,14 +57,17 @@ class MainMenu extends FBP(LitElement) {
        * Fired when drawer name is set
        * detail payload: {name}
        */
-      const customEvent = new Event('connect-to-drawer-requested', {composed: true, bubbles: true});
-      customEvent.detail = {name: this.drawer};
+      const customEvent = new Event('connect-to-drawer-requested', {
+        composed: true,
+        bubbles: true,
+      });
+      customEvent.detail = { name: this.drawer };
       this.dispatchEvent(customEvent);
 
       this._drawer = customEvent.detail.drawer;
       if (this._drawer) {
         // add regular event listener to the drawer
-        this._drawer.addEventListener("drawer-opened", () => {
+        this._drawer.addEventListener('drawer-opened', () => {
           this.focus();
         });
       }
@@ -74,12 +77,12 @@ class MainMenu extends FBP(LitElement) {
   /**
    * focuses the current selected item or the first item
    */
-  focus(){
+  focus() {
     // focus the selected element
     const li = this.shadowRoot.querySelector('li[selected]');
-    if(li){
-      li.querySelector("a").focus();
-    }else{
+    if (li) {
+      li.querySelector('a').focus();
+    } else {
       this.shadowRoot.querySelector('a').focus();
     }
   }
@@ -90,7 +93,6 @@ class MainMenu extends FBP(LitElement) {
    * @return {CSSResult}
    */
   static get styles() {
-
     // language=CSS
     return (
       Theme.getThemeForComponent(this.name) ||
@@ -243,7 +245,7 @@ class MainMenu extends FBP(LitElement) {
             <furo-icon icon="list"></furo-icon>
             tree sample</a
           >
-        </li> 
+        </li>
         <li>
           <a href="/tree-inline/xxx">
             <furo-icon icon="list"></furo-icon>

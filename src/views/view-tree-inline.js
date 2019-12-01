@@ -1,13 +1,13 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from '@furo/framework/theme.js';
-import {FBP} from '@furo/fbp';
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 import '@furo/layout/furo-vertical-scroller.js';
 import '@furo/layout/furo-split-view.js';
 import '@furo/data/furo-data-object.js';
 import '@furo/util/furo-fetch-json.js';
 import '@furo/navigation/furo-tree.js';
 import '@furo/route/furo-qp-changer.js';
-import "../formsample/sample-form.js"
+import '../formsample/sample-form.js';
 
 /**
  * `view-tree`
@@ -28,7 +28,7 @@ class ViewTreeInline extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean},
+      myBool: { type: Boolean },
     };
   }
 
@@ -93,14 +93,14 @@ class ViewTreeInline extends FBP(LitElement) {
     return html`
       <furo-split-view flex>
         <furo-tree
-                slot="master"
-                ƒ-bind-data="--treeObj"
-                qp="t"
-                root-as-header
-                no-bg-on-header
-                ƒ-location-in="--qp"
-                @-node-selected="--nodeSelected"
-                @-qp-change-requested="--qpchangerequest"
+          slot="master"
+          ƒ-bind-data="--treeObj"
+          qp="t"
+          root-as-header
+          no-bg-on-header
+          ƒ-location-in="--qp"
+          @-node-selected="--nodeSelected"
+          @-qp-change-requested="--qpchangerequest"
         ></furo-tree>
         <furo-vertical-flex>
           <furo-app-bar-top drawer="main-drawer">
@@ -109,7 +109,6 @@ class ViewTreeInline extends FBP(LitElement) {
           </furo-app-bar-top>
           <furo-vertical-scroller class="stage">
             <sample-form flex scroll class="form"></sample-form>
-
           </furo-vertical-scroller>
           <furo-button-bar class="action">
             <furo-button unelevated primary="" label="primary" @-click="--start"></furo-button>
@@ -121,19 +120,18 @@ class ViewTreeInline extends FBP(LitElement) {
         </furo-vertical-flex>
       </furo-split-view>
 
-
       <!-- retreive data -->
       <furo-data-object
-              type="tree.Tree"
-              ƒ-inject-raw="--data"
-              @-object-ready="--treeObj"
+        type="tree.Tree"
+        ƒ-inject-raw="--data"
+        @-object-ready="--treeObj"
       ></furo-data-object>
 
       <!-- Use the --FBPready wire to load the tree data once, --pageActivated will not work on the first time because of lazy loading  -->
       <furo-fetch-json
-              src="/configs/minimalTreeSample.json"
-              ƒ-fetch="--FBPready"
-              @-data="--data"
+        src="/configs/minimalTreeSample.json"
+        ƒ-fetch="--FBPready"
+        @-data="--data"
       ></furo-fetch-json>
 
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>

@@ -75,22 +75,21 @@ class ViewTree extends FBP(LitElement) {
           border-right: 1px solid var(--separator);
         }
 
-        furo-split-view{
+        furo-split-view {
           overflow: hidden;
         }
-        h1{
-          font-family: "Roboto", "Noto", sans-serif;
+        h1 {
+          font-family: 'Roboto', 'Noto', sans-serif;
           font-size: 96px;
           letter-spacing: -1.5px;
           font-weight: 200;
         }
-        h2{
-          font-family: "Roboto", "Noto", sans-serif;
+        h2 {
+          font-family: 'Roboto', 'Noto', sans-serif;
           font-size: 60px;
           letter-spacing: -0.5px;
           font-weight: 400;
         }
-       
       `
     );
   }

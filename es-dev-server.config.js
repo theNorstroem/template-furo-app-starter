@@ -1,7 +1,7 @@
 module.exports = {
   port: 8080,
   hoestname: '0.0.0.0',
-  preserveSymlinks:true,
+  preserveSymlinks: true,
   watch: true,
   nodeResolve: true,
   appIndex: 'index.html',
