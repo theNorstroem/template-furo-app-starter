@@ -55,7 +55,9 @@ class ViewAuth extends FBP(LitElement) {
           width: 360px;
         }
         furo-horizontal-flex[slot="action"]{
-          margin-left: 8px;
+          padding-left: 8px;
+          padding-right: 8px;
+          box-sizing: border-box;
         }
       `
     );
@@ -81,6 +83,8 @@ class ViewAuth extends FBP(LitElement) {
             </furo-form-layouter>
             <furo-horizontal-flex space="" slot="action">
             <furo-button primary unelevated>Login</furo-button>
+              <furo-empty-spacer></furo-empty-spacer>
+            <furo-button icon="visibility"  unelevated @-click="--showPasswordClicked">Show Password</furo-button>
             </furo-horizontal-flex>
           </furo-card>
           <furo-empty-spacer></furo-empty-spacer>
