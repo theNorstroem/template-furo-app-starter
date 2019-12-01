@@ -65,18 +65,24 @@ class MainMenu extends FBP(LitElement) {
       if (this._drawer) {
         // add regular event listener to the drawer
         this._drawer.addEventListener("drawer-opened", () => {
-          // focus the selected element
-          let li = this.shadowRoot.querySelector('li[selected]');
-          if(li){
-            li.querySelector("a").focus();
-          }
+          this.focus();
         });
-
-
       }
     }
   }
 
+  /**
+   * focuses the current selected item or the first item
+   */
+  focus(){
+    // focus the selected element
+    let li = this.shadowRoot.querySelector('li[selected]');
+    if(li){
+      li.querySelector("a").focus();
+    }else{
+      this.shadowRoot.querySelector('a').focus();
+    }
+  }
   /**
    * Themable Styles
    * @private

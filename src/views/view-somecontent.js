@@ -85,7 +85,7 @@ class ViewSomecontent extends FBP(LitElement) {
     return html`
       <h1>Hej, welcome</h1>
       <p>This is a blank page without app-bar-top</p>
-      <h2>Open the menu drawer: </h2>
+      <h2>Open the menu drawer</h2>
      <p>Send a <code>open-drawer-menu-clicked</code> event, by clicking on the button, to open the menu. There is a listener in <code>main-stage</code> which opens the menu </p>
      <furo-button raised @-click="^^open-drawer-menu-clicked" autofocus ƒ-focus="--pageActivated">open Menu</furo-button>
     `;
