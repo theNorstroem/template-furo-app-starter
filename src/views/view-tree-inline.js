@@ -94,9 +94,10 @@ class ViewTreeInline extends FBP(LitElement) {
       <furo-split-view flex>
         <furo-tree
                 slot="master"
-                
                 ƒ-bind-data="--treeObj"
                 qp="t"
+                root-as-header
+                no-bg-on-header
                 ƒ-location-in="--qp"
                 @-node-selected="--nodeSelected"
                 @-qp-change-requested="--qpchangerequest"

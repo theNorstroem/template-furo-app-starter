@@ -60,7 +60,6 @@ class ViewTree extends FBP(LitElement) {
         }
 
         .stage {
-          padding: 0;
           box-sizing: border-box;
           background-color: var(--surface);
           color: var(--on-surface);
