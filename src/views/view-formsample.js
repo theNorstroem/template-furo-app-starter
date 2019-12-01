@@ -128,16 +128,17 @@ class ViewFormsample extends FBP(LitElement) {
       <furo-banner
         ƒ-show="--networkError"
         confirm-button-text="confirm to accent"
+        danger
         @-confirmed="--confirmed"
         @-dismissed="--dismissed"
-        text="# Important:
-Do not forgett to 
+        text="# Important
+## This is a h2
+### This is a h3
+You can place markdown content here
  - insert the username 
  - set a **valid** date
 
-Thank you.
-
-the team"
+Thank you."
         icon="perm-scan-wifi"
       ></furo-banner>
       <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
