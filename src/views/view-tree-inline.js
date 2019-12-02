@@ -135,7 +135,7 @@ class ViewTreeInline extends FBP(LitElement) {
       ></furo-fetch-json>
 
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>
-      <furo-location url-space-regex="^/tree" @-location-query-changed="--qp"></furo-location>
+      <furo-location url-space-regex="^/tree-inline" @-location-query-changed="--qp"></furo-location>
     `;
   }
 }
