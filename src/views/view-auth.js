@@ -1,6 +1,6 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from '@furo/framework/theme.js';
-import {FBP} from '@furo/fbp';
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 
 /**
  * `view-auth`
@@ -21,7 +21,7 @@ class ViewAuth extends FBP(LitElement) {
       /**
        * Description
        */
-      myBool: {type: Boolean},
+      myBool: { type: Boolean },
     };
   }
 
@@ -51,10 +51,10 @@ class ViewAuth extends FBP(LitElement) {
         :host([hidden]) {
           display: none;
         }
-        furo-card{
+        furo-card {
           width: 360px;
         }
-        furo-horizontal-flex[slot="action"]{
+        furo-horizontal-flex[slot='action'] {
           padding-left: 8px;
           padding-right: 8px;
           box-sizing: border-box;
@@ -77,20 +77,32 @@ class ViewAuth extends FBP(LitElement) {
           <furo-empty-spacer></furo-empty-spacer>
           <furo-card header-text="Login" secondary-text="Enter the username and password">
             <furo-form-layouter one>
-              <furo-text-input leading-icon="account-box" autofocus label="Username" value="demo"></furo-text-input>
-              <furo-password-input leading-icon="lock-outline" value="1234" hint="Look under your keyboard or on postit below monitor" label="super secret password" ƒ-make-visible="--showPasswordClicked" ƒ-make-invisible="--hidePasswordClicked"></furo-password-input>
-
+              <furo-text-input
+                leading-icon="account-box"
+                autofocus
+                label="Username"
+                value="demo"
+              ></furo-text-input>
+              <furo-password-input
+                leading-icon="lock-outline"
+                value="1234"
+                hint="Look under your keyboard or on postit below monitor"
+                label="super secret password"
+                ƒ-make-visible="--showPasswordClicked"
+                ƒ-make-invisible="--hidePasswordClicked"
+              ></furo-password-input>
             </furo-form-layouter>
             <furo-horizontal-flex space="" slot="action">
-            <furo-button primary unelevated>Login</furo-button>
+              <furo-button primary unelevated>Login</furo-button>
               <furo-empty-spacer></furo-empty-spacer>
-            <furo-button icon="visibility"  unelevated @-click="--showPasswordClicked">Show Password</furo-button>
+              <furo-button icon="visibility" unelevated @-click="--showPasswordClicked"
+                >Show Password</furo-button
+              >
             </furo-horizontal-flex>
           </furo-card>
           <furo-empty-spacer></furo-empty-spacer>
         </furo-horizontal-flex>
         <furo-empty-spacer></furo-empty-spacer>
-
       </furo-vertical-flex>
     `;
   }

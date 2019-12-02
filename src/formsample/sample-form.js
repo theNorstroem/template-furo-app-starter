@@ -43,7 +43,6 @@ class SampleForm extends FBP(LitElement) {
     });
   }
 
-
   /**
    * Themable Styles
    * @private
