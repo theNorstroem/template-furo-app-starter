@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { Theme } from '@furo/framework/theme.js';
 import { FBP } from '@furo/fbp';
+import '@furo/form/furo-button-bar.js';
 
 /**
  * `view-auth`
@@ -54,10 +55,9 @@ class ViewAuth extends FBP(LitElement) {
         furo-card {
           width: 360px;
         }
-        furo-horizontal-flex[slot='action'] {
-          padding-left: 8px;
-          padding-right: 8px;
-          box-sizing: border-box;
+
+        furo-form-layouter > * {
+          margin: 20px 0;
         }
       `
     );
@@ -80,6 +80,7 @@ class ViewAuth extends FBP(LitElement) {
               <furo-text-input
                 leading-icon="account-box"
                 autofocus
+                hint="Your name or email"
                 label="Username"
                 value="demo"
               ></furo-text-input>

@@ -4,6 +4,7 @@ import { FBP } from '@furo/fbp';
 import '@furo/form';
 import '@furo/input';
 import '@furo/form/furo-form.js';
+import '@furo/app/furo-tooltip.js';
 
 /**
  * `sample-form`
@@ -89,6 +90,7 @@ class SampleForm extends FBP(LitElement) {
             max="2019-12-31"
             min="2019-01-01"
             label="valid from"
+            ><furo-tooltip label="Up to you"></furo-tooltip
           ></furo-date-input>
           <furo-select-input
             condensed

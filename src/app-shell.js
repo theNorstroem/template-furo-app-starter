@@ -4,6 +4,7 @@ import '../configs/init.js';
 
 import '@furo/config/furo-config-loader.js';
 import '@furo/route/furo-app-flow-router.js';
+import '@furo/app/furo-tooltip-display.js';
 import './main-stage.js';
 
 /**
@@ -44,6 +45,7 @@ class AppShell extends FBP(LitElement) {
         @-unauthorized="--unauthorized"
         @-navigate-back-clicked="--navBack"
       ></main-stage>
+      <furo-tooltip-display></furo-tooltip-display>
       <furo-app-flow-router
         ƒ-.config="--flowConfigLoaded"
         ƒ-trigger="--flowEvent"

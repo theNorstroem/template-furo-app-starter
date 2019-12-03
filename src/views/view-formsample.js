@@ -7,6 +7,7 @@ import '@furo/notification/furo-banner-display.js';
 import '@furo/notification/furo-banner.js';
 import '@furo/util/furo-keydown.js';
 
+import '@furo/app/furo-tooltip.js';
 import '../formsample/sample-form.js';
 
 /**
@@ -63,16 +64,8 @@ class ViewFormsample extends FBP(LitElement) {
         }
 
         .content {
-          padding: 0;
+          padding: 0 var(--spacing-s) var(--spacing-xs) var(--spacing-s);
           box-sizing: border-box;
-        }
-
-        .form {
-          padding: var(--spacing-s);
-        }
-
-        .action {
-          padding: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
         }
 
         /** set the banner icon color to danger color */
@@ -102,15 +95,17 @@ class ViewFormsample extends FBP(LitElement) {
         >
           <div>Sample Form</div>
           <furo-empty-spacer></furo-empty-spacer>
-          <furo-icon-button icon="check" @-click="--pin"></furo-icon-button>
+          <furo-icon-button icon="check" @-click="--pin"
+            ><furo-tooltip label="no way"></furo-tooltip
+          ></furo-icon-button>
           <div slot="extended">
             Sample Form: Juheee , this is a lot of text and should break to a second line
           </div>
         </furo-app-bar-top>
         <furo-banner-display autofocus></furo-banner-display>
         <furo-vertical-flex flex class="content">
-          <sample-form flex scroll class="form"></sample-form>
-          <furo-button-bar class="action">
+          <sample-form flex scroll></sample-form>
+          <furo-button-bar>
             <furo-button
               unelevated
               ƒ-focus="--shortcutPrimary"
@@ -120,7 +115,7 @@ class ViewFormsample extends FBP(LitElement) {
             ></furo-button>
             <furo-button unelevated accent="" label="accent" @-click="--stop"></furo-button>
             <furo-button unelevated label="unelevated default" @-click="--stop"></furo-button>
-
+            <furo-button>Tooltip <furo-tooltip label="above pls"></furo-tooltip></furo-button>
             <furo-empty-spacer></furo-empty-spacer>
             <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
           </furo-button-bar>
