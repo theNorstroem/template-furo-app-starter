@@ -83,7 +83,7 @@ class ViewSomecontent extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <h1>Hej, welcome</h1>
+      <h1>Welcome to フロー</h1>
       <p>This is a blank page without app-bar-top</p>
       <h2>Open the menu drawer</h2>
       <p>
