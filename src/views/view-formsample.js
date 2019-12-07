@@ -102,7 +102,7 @@ class ViewFormsample extends FBP(LitElement) {
             Sample Form: Juheee , this is a lot of text and should break to a second line
           </div>
         </furo-app-bar-top>
-        <furo-banner-display autofocus></furo-banner-display>
+        <furo-banner-display></furo-banner-display>
         <furo-vertical-flex flex class="content">
           <sample-form flex scroll></sample-form>
           <furo-button-bar>
@@ -118,16 +118,13 @@ class ViewFormsample extends FBP(LitElement) {
             <furo-button>Tooltip <furo-tooltip label="above pls"></furo-tooltip></furo-button>
             <furo-empty-spacer></furo-empty-spacer>
             <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
-          </furo-button-bar>
-        </furo-vertical-flex>
-      </furo-vertical-flex>
-      <furo-banner
-        ƒ-show="--networkError"
-        confirm-button-text="confirm to accent"
-        danger
-        @-confirmed="--confirmed"
-        @-dismissed="--dismissed"
-        text="# Important
+            <furo-banner
+                    ƒ-show="--networkError"
+                    confirm-button-text="confirm to accent"
+                    danger
+                    @-confirmed="--confirmed"
+                    @-dismissed="--dismissed"
+                    text="# Important
 ## This is a h2
 ### This is a h3
 You can place markdown content here
@@ -135,8 +132,11 @@ You can place markdown content here
  - set a **valid** date
 
 Thank you."
-        icon="perm-scan-wifi"
-      ></furo-banner>
+                    icon="perm-scan-wifi"
+            ></furo-banner>
+          </furo-button-bar>
+        </furo-vertical-flex>
+      </furo-vertical-flex>
       <furo-keydown ctrl key="p" @-key="--shortcutPrimary"></furo-keydown>
     `;
   }

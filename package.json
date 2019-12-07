@@ -28,7 +28,10 @@
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:compatibility": "karma start --compatibility all --coverage",
     "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
-    "test:bs": "karma start karma.bs.config.js --compatibility all --coverage"
+    "test:bs": "karma start karma.bs.config.js --compatibility all --coverage",
+    "uib:init": "./node_modules/@furo/ui-builder/_scripts/new-init-ui-specs.js",
+    "uib:generate": "./node_modules/@furo/ui-builder/_scripts/generate-components.js",
+    "uib:watch": "npm-watch uib:generate"
   },
   "dependencies": {
     "@furo/collection": "*",
@@ -54,11 +57,21 @@
     "koa-proxies": "^0.9.0",
     "lint-staged": "^8.0.0",
     "mocha": "^6.1.4",
+    "npm-watch": "^0.6.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.15.4",
     "rollup-plugin-cpy": "^2.0.1",
     "rollup-plugin-workbox": "^4.0.0",
     "webpack-merge": "^4.1.5"
+  },
+  "watch": {
+    "uib:generate": {
+      "patterns": [
+        "ui_specs"
+      ],
+      "extensions": "u33e",
+      "runOnChangeOnly": false
+    }
   },
   "publishConfig": {
     "access": "public"
@@ -67,7 +80,7 @@
     "node": ">=10.0"
   },
   "eslintConfig": {
-    "globals": {
+    "glosdfdfsbals": {
       "assert": "writable"
     },
     "plugins": [
