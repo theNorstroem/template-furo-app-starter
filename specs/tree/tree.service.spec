@@ -38,7 +38,7 @@
       "deeplink": {
         "description":"Describe_the_query_params_if_you_have",
         "rel": "list",
-        "href": "/api/trees",
+        "href": "/mockdata/trees",
         "method": "GET"
       }
     },
@@ -53,7 +53,7 @@
       },
       "deeplink": {
         "rel": "create",
-        "href": "/api/trees",
+        "href": "/mockdata/trees",
         "method": "POST"
       }
     },
@@ -68,7 +68,7 @@
       },
       "deeplink": {
         "rel": "self",
-        "href": "/api/trees/{tre}/get.json",
+        "href": "/mockdata/trees/{tre}/get.json",
         "method": "GET"
       }
     },
@@ -82,7 +82,7 @@
       "query": {},
       "deeplink": {
         "rel": "update",
-        "href": "/api/trees/{tre}",
+        "href": "/mockdata/trees/{tre}",
         "method": "PATCH"
       }
     },
@@ -96,7 +96,7 @@
       "query": {},
       "deeplink": {
         "rel": "delete",
-        "href": "/api/trees/{tre}",
+        "href": "/mockdata/trees/{tre}",
         "method": "DELETE"
       }
     }

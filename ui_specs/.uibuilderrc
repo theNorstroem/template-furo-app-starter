@@ -1,0 +1,5 @@
+{
+  "ignored_specs": [
+    "projectfilter.type.spec"
+  ]
+}
