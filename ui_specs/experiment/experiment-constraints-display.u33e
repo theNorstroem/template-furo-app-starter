@@ -1,0 +1,95 @@
+{
+  "_writeprotection": false,
+  "theme": "FormBaseTheme",
+  "class_name": "ExperimentConstraintsDisplay",
+  "component_name": "experiment-constraints-display",
+  "description": "Test the Constraints",
+  "summary": "summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form"
+  ],
+  "path": "src/project-components/demo",
+  "style": {
+    "children": {
+      ":host([hidden])": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      }
+    },
+    "attributes": {}
+  },
+  "properties": {},
+  "template": [
+    {
+      "description": "form layouter",
+      "component": "furo-form-layouter",
+      "flags": [
+        "four"
+      ],
+      "children": [
+        {
+          "description": "field: number",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.number)"
+          },
+          "methods": {
+            "focus": "--focused"
+          }
+        },
+        {
+          "description": "field: text",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.text)"
+          }
+        }
+      ]
+    }
+  ],
+  "exposedWires": [
+    {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Setze den Fokus"
+    }
+  ],
+  "keyboardShortcuts": [],
+  "methods": {
+    "bindData": {
+      "description": "Use ƒ-bind-data to bind your data object\n und so",
+      "args": "data",
+      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+    }
+  },
+  "source": "specs/experiment/experiment.constraints.type.spec"
+}

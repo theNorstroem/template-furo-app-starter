@@ -1,0 +1,126 @@
+{
+  "_writeprotection": false,
+  "theme": "FormBaseTheme",
+  "class_name": "PersonPersonDisplay",
+  "component_name": "person-person-display",
+  "description": "Person message type",
+  "summary": "summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form"
+  ],
+  "path": "src/project-components/demo",
+  "style": {
+    "children": {
+      ":host([hidden])": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      }
+    },
+    "attributes": {}
+  },
+  "properties": {},
+  "template": [
+    {
+      "description": "form layouter",
+      "component": "furo-form-layouter",
+      "flags": [
+        "four"
+      ],
+      "children": [
+        {
+          "description": "field: name",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.name)"
+          },
+          "methods": {
+            "focus": "--focused"
+          }
+        },
+        {
+          "description": "field: first_name",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.first_name)"
+          }
+        },
+        {
+          "description": "field: phone_nr",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.phone_nr)"
+          }
+        },
+        {
+          "description": "field: skills",
+          "component": "furo-data-repeat",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.skills)",
+            "repeated-component": "furo-data-display"
+          }
+        },
+        {
+          "description": "field: update_mask",
+          "component": "furo-data-display",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.update_mask)"
+          }
+        }
+      ]
+    }
+  ],
+  "exposedWires": [
+    {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Setze den Fokus"
+    }
+  ],
+  "keyboardShortcuts": [],
+  "methods": {
+    "bindData": {
+      "description": "Use ƒ-bind-data to bind your data object\n und so",
+      "args": "data",
+      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+    }
+  },
+  "source": "specs/person/person.type.spec"
+}

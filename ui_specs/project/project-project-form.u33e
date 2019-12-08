@@ -1,0 +1,127 @@
+{
+  "_writeprotection": false,
+  "theme": "FormBaseTheme",
+  "class_name": "ProjectProjectForm",
+  "component_name": "project-project-form",
+  "description": "Project description",
+  "summary": "summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form",
+    "../person/person-person-form.js"
+  ],
+  "path": "src/project-components/demo",
+  "style": {
+    "children": {
+      ":host([hidden])": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      }
+    },
+    "attributes": {}
+  },
+  "properties": {},
+  "template": [
+    {
+      "description": "form",
+      "component": "furo-form-layouter",
+      "flags": [
+        "four"
+      ],
+      "children": [
+        {
+          "description": "field: start",
+          "component": "furo-data-date-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.start)"
+          },
+          "methods": {
+            "focus": "--focused"
+          }
+        },
+        {
+          "description": "field: end",
+          "component": "furo-data-date-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.end)"
+          }
+        },
+        {
+          "description": "field: description",
+          "component": "furo-data-text-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.description)"
+          }
+        },
+        {
+          "description": "field: members",
+          "component": "furo-data-repeat",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.members)",
+            "repeated-component": "person-person-form"
+          }
+        },
+        {
+          "description": "field: cost_limit",
+          "component": "furo-data-money-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.cost_limit)"
+          }
+        }
+      ]
+    }
+  ],
+  "exposedWires": [
+    {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Setze den Fokus"
+    }
+  ],
+  "keyboardShortcuts": [],
+  "methods": {
+    "bindData": {
+      "description": "Use ƒ-bind-data to bind your data object\n und so",
+      "args": "data",
+      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+    }
+  },
+  "source": "specs/project/project.type.spec"
+}

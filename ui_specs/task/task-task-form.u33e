@@ -1,0 +1,118 @@
+{
+  "_writeprotection": false,
+  "theme": "FormBaseTheme",
+  "class_name": "TaskTaskForm",
+  "component_name": "task-task-form",
+  "description": "Task data description",
+  "summary": "summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form",
+    "../person/person-person-reference-search.js",
+    "./task-task-form.js"
+  ],
+  "path": "src/project-components/demo",
+  "style": {
+    "children": {
+      ":host([hidden])": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      }
+    },
+    "attributes": {}
+  },
+  "properties": {},
+  "template": [
+    {
+      "description": "form",
+      "component": "furo-form-layouter",
+      "flags": [
+        "four"
+      ],
+      "children": [
+        {
+          "description": "field: description",
+          "component": "furo-data-text-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.description)"
+          },
+          "methods": {
+            "focus": "--focused"
+          }
+        },
+        {
+          "description": "field: estimated_time",
+          "component": "furo-data-number-input",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.estimated_time)"
+          }
+        },
+        {
+          "description": "field: owner",
+          "component": "person-person-reference-search",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.owner)"
+          }
+        },
+        {
+          "description": "field: subtasks",
+          "component": "furo-data-repeat",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "ƒ-bind-data": "--data(*.subtasks)",
+            "repeated-component": "task-task-form"
+          }
+        }
+      ]
+    }
+  ],
+  "exposedWires": [
+    {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Setze den Fokus"
+    }
+  ],
+  "keyboardShortcuts": [],
+  "methods": {
+    "bindData": {
+      "description": "Use ƒ-bind-data to bind your data object\n und so",
+      "args": "data",
+      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+    }
+  },
+  "source": "specs/task/task.type.spec"
+}
