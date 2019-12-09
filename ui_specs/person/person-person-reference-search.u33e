@@ -24,7 +24,26 @@
   "component_name": "person-person-reference-search",
   "path": "./ui_specs/person/person-person-reference-search.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      "furo-data-reference-search": {
+        "children": {},
+        "attributes": {
+          "width": "100%"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [
@@ -40,7 +59,8 @@
       },
       "methods": {
         "collection-in": "--collection",
-        "bind-data": "----field-injected"
+        "focus": "--focused",
+        "bind-data": "--field-injected"
       },
       "events": {
         "search": "--term"
@@ -52,7 +72,7 @@
       "description": "It is a good practice to set a description",
       "flags": [],
       "attributes": {
-        "service": "dfsdfsfdsdf"
+        "service": "PersonService"
       },
       "methods": {
         "hts-in": "--field-injected(*.link._value), --htsUpdated",

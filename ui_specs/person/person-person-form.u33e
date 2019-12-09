@@ -27,7 +27,20 @@
   "component_name": "person-person-form",
   "path": "./ui_specs/person/person-person-form.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [

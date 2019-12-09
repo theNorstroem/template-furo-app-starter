@@ -28,7 +28,20 @@
   "component_name": "task-task-form",
   "path": "./ui_specs/task/task-task-form.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [

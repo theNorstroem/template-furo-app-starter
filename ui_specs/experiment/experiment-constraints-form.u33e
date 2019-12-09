@@ -27,7 +27,20 @@
   "component_name": "experiment-constraints-form",
   "path": "./ui_specs/experiment/experiment-constraints-form.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [
