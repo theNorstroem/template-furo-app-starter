@@ -1,10 +1,6 @@
 {
-  "_writeprotection": false,
-  "theme": "FormBaseTheme",
-  "class_name": "TreeNavigationnodeForm",
-  "component_name": "tree-navigationnode-form",
   "description": "Item of the navigationtree",
-  "summary": "summary",
+  "summary": "todo: write summary",
   "import_members": [
     [
       " LitElement, html, css ",
@@ -12,166 +8,189 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data-input",
-    "@furo/form",
-    "../tree/tree-navigationnode-form.js"
+    "@furo/form"
   ],
-  "path": "src/project-components/demo",
+  "component_name": "tree-navigationnode-form",
+  "path": "./ui_specs/navigationnode/tree-navigationnode-form.u33e",
   "style": {
-    "children": {
-      ":host([hidden])": {
-        "children": {},
-        "attributes": {
-          "display": "none"
-        }
-      },
-      ":host": {
-        "children": {},
-        "attributes": {
-          "display": "block"
-        }
-      }
-    },
+    "children": {},
     "attributes": {}
   },
-  "properties": {},
   "template": [
     {
-      "description": "form",
       "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
       "flags": [
         "four"
       ],
+      "attributes": {},
+      "methods": {},
+      "events": {},
       "children": [
         {
-          "description": "field: id",
           "component": "furo-data-text-input",
+          "description": "field: id",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.id)",
+            "focus": "--focused"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: secondary_text",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.secondary_text)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: description",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.description)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: icon",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.icon)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: key_words",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.key_words)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: has_error",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.has_error)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: open",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.open)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: link",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.link)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-text-input",
+          "description": "field: is_group_label",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.is_group_label)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-repeat",
+          "description": "field: children",
           "flags": [
             "condensed"
           ],
           "attributes": {
-            "ƒ-bind-data": "--data(*.id)"
+            "repeated-component": "tree-navigationnode-form"
           },
           "methods": {
-            "focus": "--focused"
-          }
-        },
-        {
-          "description": "field: secondary_text",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.secondary_text)"
-          }
-        },
-        {
-          "description": "field: description",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.description)"
-          }
-        },
-        {
-          "description": "field: icon",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.icon)"
-          }
-        },
-        {
-          "description": "field: key_words",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.key_words)"
-          }
-        },
-        {
-          "description": "field: has_error",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.has_error)"
-          }
-        },
-        {
-          "description": "field: open",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.open)"
-          }
-        },
-        {
-          "description": "field: link",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.link)"
-          }
-        },
-        {
-          "description": "field: is_group_label",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.is_group_label)"
-          }
-        },
-        {
-          "description": "field: children",
-          "component": "furo-data-repeat",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.children)",
-            "repeated-component": "tree-navigationnode-form"
-          }
+            "bind-data": "--data(*.children)"
+          },
+          "events": {},
+          "children": []
         }
       ]
     }
   ],
-  "exposedWires": [
-    {
+  "properties": {},
+  "exposedWires": {
+    "focus": {
       "name": "focus",
       "wire": "--focused",
-      "description": "Setze den Fokus"
-    }
-  ],
-  "keyboardShortcuts": [],
-  "methods": {
-    "bindData": {
-      "description": "Use ƒ-bind-data to bind your data object\n und so",
-      "args": "data",
-      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+      "description": "Fokus"
     }
   },
-  "source": "specs/tree/navigationnode.type.spec"
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
 }

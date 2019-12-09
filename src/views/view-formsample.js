@@ -119,12 +119,12 @@ class ViewFormsample extends FBP(LitElement) {
             <furo-empty-spacer></furo-empty-spacer>
             <furo-button unelevated danger="" label="Danger" @-click="--networkError"></furo-button>
             <furo-banner
-                    ƒ-show="--networkError"
-                    confirm-button-text="confirm to accent"
-                    danger
-                    @-confirmed="--confirmed"
-                    @-dismissed="--dismissed"
-                    text="# Important
+              ƒ-show="--networkError"
+              confirm-button-text="confirm to accent"
+              danger
+              @-confirmed="--confirmed"
+              @-dismissed="--dismissed"
+              text="# Important
 ## This is a h2
 ### This is a h3
 You can place markdown content here
@@ -132,7 +132,7 @@ You can place markdown content here
  - set a **valid** date
 
 Thank you."
-                    icon="perm-scan-wifi"
+              icon="perm-scan-wifi"
             ></furo-banner>
           </furo-button-bar>
         </furo-vertical-flex>

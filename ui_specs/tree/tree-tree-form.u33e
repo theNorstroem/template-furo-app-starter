@@ -1,10 +1,6 @@
 {
-  "_writeprotection": false,
-  "theme": "FormBaseTheme",
-  "class_name": "TreeTreeForm",
-  "component_name": "tree-tree-form",
   "description": "Navigation tree type with recursive navigation nodes",
-  "summary": "summary",
+  "summary": "todo: write summary",
   "import_members": [
     [
       " LitElement, html, css ",
@@ -12,11 +8,16 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
@@ -24,93 +25,93 @@
     "@furo/form",
     "./tree-navigationnode-form.js"
   ],
-  "path": "src/project-components/demo",
+  "component_name": "tree-tree-form",
+  "path": "./ui_specs/tree/tree-tree-form.u33e",
   "style": {
-    "children": {
-      ":host([hidden])": {
-        "children": {},
-        "attributes": {
-          "display": "none"
-        }
-      },
-      ":host": {
-        "children": {},
-        "attributes": {
-          "display": "block"
-        }
-      }
-    },
+    "children": {},
     "attributes": {}
   },
-  "properties": {},
   "template": [
     {
-      "description": "form",
       "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
       "flags": [
         "four"
       ],
+      "attributes": {},
+      "methods": {},
+      "events": {},
       "children": [
         {
+          "component": "furo-data-text-input",
           "description": "field: id",
-          "component": "furo-data-text-input",
           "flags": [
             "condensed"
           ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.id)"
-          },
+          "attributes": {},
           "methods": {
+            "bind-data": "--data(*.id)",
             "focus": "--focused"
-          }
+          },
+          "events": {},
+          "children": []
         },
         {
+          "component": "furo-data-text-input",
           "description": "field: secondary_text",
-          "component": "furo-data-text-input",
           "flags": [
             "condensed"
           ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.secondary_text)"
-          }
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.secondary_text)"
+          },
+          "events": {},
+          "children": []
         },
         {
+          "component": "furo-data-text-input",
           "description": "field: description",
-          "component": "furo-data-text-input",
           "flags": [
             "condensed"
           ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.description)"
-          }
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.description)"
+          },
+          "events": {},
+          "children": []
         },
         {
-          "description": "field: root",
           "component": "tree-navigationnode-form",
+          "description": "field: root",
           "flags": [
             "condensed"
           ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.root)"
-          }
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.root)"
+          },
+          "events": {},
+          "children": []
         }
       ]
     }
   ],
-  "exposedWires": [
-    {
+  "properties": {},
+  "exposedWires": {
+    "focus": {
       "name": "focus",
       "wire": "--focused",
-      "description": "Setze den Fokus"
-    }
-  ],
-  "keyboardShortcuts": [],
-  "methods": {
-    "bindData": {
-      "description": "Use ƒ-bind-data to bind your data object\n und so",
-      "args": "data",
-      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+      "description": "Fokus"
     }
   },
-  "source": "specs/tree/tree.type.spec"
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
 }

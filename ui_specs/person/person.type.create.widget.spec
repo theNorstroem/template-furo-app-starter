@@ -12,11 +12,16 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [

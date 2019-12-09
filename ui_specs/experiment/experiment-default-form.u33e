@@ -1,10 +1,6 @@
 {
-  "_writeprotection": false,
-  "theme": "FormBaseTheme",
-  "class_name": "ExperimentDefaultForm",
-  "component_name": "experiment-default-form",
   "description": "Test the default value",
-  "summary": "summary",
+  "summary": "todo: write summary",
   "import_members": [
     [
       " LitElement, html, css ",
@@ -12,85 +8,85 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data-input",
     "@furo/form"
   ],
-  "path": "src/project-components/demo",
+  "component_name": "experiment-default-form",
+  "path": "./ui_specs/experiment/experiment-default-form.u33e",
   "style": {
-    "children": {
-      ":host([hidden])": {
-        "children": {},
-        "attributes": {
-          "display": "none"
-        }
-      },
-      ":host": {
-        "children": {},
-        "attributes": {
-          "display": "block"
-        }
-      }
-    },
+    "children": {},
     "attributes": {}
   },
-  "properties": {},
   "template": [
     {
-      "description": "form",
       "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
       "flags": [
         "four"
       ],
+      "attributes": {},
+      "methods": {},
+      "events": {},
       "children": [
         {
-          "description": "field: description",
           "component": "furo-data-text-input",
+          "description": "field: description",
           "flags": [
             "condensed"
           ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.description)"
-          },
+          "attributes": {},
           "methods": {
+            "bind-data": "--data(*.description)",
             "focus": "--focused"
-          }
+          },
+          "events": {},
+          "children": []
         },
         {
-          "description": "field: repstring",
           "component": "furo-data-repeat",
+          "description": "field: repstring",
           "flags": [
             "condensed"
           ],
           "attributes": {
-            "ƒ-bind-data": "--data(*.repstring)",
             "repeated-component": "furo-data-text-input"
-          }
+          },
+          "methods": {
+            "bind-data": "--data(*.repstring)"
+          },
+          "events": {},
+          "children": []
         }
       ]
     }
   ],
-  "exposedWires": [
-    {
+  "properties": {},
+  "exposedWires": {
+    "focus": {
       "name": "focus",
       "wire": "--focused",
-      "description": "Setze den Fokus"
-    }
-  ],
-  "keyboardShortcuts": [],
-  "methods": {
-    "bindData": {
-      "description": "Use ƒ-bind-data to bind your data object\n und so",
-      "args": "data",
-      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+      "description": "Fokus"
     }
   },
-  "source": "specs/experiment/experiment.default.type.spec"
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
 }

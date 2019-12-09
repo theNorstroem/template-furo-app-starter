@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit-element';
 import { Theme } from '@furo/framework/theme.js';
 import { FBP } from '@furo/fbp';
 
- /**
+/**
  * `view-somecontent`
  * todo Describe your element
  *
@@ -96,7 +96,6 @@ class ViewSomecontent extends FBP(LitElement) {
       <furo-button raised @-click="^^open-drawer-menu-clicked" autofocus ƒ-focus="--pageActivated"
         >open Menu</furo-button
       >
-
     `;
   }
 }

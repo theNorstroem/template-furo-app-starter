@@ -1,10 +1,6 @@
 {
-  "_writeprotection": false,
-  "theme": "FormBaseTheme",
-  "class_name": "ProjectfilterProjectfilterCreateForm",
-  "component_name": "projectfilter-projectfilter-create-form",
   "description": "Options for possible filter values",
-  "summary": "summary",
+  "summary": "todo: write summary",
   "import_members": [
     [
       " LitElement, html, css ",
@@ -12,114 +8,55 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data-input",
     "@furo/form"
   ],
-  "path": "src/project-components/demo",
+  "component_name": "projectfilter-projectfilter-create-form",
+  "path": "./ui_specs/projectfilter/projectfilter-projectfilter-create-form.u33e",
   "style": {
-    "children": {
-      ":host([hidden])": {
-        "children": {},
-        "attributes": {
-          "display": "none"
-        }
-      },
-      ":host": {
-        "children": {},
-        "attributes": {
-          "display": "block"
-        }
-      }
-    },
+    "children": {},
     "attributes": {}
   },
-  "properties": {},
   "template": [
     {
-      "description": "form layouter",
       "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
       "flags": [
         "four"
       ],
-      "children": [
-        {
-          "description": "field: description",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.description)"
-          },
-          "methods": {
-            "focus": "--focused"
-          }
-        },
-        {
-          "description": "field: start",
-          "component": "furo-data-date-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.start)"
-          }
-        },
-        {
-          "description": "field: end",
-          "component": "furo-data-date-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.end)"
-          }
-        },
-        {
-          "description": "field: members",
-          "component": "person-person-reference-search",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.members)"
-          }
-        },
-        {
-          "description": "field: cost_limit",
-          "component": "furo-data-money-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.cost_limit)"
-          }
-        }
-      ]
+      "attributes": {},
+      "methods": {},
+      "events": {},
+      "children": []
     }
   ],
-  "exposedWires": [
-    {
+  "properties": {},
+  "exposedWires": {
+    "focus": {
       "name": "focus",
       "wire": "--focused",
-      "description": "Setze den Fokus"
-    }
-  ],
-  "keyboardShortcuts": [],
-  "methods": {
-    "bindData": {
-      "description": "Use ƒ-bind-data to bind your data object\n und so",
-      "args": "data",
-      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+      "description": "Fokus"
     }
   },
-  "source": "specs/projectfilter/projectfilter.type.spec"
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
 }

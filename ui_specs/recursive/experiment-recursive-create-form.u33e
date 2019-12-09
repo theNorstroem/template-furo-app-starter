@@ -1,10 +1,6 @@
 {
-  "_writeprotection": false,
-  "theme": "FormBaseTheme",
-  "class_name": "ExperimentRecursiveCreateForm",
-  "component_name": "experiment-recursive-create-form",
   "description": "recursive type for testing",
-  "summary": "summary",
+  "summary": "todo: write summary",
   "import_members": [
     [
       " LitElement, html, css ",
@@ -12,94 +8,55 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme"
+      "@furo/framework/theme.js"
     ],
     [
       "FBP",
       "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data-input",
     "@furo/form"
   ],
-  "path": "src/project-components/demo",
+  "component_name": "experiment-recursive-create-form",
+  "path": "./ui_specs/recursive/experiment-recursive-create-form.u33e",
   "style": {
-    "children": {
-      ":host([hidden])": {
-        "children": {},
-        "attributes": {
-          "display": "none"
-        }
-      },
-      ":host": {
-        "children": {},
-        "attributes": {
-          "display": "block"
-        }
-      }
-    },
+    "children": {},
     "attributes": {}
   },
-  "properties": {},
   "template": [
     {
-      "description": "form layouter",
       "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
       "flags": [
         "four"
       ],
-      "children": [
-        {
-          "description": "field: id",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.id)"
-          },
-          "methods": {
-            "focus": "--focused"
-          }
-        },
-        {
-          "description": "field: display_name",
-          "component": "furo-data-text-input",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.display_name)"
-          }
-        },
-        {
-          "description": "field: recursion",
-          "component": "experiment-recursive-form",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "ƒ-bind-data": "--data(*.recursion)"
-          }
-        }
-      ]
+      "attributes": {},
+      "methods": {},
+      "events": {},
+      "children": []
     }
   ],
-  "exposedWires": [
-    {
+  "properties": {},
+  "exposedWires": {
+    "focus": {
       "name": "focus",
       "wire": "--focused",
-      "description": "Setze den Fokus"
-    }
-  ],
-  "keyboardShortcuts": [],
-  "methods": {
-    "bindData": {
-      "description": "Use ƒ-bind-data to bind your data object\n und so",
-      "args": "data",
-      "code": "dGhpcy5fRkJQVHJpZ2dlcldpcmUoJy0tZGF0YScsIGRhdGEpOwogICAgdGhpcy5maWVsZCA9IGRhdGE7"
+      "description": "Fokus"
     }
   },
-  "source": "specs/experiment/recursive.type.spec"
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
 }
