@@ -1,0 +1,77 @@
+{
+  "description": "Task data description",
+  "summary": "todo: write summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme.js"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form"
+  ],
+  "component_name": "task-task-create-form",
+  "path": "./ui_specs/task/task-task-create-form.u33e",
+  "style": {
+    "children": {},
+    "attributes": {}
+  },
+  "template": [
+    {
+      "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
+      "flags": [
+        "four"
+      ],
+      "attributes": {},
+      "methods": {},
+      "events": {},
+      "children": [
+        {
+          "component": "furo-data-text-input",
+          "description": "field: description",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.description)",
+            "focus": "--focused"
+          },
+          "events": {},
+          "children": []
+        }
+      ]
+    }
+  ],
+  "properties": {},
+  "exposedWires": {
+    "focus": {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Fokus"
+    }
+  },
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
+}

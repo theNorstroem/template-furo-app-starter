@@ -1,0 +1,145 @@
+{
+  "description": "Task data description",
+  "summary": "todo: write summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme.js"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
+    ]
+  ],
+  "imports": [
+    "@furo/data-input",
+    "@furo/form",
+    "../person/person-person-reference-search.js"
+  ],
+  "component_name": "task-task-display",
+  "path": "./ui_specs/task/task-task-display.u33e",
+  "style": {
+    "children": {},
+    "attributes": {}
+  },
+  "template": [
+    {
+      "component": "furo-form-layouter",
+      "description": "It is a good practice to set a description",
+      "flags": [
+        "four"
+      ],
+      "attributes": {},
+      "methods": {},
+      "events": {},
+      "children": [
+        {
+          "component": "furo-data-display",
+          "description": "field: id",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.id)",
+            "focus": "--focused"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-display",
+          "description": "field: display_name",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.display_name)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-display",
+          "description": "field: description",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.description)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-display",
+          "description": "field: estimated_time",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.estimated_time)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "person-person-reference-search",
+          "description": "field: owner",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {},
+          "methods": {
+            "bind-data": "--data(*.owner)"
+          },
+          "events": {},
+          "children": []
+        },
+        {
+          "component": "furo-data-repeat",
+          "description": "field: subtasks",
+          "flags": [
+            "condensed"
+          ],
+          "attributes": {
+            "repeated-component": "task-task-display"
+          },
+          "methods": {
+            "bind-data": "--data(*.subtasks)"
+          },
+          "events": {},
+          "children": []
+        }
+      ]
+    }
+  ],
+  "properties": {},
+  "exposedWires": {
+    "focus": {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Fokus"
+    }
+  },
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "data",
+      "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
+    }
+  },
+  "keyboardShortcuts": []
+}
