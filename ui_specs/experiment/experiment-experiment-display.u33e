@@ -27,7 +27,20 @@
   "component_name": "experiment-experiment-display",
   "path": "./ui_specs/experiment/experiment-experiment-display.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [

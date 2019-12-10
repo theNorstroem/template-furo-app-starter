@@ -27,7 +27,20 @@
   "component_name": "experiment-constraints-display",
   "path": "./ui_specs/experiment/experiment-constraints-display.u33e",
   "style": {
-    "children": {},
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      }
+    },
     "attributes": {}
   },
   "template": [

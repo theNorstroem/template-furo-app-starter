@@ -1,0 +1,113 @@
+{
+  "description": "service specs for the experiment api",
+  "summary": "todo: write summary",
+  "import_members": [
+    [
+      " LitElement, html, css ",
+      "lit-element"
+    ],
+    [
+      "Theme",
+      "@furo/framework/theme.js"
+    ],
+    [
+      "FBP",
+      "@furo/fbp"
+    ],
+    [
+      "i18n",
+      "@furo/framework/i18n.js",
+      "eslint-disable-next-line no-unused-vars"
+    ]
+  ],
+  "imports": [
+    "@furo/data",
+    "@furo/data-input"
+  ],
+  "component_name": "experiment-experiment-reference-dropdown",
+  "path": "./ui_specs/experiment/experiment-experiment-reference-dropdown.u33e",
+  "style": {
+    "children": {
+      ":host": {
+        "children": {},
+        "attributes": {
+          "display": "block"
+        }
+      },
+      ":host[hidden]": {
+        "children": {},
+        "attributes": {
+          "display": "none"
+        }
+      },
+      "furo-data-collection-dropdown": {
+        "children": {},
+        "attributes": {
+          "width": "100%"
+        }
+      }
+    },
+    "attributes": {}
+  },
+  "template": [
+    {
+      "component": "furo-data-collection-dropdown",
+      "description": "It is a good practice to set a description",
+      "flags": [],
+      "attributes": {
+        "value-field": "id",
+        "display-field": "display_name",
+        "subfield": "id",
+        "subfield-display": "display-name",
+        "?condensed": "$(this.condensed)"
+      },
+      "methods": {
+        "inject-entities": "--collection(*.entities)",
+        "focus": "--focused",
+        "bind-data": "--field-injected"
+      },
+      "events": {},
+      "children": []
+    },
+    {
+      "component": "furo-collection-agent",
+      "description": "It is a good practice to set a description",
+      "flags": [
+        "list-on-hts-in"
+      ],
+      "attributes": {
+        "service": "ExperimentService"
+      },
+      "methods": {
+        "hts-in": "--field-injected(*.link._value), --htsUpdated"
+      },
+      "events": {
+        "response": "--collection"
+      },
+      "children": []
+    }
+  ],
+  "properties": {
+    "condensed": {
+      "type": "Boolean",
+      "description": "The default style (md like) supports a condensed form. It is a little bit smaller then the default",
+      "reflect": false,
+      "notify": false
+    }
+  },
+  "exposedWires": {
+    "focus": {
+      "name": "focus",
+      "wire": "--focused",
+      "description": "Fokus"
+    }
+  },
+  "methods": {
+    "bindData": {
+      "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
+      "args": "field",
+      "code": "ICAgIHRoaXMuZmllbGQgPSBmaWVsZDsKICAgIHRoaXMuX0ZCUFRyaWdnZXJXaXJlKCItLWZpZWxk\nLWluamVjdGVkIiwgZmllbGQpOwoKICAgIHRoaXMuZmllbGQuYWRkRXZlbnRMaXN0ZW5lcigiZmll\nbGQtdmFsdWUtY2hhbmdlZCIsIChlKT0+ewoKICAgICAgaWYoZS5kZXRhaWwuX25hbWUgPT09ICJ0\neXBlIikgewogICAgICAgIHRoaXMuX0ZCUFRyaWdnZXJXaXJlKCItLWh0c1VwZGF0ZWQiLCB0aGlz\nLmZpZWxkLmxpbmsuX3ZhbHVlKTsKICAgICAgfQogICAgfSk7"
+    }
+  },
+  "keyboardShortcuts": []
+}
