@@ -7,22 +7,23 @@
       "lit-element"
     ],
     [
-      "Theme",
+      " Theme ",
       "@furo/framework/theme.js"
     ],
     [
-      "FBP",
+      " FBP ",
       "@furo/fbp"
     ],
     [
-      "i18n",
+      " i18n ",
       "@furo/framework/i18n.js",
       "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data-input",
-    "@furo/form",
+    "@furo/form/furo-form-layouter.js",
+    "@furo/input/furo-button.js",
     "@furo/app/furo-card.js",
     "@furo/layout/furo-horizontal-flex.js"
   ],
@@ -126,5 +127,7 @@
       "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
     }
   },
-  "keyboardShortcuts": []
+  "keyboardShortcuts": [],
+  "extends": "FBP(LitElement)",
+  "theme": "CreateWidgetBaseTheme"
 }

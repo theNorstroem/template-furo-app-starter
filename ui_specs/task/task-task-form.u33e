@@ -23,7 +23,7 @@
   "imports": [
     "@furo/data-input",
     "@furo/form",
-    "../person/person-person-reference-search.js"
+    "../projectmemberservice/person-person-reference-search.js"
   ],
   "component_name": "task-task-form",
   "path": "./ui_specs/task/task-task-form.u33e",
@@ -46,74 +46,110 @@
   },
   "template": [
     {
-      "component": "furo-form-layouter",
+      "component": "furo-form",
       "description": "It is a good practice to set a description",
-      "flags": [
-        "four"
-      ],
-      "attributes": {},
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText?this.headerText:\"\"}",
+        "secondary-text": "${this.secondaryText?this.secondaryText:\"\"}"
+      },
       "methods": {},
       "events": {},
       "children": [
         {
-          "component": "furo-data-text-input",
-          "description": "field: description",
+          "component": "furo-form-layouter",
+          "description": "It is a good practice to set a description",
           "flags": [
-            "condensed"
+            "four"
           ],
           "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.description)",
-            "focus": "--focused"
-          },
+          "methods": {},
           "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-number-input",
-          "description": "field: estimated_time",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.estimated_time)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "person-person-reference-search",
-          "description": "field: owner",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.owner)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-repeat",
-          "description": "field: subtasks",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "repeated-component": "task-task-form"
-          },
-          "methods": {
-            "bind-data": "--data(*.subtasks)"
-          },
-          "events": {},
-          "children": []
+          "children": [
+            {
+              "component": "furo-data-text-input",
+              "description": "field: description",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.description)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-number-input",
+              "description": "field: estimated_time",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.estimated_time)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "person-person-reference-search",
+              "description": "field: owner",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.owner)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-repeat",
+              "description": "field: subtasks",
+              "flags": [
+                "condensed",
+                "full"
+              ],
+              "attributes": {
+                "header-text": "${i18n.t('task.task.form.header.text')}",
+                "secondary-text": "${i18n.t('task.task.form.secondary.text')}",
+                "repeated-component": "task-task-form"
+              },
+              "methods": {
+                "bind-data": "--data(*.subtasks)"
+              },
+              "events": {},
+              "children": []
+            }
+          ]
         }
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text to label the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text for a detailed description",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",
@@ -128,5 +164,7 @@
       "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
     }
   },
-  "keyboardShortcuts": []
+  "keyboardShortcuts": [],
+  "extends": "FBP(LitElement)",
+  "theme": "FormBaseTheme"
 }

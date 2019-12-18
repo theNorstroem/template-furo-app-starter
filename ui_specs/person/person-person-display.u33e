@@ -166,5 +166,7 @@
       "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
     }
   },
-  "keyboardShortcuts": []
+  "keyboardShortcuts": [],
+  "extends": "FBP(LitElement)",
+  "theme": "DisplayBaseTheme"
 }

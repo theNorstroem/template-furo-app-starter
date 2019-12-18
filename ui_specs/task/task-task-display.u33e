@@ -23,7 +23,7 @@
   "imports": [
     "@furo/data-input",
     "@furo/form",
-    "../person/person-person-reference-search.js"
+    "../projectmemberservice/person-person-reference-search.js"
   ],
   "component_name": "task-task-display",
   "path": "./ui_specs/task/task-task-display.u33e",
@@ -154,5 +154,7 @@
       "code": "CiAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1kYXRhJywgZGF0YSk7CiAgICB0aGlzLmZpZWxkID0gZGF0YTs="
     }
   },
-  "keyboardShortcuts": []
+  "keyboardShortcuts": [],
+  "extends": "FBP(LitElement)",
+  "theme": "DisplayBaseTheme"
 }

@@ -5,10 +5,11 @@
   "generator_template": "./node_modules/@furo/ui-builder/_scripts/templates/lit.js.tmpl",
   "skip_spec": [
     ".*collection.type.spec",
-    ".*entity.type.spec"
+    ".*entity.type.spec",
+    "tree.*"
   ],
   "writeprotection": [
-    "some-form.u33e"
+    "some-file.u33e"
   ],
   "hooks": {
     "service": [
@@ -23,5 +24,29 @@
       "node_modules/@furo/ui-builder/_scripts/hook-init-create-widget.js",
       "node_modules/@furo/ui-builder/_scripts/hook-init-display.js"
     ]
+  },
+  "hook": {
+    "hook_init_form": {
+      "replace": {
+        "some-type-form": {
+          "with": "other-component",
+          "import_path": "../../src/components/other-component.js",
+          "field_flags": [
+            "condensed",
+            "double"
+          ]
+        }
+      },
+      "default_form_size": "four",
+      "default_field_flags": [
+        "condensed",
+        "double"
+      ],
+      "skip_fields_on_init": [
+        "id",
+        "display_name"
+      ]
+    }
   }
 }
+
