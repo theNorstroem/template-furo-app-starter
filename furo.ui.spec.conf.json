@@ -1,13 +1,21 @@
 {
   "spec_dir": "./specs",
   "ui_spec_out": "./ui_specs",
-  "build_output_dir": "./src/generated_components",
+  "build_output_dir": "./generated_components",
   "generator_template": "./node_modules/@furo/ui-builder/_scripts/templates/lit.js.tmpl",
-  "skip_init": ["project.service.spec"],
+  "skip_spec": [
+    ".*collection.type.spec",
+    ".*entity.type.spec"
+  ],
+  "writeprotection": [
+    "some-form.u33e"
+  ],
   "hooks": {
     "service": [
       "node_modules/@furo/ui-builder/_scripts/hook-init-reference-search.js",
-      "node_modules/@furo/ui-builder/_scripts/hook-init-reference-dropdown.js"
+      "node_modules/@furo/ui-builder/_scripts/hook-init-reference-dropdown.js",
+      "node_modules/@furo/ui-builder/_scripts/hook-init-update-action.js",
+      "node_modules/@furo/ui-builder/_scripts/hook-init-update-panel.js"
     ],
     "type": [
       "node_modules/@furo/ui-builder/_scripts/hook-init-form.js",

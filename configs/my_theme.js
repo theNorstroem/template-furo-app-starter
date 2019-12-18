@@ -1,9 +1,10 @@
 import { css } from 'lit-element/lib/css-tag.js';
+import {  Theme } from '@furo/framework/furo.js';
 
 export const MyThemeset = {
   ExampleComponent: css`
     :host {
-      height: 100%;
+      height: 50%;
       display: block;
       background: var(--background);
       color: var(--on-background);
@@ -17,3 +18,5 @@ export const MyThemeset = {
     }
   `,
 };
+
+Theme.registerThemeset(MyThemeset);

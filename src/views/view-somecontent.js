@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { Theme } from '@furo/framework/theme.js';
 import { FBP } from '@furo/fbp';
-
+import "@furo/input/furo-file-drop.js"
 /**
  * `view-somecontent`
  * todo Describe your element
@@ -90,6 +90,7 @@ class ViewSomecontent extends FBP(LitElement) {
         Send a <code>open-drawer-menu-clicked</code> event, by clicking on the button, to open the
         menu. There is a listener in <code>main-stage</code> which opens the menu.
       </p>
+      <furo-file-drop></furo-file-drop>
       <p>
         If the menu is open already, the only effect you will see is the focusing of the menu item.
       </p>

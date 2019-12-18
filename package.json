@@ -29,13 +29,14 @@
     "test:compatibility": "karma start --compatibility all --coverage",
     "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
     "test:bs": "karma start karma.bs.config.js --compatibility all --coverage",
-    "uib:init": "./node_modules/@furo/ui-builder/_scripts/new-init-ui-specs.js",
+    "uib:init": "./node_modules/@furo/ui-builder/_scripts/init-with-hook.js",
     "uib:generate": "./node_modules/@furo/ui-builder/_scripts/generate-components.js",
     "uib:watch": "npm-watch uib:generate"
   },
   "dependencies": {
     "@furo/collection": "*",
-    "@furo/specs": "*"
+    "@furo/specs": "*",
+    "signature_pad": "^3.0.0-beta.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
