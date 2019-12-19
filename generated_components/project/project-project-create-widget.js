@@ -102,4 +102,3 @@ export class ProjectProjectCreateWidget extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-create-widget', ProjectProjectCreateWidget);
-

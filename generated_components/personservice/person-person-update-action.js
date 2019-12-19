@@ -56,7 +56,7 @@ export class PersonPersonUpdateAction extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return Theme.getThemeForComponent("PersonPersonUpdateAction") || css`
       
       :host {
         display: block;
@@ -93,4 +93,3 @@ export class PersonPersonUpdateAction extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-update-action', PersonPersonUpdateAction);
-

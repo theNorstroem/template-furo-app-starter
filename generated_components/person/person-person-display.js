@@ -106,4 +106,3 @@ export class PersonPersonDisplay extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-display', PersonPersonDisplay);
-

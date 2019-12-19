@@ -54,7 +54,7 @@ export class PersonPersonCreateForm extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent("CreateFormBaseTheme") || css`
+    return Theme.getThemeForComponent("PersonPersonCreateForm") || css`
       
       :host {
         display: block;
@@ -88,4 +88,3 @@ export class PersonPersonCreateForm extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-create-form', PersonPersonCreateForm);
-

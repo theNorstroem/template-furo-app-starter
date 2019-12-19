@@ -109,4 +109,3 @@ export class TaskTaskReferenceDropdown extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-reference-dropdown', TaskTaskReferenceDropdown);
-

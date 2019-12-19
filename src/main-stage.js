@@ -29,10 +29,7 @@ import './views/view-404.js';
  * @appliesMixin FBP
  */
 class MainStage extends FBP(LitElement) {
-  constructor(){
-    super();
-    console.dir(this);
-  }
+
   _FBPReady() {
     super._FBPReady();
     /**

@@ -1,16 +1,16 @@
 /* eslint-disable */
 import cpy from 'rollup-plugin-cpy';
-import { createCompatibilityConfig } from '@open-wc/building-rollup';
+import { createDefaultConfig } from '@open-wc/building-rollup';
 const workboxConfig = require('./workbox-config.js');
 const { generateSW } = require('rollup-plugin-workbox');
 
 // if you need to support IE11 use "modern-and-legacy-config" instead.
-const config = createCompatibilityConfig({
+const config = [createDefaultConfig({
   input: './index.html',
   plugins: {
     workbox: false,
   },
-});
+})];
 
 
 // if you use an array of configs, you don't need the copy task to be executed for both builds.
@@ -23,19 +23,14 @@ export default [
       ...config[0].plugins,
       cpy({
         // copy over all images files
-        files: ['manifest.json', 'favicon.ico', 'assets/**/*', 'configs/**/*'],
+        files: ['manifest.json', 'favicon.ico', 'assets/**/*', 'configs/**/*','es-dev-server-build.config.js','robots.txt'],
         dest: 'dist',
         options: {
           // parents makes sure to preserve the original folder structure
           parents: true,
         },
       }),
+      generateSW(workboxConfig),
     ],
-  },
-
-  // Add plugin to the second config (generateSW when everything is done)
-  {
-    ...config[1],
-    plugins: [...config[1].plugins, generateSW(workboxConfig)],
-  },
+  }
 ];

@@ -13,9 +13,10 @@
   "scripts": {
     "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
     "start": "es-dev-server --open",
-    "start:build": "cd dist && es-dev-server --port 8888 --open",
+    "start:build": "cd dist && es-dev-server --config es-dev-server-build.config.js --open",
     "start:polymer": "polymer serve",
-    "build": "rimraf dist && rollup -c rollup.config.js",
+    "build:compatibility": "rimraf dist && rollup -c rollup.config.js",
+    "build:modern": "rimraf dist && rollup -c rollup.config.modern.js",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
@@ -34,9 +35,9 @@
     "uib:watch": "npm-watch uib:generate"
   },
   "dependencies": {
-    "@furo/collection": "*",
-    "@furo/specs": "*",
-    "signature_pad": "^3.0.0-beta.3"
+    "@furo/collection": "^0.23.6",
+    "@furo/ui-builder": "^0.3.0",
+    "@furo/specs": "^0.45.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",

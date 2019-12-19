@@ -49,7 +49,7 @@ export class PersonPersonUpdatePanel extends BasePanel {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return Theme.getThemeForComponent("PersonPersonUpdatePanel") || css`
       
       :host {
         background-color: var(--update-panel-background, var(--surface, white));
@@ -114,4 +114,3 @@ export class PersonPersonUpdatePanel extends BasePanel {
 }
 
 window.customElements.define('person-person-update-panel', PersonPersonUpdatePanel);
-

@@ -88,4 +88,3 @@ export class ProjectProjectCreateForm extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-create-form', ProjectProjectCreateForm);
-

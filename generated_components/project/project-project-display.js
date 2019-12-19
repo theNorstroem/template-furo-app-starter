@@ -107,4 +107,3 @@ export class ProjectProjectDisplay extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-display', ProjectProjectDisplay);
-

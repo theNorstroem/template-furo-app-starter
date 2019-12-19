@@ -123,7 +123,7 @@ class MainMenu extends FBP(LitElement) {
           height: 24px;
           letter-spacing: 0.1px;
           padding-left: var(--spacing-s, 16px);
-          color: rgba(var(--on-surface-rgb), var(--medium-emphasis-surface));
+          color: rgba(var(--on-surface-rgb), 0.8);
           line-height: 20px;
         }
 
@@ -209,7 +209,7 @@ class MainMenu extends FBP(LitElement) {
           height: 24px;
           letter-spacing: 0.1px;
           padding-left: var(--spacing-s, 16px);
-          color: rgba(var(--on-surface-rgb), var(--medium-emphasis-surface));
+          color: rgba(var(--on-surface-rgb), 0.8);
           line-height: 20px;
         }
 

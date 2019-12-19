@@ -109,4 +109,3 @@ export class ProjectProjectReferenceSearch extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-reference-search', ProjectProjectReferenceSearch);
-

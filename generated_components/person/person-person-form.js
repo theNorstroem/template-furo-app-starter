@@ -123,4 +123,3 @@ export class PersonPersonForm extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-form', PersonPersonForm);
-

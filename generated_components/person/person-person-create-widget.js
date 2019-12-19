@@ -102,4 +102,3 @@ export class PersonPersonCreateWidget extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-create-widget', PersonPersonCreateWidget);
-

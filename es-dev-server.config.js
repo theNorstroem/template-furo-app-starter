@@ -1,9 +1,10 @@
 module.exports = {
   port: 8080,
-  hoestname: '0.0.0.0',
+  __hostname: '0.0.0.0',
   preserveSymlinks: true,
   watch: true,
   nodeResolve: true,
   appIndex: 'index.html',
+
   moduleDirs: ['node_modules', 'custom-modules'],
 };

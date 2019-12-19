@@ -87,6 +87,5 @@
     }
   },
   "keyboardShortcuts": [],
-  "extends": "FBP(LitElement)",
-  "theme": "CreateFormBaseTheme"
+  "extends": "FBP(LitElement)"
 }

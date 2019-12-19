@@ -54,9 +54,9 @@ export class Styling {
         --error: #ea1c24;
         --on-error: #ffffff;
 
-        --danger-light: #fc1c21;
-        --danger: #ee1c21;
-        --danger-dark: #de1c21;
+        --danger-light: #eb1a1f;
+        --danger: #d8191e;
+        --danger-dark: #c6191e;
         --on-danger: #f8f8f8;
 
         --success: #129991;

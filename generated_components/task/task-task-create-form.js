@@ -88,4 +88,3 @@ export class TaskTaskCreateForm extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-create-form', TaskTaskCreateForm);
-

@@ -102,4 +102,3 @@ export class TaskTaskCreateWidget extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-create-widget', TaskTaskCreateWidget);
-

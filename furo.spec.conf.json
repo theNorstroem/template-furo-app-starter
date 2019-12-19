@@ -11,7 +11,7 @@
   "swagger": true,
   "grpc_gateway": true,
   "java": false,
-  "build_output_dir": "./_specbuild",
+  "build_output_dir": "./specbuild",
   "furo_env_name": "data_environment.js",
   "_hooks": {
     "type_completed": "./sample-hook.js",

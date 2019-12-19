@@ -109,4 +109,3 @@ export class ProjectProjectReferenceDropdown extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-reference-dropdown', ProjectProjectReferenceDropdown);
-

@@ -56,7 +56,7 @@ export class TaskTaskUpdateAction extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return Theme.getThemeForComponent("TaskTaskUpdateAction") || css`
       
       :host {
         display: block;
@@ -93,4 +93,3 @@ export class TaskTaskUpdateAction extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-update-action', TaskTaskUpdateAction);
-

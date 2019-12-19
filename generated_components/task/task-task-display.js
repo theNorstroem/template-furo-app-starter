@@ -104,4 +104,3 @@ export class TaskTaskDisplay extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-display', TaskTaskDisplay);
-

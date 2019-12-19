@@ -109,4 +109,3 @@ export class TaskTaskReferenceSearch extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-reference-search', TaskTaskReferenceSearch);
-

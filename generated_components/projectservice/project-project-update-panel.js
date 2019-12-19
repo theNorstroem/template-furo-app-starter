@@ -49,7 +49,7 @@ export class ProjectProjectUpdatePanel extends BasePanel {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent(this.name) || css`
+    return Theme.getThemeForComponent("ProjectProjectUpdatePanel") || css`
       
       :host {
         background-color: var(--update-panel-background, var(--surface, white));
@@ -114,4 +114,3 @@ export class ProjectProjectUpdatePanel extends BasePanel {
 }
 
 window.customElements.define('project-project-update-panel', ProjectProjectUpdatePanel);
-

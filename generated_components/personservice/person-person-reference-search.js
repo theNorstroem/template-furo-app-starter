@@ -109,4 +109,3 @@ export class PersonPersonReferenceSearch extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-reference-search', PersonPersonReferenceSearch);
-
