@@ -26,6 +26,10 @@ import { Services, Types } from '../_specbuild/data_environment.js';
 
 import  './my_theme.js';
 
+// -- register generated panels
+//import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
+import '../generated_components/registry.js';
+
 // -- register resource bundle i18n
 import { Translations } from './translations.js';
 // register the available types (only needed if you work with @furo/data... components  )

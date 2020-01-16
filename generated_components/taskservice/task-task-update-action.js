@@ -93,3 +93,4 @@ export class TaskTaskUpdateAction extends FBP(LitElement) {
 }
 
 window.customElements.define('task-task-update-action', TaskTaskUpdateAction);
+

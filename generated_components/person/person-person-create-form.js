@@ -20,6 +20,25 @@ import "@furo/form";
 export class PersonPersonCreateForm extends FBP(LitElement) {
 
   
+  /**
+   * @private
+   * @return {Object}
+   */
+  static get properties() {
+    return {
+
+      // Header text to label the form
+      headerText: {
+        type: String,
+        attribute: "header-text",
+      },
+      // Secondary text for a detailed description
+      secondaryText: {
+        type: String,
+        attribute: "secondary-text",
+      },
+    }
+  }
 
   // Fokus
   focus(d) {
@@ -54,7 +73,7 @@ export class PersonPersonCreateForm extends FBP(LitElement) {
    */
   static get styles() {
     // language=CSS
-    return Theme.getThemeForComponent("PersonPersonCreateForm") || css`
+    return Theme.getThemeForComponent("CreateFormBaseTheme") || css`
       
       :host {
         display: block;
@@ -78,13 +97,18 @@ export class PersonPersonCreateForm extends FBP(LitElement) {
     return html`
 
       <!-- It is a good practice to set a description -->
-      <furo-form-layouter four>
+      <furo-form header-text="${this.headerText?this.headerText:""}" secondary-text="${this.secondaryText?this.secondaryText:""}">
 
-        <!-- field: name -->
-        <furo-data-text-input condensed ƒ-bind-data="--data(*.name)" ƒ-focus="--focused"></furo-data-text-input> 
-      </furo-form-layouter> 
+        <!-- It is a good practice to set a description -->
+        <furo-form-layouter four>
+
+          <!-- field: name -->
+          <furo-data-text-input condensed double ƒ-bind-data="--data(*.name)" ƒ-focus="--focused"></furo-data-text-input> 
+        </furo-form-layouter> 
+      </furo-form> 
     `;
   }
 }
 
 window.customElements.define('person-person-create-form', PersonPersonCreateForm);
+

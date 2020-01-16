@@ -114,3 +114,4 @@ export class TaskTaskUpdatePanel extends BasePanel {
 }
 
 window.customElements.define('task-task-update-panel', TaskTaskUpdatePanel);
+

@@ -93,3 +93,4 @@ export class ProjectProjectUpdateAction extends FBP(LitElement) {
 }
 
 window.customElements.define('project-project-update-action', ProjectProjectUpdateAction);
+

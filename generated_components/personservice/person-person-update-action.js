@@ -93,3 +93,4 @@ export class PersonPersonUpdateAction extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-update-action', PersonPersonUpdateAction);
+

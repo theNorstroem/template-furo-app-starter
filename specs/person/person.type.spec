@@ -106,6 +106,9 @@
       "constraints": {},
       "__proto": {
         "number": 7
+      },
+      "__ui": {
+        "__no_init": false
       }
     }
   }

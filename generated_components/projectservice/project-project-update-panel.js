@@ -114,3 +114,4 @@ export class ProjectProjectUpdatePanel extends BasePanel {
 }
 
 window.customElements.define('project-project-update-panel', ProjectProjectUpdatePanel);
+

@@ -11,7 +11,7 @@ import '@furo/app/furo-app-drawer.js';
 import '@furo/app/furo-app-bar-top.js';
 import '@furo/notification/furo-snackbar-display.js';
 import './menu/main-menu.js';
-
+import "./views/view-generates-viewer.js"
 /**
  * Static imports of the views
  * The lazy imports a below in _FBPReady
@@ -122,6 +122,7 @@ class MainStage extends FBP(LitElement) {
           <view-formsample name="form"></view-formsample>
           <view-somecontent name="somecontent"></view-somecontent>
           <view-layout-example name="examplelayout"></view-layout-example>
+          <view-generates-viewer name="generates"></view-generates-viewer>
           <view-404 name="404"></view-404>
         </furo-pages>
       </furo-app-drawer>

@@ -114,3 +114,4 @@ export class PersonPersonUpdatePanel extends BasePanel {
 }
 
 window.customElements.define('person-person-update-panel', PersonPersonUpdatePanel);
+

@@ -123,20 +123,6 @@
               },
               "events": {},
               "children": []
-            },
-            {
-              "component": "furo-data-text-input",
-              "description": "field: update_mask",
-              "flags": [
-                "condensed",
-                "double"
-              ],
-              "attributes": {},
-              "methods": {
-                "bind-data": "--data(*.update_mask)"
-              },
-              "events": {},
-              "children": []
             }
           ]
         }

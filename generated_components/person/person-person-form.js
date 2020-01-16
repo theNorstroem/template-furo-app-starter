@@ -113,9 +113,6 @@ export class PersonPersonForm extends FBP(LitElement) {
 
           <!-- field: skills -->
           <furo-data-repeat condensed double repeated-component="furo-data-text-input" ƒ-bind-data="--data(*.skills)"></furo-data-repeat> 
-
-          <!-- field: update_mask -->
-          <furo-data-text-input condensed double ƒ-bind-data="--data(*.update_mask)"></furo-data-text-input> 
         </furo-form-layouter> 
       </furo-form> 
     `;
@@ -123,3 +120,4 @@ export class PersonPersonForm extends FBP(LitElement) {
 }
 
 window.customElements.define('person-person-form', PersonPersonForm);
+
