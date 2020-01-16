@@ -24,10 +24,10 @@ import { ExampleCustomIconset } from './iconset.js';
 // import {Services, Types} from "/node_modules/YOURspecs/build/data_environment.js"
 import { Services, Types } from '../_specbuild/data_environment.js';
 
-import  './my_theme.js';
+import './my_theme.js';
 
 // -- register generated panels
-//import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
+// import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
 import '../generated_components/registry.js';
 
 // -- register resource bundle i18n

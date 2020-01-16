@@ -4,5 +4,5 @@ module.exports = {
   preserveSymlinks: false,
   watch: false,
   nodeResolve: false,
-  appIndex: 'index.html'
+  appIndex: 'index.html',
 };

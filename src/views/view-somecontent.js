@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { Theme } from '@furo/framework/theme.js';
 import { FBP } from '@furo/fbp';
-import "@furo/input/furo-file-drop.js"
+import '@furo/input/furo-file-drop.js';
 /**
  * `view-somecontent`
  * todo Describe your element

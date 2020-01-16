@@ -251,7 +251,7 @@ class MainMenu extends FBP(LitElement) {
             <furo-icon icon="list"></furo-icon>
             tree inline</a
           >
-        </li>        
+        </li>
         <li>
           <a href="/generates">
             <furo-icon icon="image:remove-red-eye"></furo-icon>

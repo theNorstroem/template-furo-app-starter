@@ -1,5 +1,5 @@
 import { css } from 'lit-element/lib/css-tag.js';
-import {  Theme } from '@furo/framework/furo.js';
+import { Theme } from '@furo/framework/furo.js';
 
 export const MyThemeset = {
   ExampleComponent: css`

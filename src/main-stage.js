@@ -11,7 +11,7 @@ import '@furo/app/furo-app-drawer.js';
 import '@furo/app/furo-app-bar-top.js';
 import '@furo/notification/furo-snackbar-display.js';
 import './menu/main-menu.js';
-import "./views/view-generates-viewer.js"
+import './views/view-generates-viewer.js';
 /**
  * Static imports of the views
  * The lazy imports a below in _FBPReady
@@ -29,7 +29,6 @@ import './views/view-404.js';
  * @appliesMixin FBP
  */
 class MainStage extends FBP(LitElement) {
-
   _FBPReady() {
     super._FBPReady();
     /**

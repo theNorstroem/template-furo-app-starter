@@ -81,7 +81,7 @@ class SampleForm extends FBP(LitElement) {
           >A form-layouter can have custom breakpoints. This one has a breakpoint of 608. Resize
           your screen to see the effect</secondary
         >
-       
+
         <!-- Inside a furo-form-layouter the elements are always full-width -->
         <!-- Full width, one column layout-->
         <furo-form-layouter two breakpoint-big="608">
@@ -122,7 +122,7 @@ class SampleForm extends FBP(LitElement) {
           <furo-textarea-input label="pro" float rows="5"></furo-textarea-input>
           <furo-textarea-input label="contra" float rows="5"></furo-textarea-input>
           <furo-data-sign-pad @-sign-updated="--signed"></furo-data-sign-pad>
-          <img ƒ-.src="--signed" alt="">
+          <img ƒ-.src="--signed" alt="" />
         </furo-form-layouter>
       </furo-form>
       <furo-keydown key="n" @-key="--tab"></furo-keydown>

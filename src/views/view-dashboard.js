@@ -88,7 +88,7 @@ class ViewDashboard extends FBP(LitElement) {
         <furo-app-bar-top drawer="main-drawer">
           <div>Dashboard</div>
           <furo-empty-spacer></furo-empty-spacer>
-          <furo-icon-button icon="search"  @-click="--float"></furo-icon-button>
+          <furo-icon-button icon="search" @-click="--float"></furo-icon-button>
           <furo-icon-button icon="settings" @-click="--op"></furo-icon-button>
           <furo-snackbar
             position-right
