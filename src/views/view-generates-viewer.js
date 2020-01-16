@@ -39,6 +39,7 @@ class ViewGeneratesViewer extends FBP(LitElement) {
           display_name: typeName,
           is_group_label: true,
           panel: null,
+          open:true,
           children: [],
         };
 
@@ -46,7 +47,9 @@ class ViewGeneratesViewer extends FBP(LitElement) {
           const p = {
             id: (id += 1),
             display_name: panel,
+            secondary_text: typeName,
             icon: panelIcons[panel],
+
             panel,
             link: {
               rel: null,
