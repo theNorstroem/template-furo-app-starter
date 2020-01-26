@@ -22,7 +22,8 @@
   ],
   "imports": [
     "@furo/data-input",
-    "@furo/form"
+    "@furo/form",
+    "../furo/furo-link-display.js"
   ],
   "component_name": "tree-navigationnode-display",
   "path": "./ui_specs/tree/tree-navigationnode-display.u33e",
@@ -45,178 +46,193 @@
   },
   "template": [
     {
-      "component": "furo-form-layouter",
+      "component": "furo-form",
       "description": "It is a good practice to set a description",
-      "flags": [
-        "four"
-      ],
-      "attributes": {},
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText?this.headerText:\"\"}",
+        "secondary-text": "${this.secondaryText?this.secondaryText:\"\"}"
+      },
       "methods": {},
       "events": {},
       "children": [
         {
-          "component": "furo-data-display",
-          "description": "field: id",
+          "component": "furo-form-layouter",
+          "description": "It is a good practice to set a description",
           "flags": [
-            "condensed"
+            "four"
           ],
           "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.id)",
-            "focus": "--focused"
-          },
+          "methods": {},
           "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: display_name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.display_name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: secondary_text",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.secondary_text)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: description",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.description)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: icon",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.icon)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: panel",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.panel)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: key_words",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.key_words)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: has_error",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.has_error)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: open",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.open)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: link",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.link)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: is_group_label",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.is_group_label)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-repeat",
-          "description": "field: children",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "repeated-component": "tree-navigationnode-display"
-          },
-          "methods": {
-            "bind-data": "--data(*.children)"
-          },
-          "events": {},
-          "children": []
+          "children": [
+            {
+              "component": "furo-data-display",
+              "description": "field: secondary_text",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.secondary_text)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: description",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.description)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: icon",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.icon)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: panel",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.panel)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: key_words",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.key_words)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: has_error",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.has_error)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: open",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.open)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-link-display",
+              "description": "field: link",
+              "flags": [
+                "condensed",
+                "full"
+              ],
+              "attributes": {
+                "header-text": "${i18n.t('furo.link.form.header.text')}",
+                "secondary-text": "${i18n.t('furo.link.form.secondary.text')}"
+              },
+              "methods": {
+                "bind-data": "--data(*.link)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: is_group_label",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.is_group_label)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: children",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.children)"
+              },
+              "events": {},
+              "children": []
+            }
+          ]
         }
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text to label the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text for a detailed description",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

@@ -23,7 +23,7 @@
   "imports": [
     "@furo/data-input",
     "@furo/form",
-    "../person/person-person-form.js"
+    "../person/person-person-repeat.js"
   ],
   "component_name": "project-project-form",
   "path": "./ui_specs/project/project-project-form.u33e",
@@ -110,17 +110,13 @@
               "children": []
             },
             {
-              "component": "furo-data-repeat",
+              "component": "person-person-repeat",
               "description": "field: members",
               "flags": [
                 "condensed",
-                "full"
+                "double"
               ],
-              "attributes": {
-                "header-text": "${i18n.t('person.person.form.header.text')}",
-                "secondary-text": "${i18n.t('person.person.form.secondary.text')}",
-                "repeated-component": "person-person-form"
-              },
+              "attributes": {},
               "methods": {
                 "bind-data": "--data(*.members)"
               },

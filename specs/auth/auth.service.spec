@@ -38,7 +38,7 @@
       "deeplink": {
         "description":"Describe_the_query_params_if_you_have",
         "rel": "list",
-        "href": "/api/auths",
+        "href": "/api/auth",
         "method": "GET"
       }
     },
@@ -53,7 +53,7 @@
       },
       "deeplink": {
         "rel": "create",
-        "href": "/api/auths",
+        "href": "/api/auth",
         "method": "POST"
       }
     },
@@ -68,7 +68,7 @@
       },
       "deeplink": {
         "rel": "self",
-        "href": "/api/auths/{qp}",
+        "href": "/api/auth/{qp}",
         "method": "GET"
       }
     },
@@ -82,7 +82,7 @@
       "query": {},
       "deeplink": {
         "rel": "update",
-        "href": "/api/auths/{qp}",
+        "href": "/api/auth/{qp}",
         "method": "PATCH"
       }
     },

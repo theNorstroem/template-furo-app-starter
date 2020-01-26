@@ -46,85 +46,95 @@
   },
   "template": [
     {
-      "component": "furo-form-layouter",
+      "component": "furo-form",
       "description": "It is a good practice to set a description",
-      "flags": [
-        "four"
-      ],
-      "attributes": {},
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText?this.headerText:\"\"}",
+        "secondary-text": "${this.secondaryText?this.secondaryText:\"\"}"
+      },
       "methods": {},
       "events": {},
       "children": [
         {
-          "component": "furo-data-display",
-          "description": "field: id",
+          "component": "furo-form-layouter",
+          "description": "It is a good practice to set a description",
           "flags": [
-            "condensed"
+            "four"
           ],
           "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.id)",
-            "focus": "--focused"
-          },
+          "methods": {},
           "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: display_name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.display_name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: secondary_text",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.secondary_text)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: description",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.description)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "tree-navigationnode-display",
-          "description": "field: root",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.root)"
-          },
-          "events": {},
-          "children": []
+          "children": [
+            {
+              "component": "furo-data-display",
+              "description": "field: secondary_text",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.secondary_text)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: description",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.description)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "tree-navigationnode-display",
+              "description": "field: root",
+              "flags": [
+                "condensed",
+                "full"
+              ],
+              "attributes": {
+                "header-text": "${i18n.t('tree.navigationnode.form.header.text')}",
+                "secondary-text": "${i18n.t('tree.navigationnode.form.secondary.text')}"
+              },
+              "methods": {
+                "bind-data": "--data(*.root)"
+              },
+              "events": {},
+              "children": []
+            }
+          ]
         }
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text to label the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text for a detailed description",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

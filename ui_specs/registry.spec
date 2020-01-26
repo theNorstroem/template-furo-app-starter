@@ -3,6 +3,7 @@
     "./authservice/auth-auth-update-panel.js",
     "./personservice/person-person-update-panel.js",
     "./projectservice/project-project-update-panel.js",
+    "./specservice/spec-type-update-panel.js",
     "./taskservice/task-task-update-panel.js",
     "./treeservice/tree-tree-update-panel.js"
   ],
@@ -15,6 +16,9 @@
     },
     "project.ProjectEntity": {
       "edit": "project-project-update-panel"
+    },
+    "spec.SpecEntity": {
+      "edit": "spec-type-update-panel"
     },
     "task.TaskEntity": {
       "edit": "task-task-update-panel"

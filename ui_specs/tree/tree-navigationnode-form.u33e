@@ -22,7 +22,9 @@
   ],
   "imports": [
     "@furo/data-input",
-    "@furo/form"
+    "@furo/form",
+    "../furo/furo-link-form.js",
+    "./tree-navigationnode-repeat.js"
   ],
   "component_name": "tree-navigationnode-form",
   "path": "./ui_specs/tree/tree-navigationnode-form.u33e",
@@ -137,7 +139,7 @@
               "children": []
             },
             {
-              "component": "furo-data-text-input",
+              "component": "furo-data-checkbox-input",
               "description": "field: has_error",
               "flags": [
                 "condensed",
@@ -151,7 +153,7 @@
               "children": []
             },
             {
-              "component": "furo-data-text-input",
+              "component": "furo-data-checkbox-input",
               "description": "field: open",
               "flags": [
                 "condensed",
@@ -165,13 +167,16 @@
               "children": []
             },
             {
-              "component": "furo-data-text-input",
+              "component": "furo-link-form",
               "description": "field: link",
               "flags": [
                 "condensed",
-                "double"
+                "full"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('furo.link.form.header.text')}",
+                "secondary-text": "${i18n.t('furo.link.form.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.link)"
               },
@@ -179,7 +184,7 @@
               "children": []
             },
             {
-              "component": "furo-data-text-input",
+              "component": "furo-data-checkbox-input",
               "description": "field: is_group_label",
               "flags": [
                 "condensed",
@@ -193,17 +198,13 @@
               "children": []
             },
             {
-              "component": "furo-data-repeat",
+              "component": "tree-navigationnode-repeat",
               "description": "field: children",
               "flags": [
                 "condensed",
-                "full"
+                "double"
               ],
-              "attributes": {
-                "header-text": "${i18n.t('tree.navigationnode.form.header.text')}",
-                "secondary-text": "${i18n.t('tree.navigationnode.form.secondary.text')}",
-                "repeated-component": "tree-navigationnode-form"
-              },
+              "attributes": {},
               "methods": {
                 "bind-data": "--data(*.children)"
               },

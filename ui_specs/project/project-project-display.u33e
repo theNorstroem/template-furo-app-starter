@@ -22,8 +22,7 @@
   ],
   "imports": [
     "@furo/data-input",
-    "@furo/form",
-    "../person/person-person-display.js"
+    "@furo/form"
   ],
   "component_name": "project-project-display",
   "path": "./ui_specs/project/project-project-display.u33e",
@@ -46,113 +45,120 @@
   },
   "template": [
     {
-      "component": "furo-form-layouter",
+      "component": "furo-form",
       "description": "It is a good practice to set a description",
-      "flags": [
-        "four"
-      ],
-      "attributes": {},
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText?this.headerText:\"\"}",
+        "secondary-text": "${this.secondaryText?this.secondaryText:\"\"}"
+      },
       "methods": {},
       "events": {},
       "children": [
         {
-          "component": "furo-data-display",
-          "description": "field: id",
+          "component": "furo-form-layouter",
+          "description": "It is a good practice to set a description",
           "flags": [
-            "condensed"
+            "four"
           ],
           "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.id)",
-            "focus": "--focused"
-          },
+          "methods": {},
           "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: display_name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.display_name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: start",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.start)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: end",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.end)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: description",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.description)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-repeat",
-          "description": "field: members",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "repeated-component": "person-person-display"
-          },
-          "methods": {
-            "bind-data": "--data(*.members)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: cost_limit",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.cost_limit)"
-          },
-          "events": {},
-          "children": []
+          "children": [
+            {
+              "component": "furo-data-display",
+              "description": "field: start",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.start)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: end",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.end)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: description",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.description)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: members",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.members)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: cost_limit",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.cost_limit)"
+              },
+              "events": {},
+              "children": []
+            }
+          ]
         }
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text to label the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text for a detailed description",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

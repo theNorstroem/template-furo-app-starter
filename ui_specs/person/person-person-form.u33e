@@ -109,15 +109,13 @@
               "children": []
             },
             {
-              "component": "furo-data-repeat",
+              "component": "string-repeat",
               "description": "field: skills",
               "flags": [
                 "condensed",
                 "double"
               ],
-              "attributes": {
-                "repeated-component": "furo-data-text-input"
-              },
+              "attributes": {},
               "methods": {
                 "bind-data": "--data(*.skills)"
               },

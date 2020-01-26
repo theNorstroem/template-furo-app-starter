@@ -23,7 +23,9 @@
   "imports": [
     "@furo/data-input",
     "@furo/form",
-    "../projectmemberservice/person-person-reference-search.js"
+    "../furo/furo-reference-form.js",
+    "../projectmemberservice/person-person-reference-search.js",
+    "./task-task-repeat.js"
   ],
   "component_name": "task-task-form",
   "path": "./ui_specs/task/task-task-form.u33e",
@@ -100,9 +102,12 @@
               "description": "field: owner",
               "flags": [
                 "condensed",
-                "double"
+                "full"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('furo.reference.form.header.text')}",
+                "secondary-text": "${i18n.t('furo.reference.form.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.owner)"
               },
@@ -110,17 +115,13 @@
               "children": []
             },
             {
-              "component": "furo-data-repeat",
+              "component": "task-task-repeat",
               "description": "field: subtasks",
               "flags": [
                 "condensed",
-                "full"
+                "double"
               ],
-              "attributes": {
-                "header-text": "${i18n.t('task.task.form.header.text')}",
-                "secondary-text": "${i18n.t('task.task.form.secondary.text')}",
-                "repeated-component": "task-task-form"
-              },
+              "attributes": {},
               "methods": {
                 "bind-data": "--data(*.subtasks)"
               },

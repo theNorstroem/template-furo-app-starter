@@ -1,12 +1,18 @@
-import {LitElement, html, css} from 'lit-element';
-import {Theme} from '@furo/framework/theme.js';
-import {FBP} from '@furo/fbp';
+import { LitElement, html, css } from 'lit-element';
+import { Theme } from '@furo/framework/theme.js';
+import { FBP } from '@furo/fbp';
 import '@furo/layout/furo-split-view.js';
-import {panelRegistry} from '@furo/route/lib/panelRegistry.js';
+import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
 import '@furo/navigation/furo-tree.js';
 import '@furo/route/furo-panel-coordinator.js';
 import '@furo/route/furo-qp-changer.js';
 import '@furo/data/furo-data-object.js';
+
+// import skalar repeater
+import '../../project_components/string-map.js';
+import '../../project_components/string-repeat.js';
+import '../../project_components/google-protobuf-any-repeat.js';
+
 
 /**
  * `generate-viewer`
@@ -26,11 +32,11 @@ class ViewGeneratesViewer extends FBP(LitElement) {
      */
     this._FBPAddWireHook('--entityObj', e => {
       // build a tree object
-      const {root} = e;
+      const { root } = e;
       let id = 0;
-      root._value = {id: (id += 1), display_name: 'generated elements', icon: 'apps'};
+      root._value = { id: (id += 1), display_name: 'generated elements', icon: 'apps' };
 
-      const panelIcons = {edit: 'editor:mode-edit', display: 'visibility'};
+      const panelIcons = { edit: 'editor:mode-edit', display: 'visibility' };
       Object.keys(panelRegistry._registry).forEach(typeName => {
         const type = panelRegistry._registry[typeName];
 
@@ -39,7 +45,7 @@ class ViewGeneratesViewer extends FBP(LitElement) {
           display_name: typeName,
           is_group_label: true,
           panel: null,
-          open:true,
+          open: true,
           children: [],
         };
 
@@ -98,13 +104,13 @@ class ViewGeneratesViewer extends FBP(LitElement) {
     return html`
       <furo-split-view>
         <furo-tree
-                slot="master"
-                root-as-header
-                ƒ-bind-data="--entityObj"
-                qp="t"
-                ƒ-location-in="--qp"
-                @-node-selected="--nodeSelected"
-                @-qp-change-requested="--qpchangerequest"
+          slot="master"
+          root-as-header
+          ƒ-bind-data="--entityObj"
+          qp="t"
+          ƒ-location-in="--qp"
+          @-node-selected="--nodeSelected"
+          @-qp-change-requested="--qpchangerequest"
         ></furo-tree>
 
         <furo-pages default="default" scroll>
@@ -112,9 +118,9 @@ class ViewGeneratesViewer extends FBP(LitElement) {
           <panel-default name="default"></panel-default>
           <!-- dynamic panels -->
           <furo-panel-coordinator
-                  ƒ-show-page="--nodeSelected"
-                  ƒ-close-all="--pageDeActivated"
-                  @-panels-changed="--panelChanges"
+            ƒ-show-page="--nodeSelected"
+            ƒ-close-all="--pageDeActivated"
+            @-panels-changed="--panelChanges"
           ></furo-panel-coordinator>
         </furo-pages>
       </furo-split-view>

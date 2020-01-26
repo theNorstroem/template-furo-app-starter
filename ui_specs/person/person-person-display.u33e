@@ -45,113 +45,106 @@
   },
   "template": [
     {
-      "component": "furo-form-layouter",
+      "component": "furo-form",
       "description": "It is a good practice to set a description",
-      "flags": [
-        "four"
-      ],
-      "attributes": {},
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText?this.headerText:\"\"}",
+        "secondary-text": "${this.secondaryText?this.secondaryText:\"\"}"
+      },
       "methods": {},
       "events": {},
       "children": [
         {
-          "component": "furo-data-display",
-          "description": "field: id",
+          "component": "furo-form-layouter",
+          "description": "It is a good practice to set a description",
           "flags": [
-            "condensed"
+            "four"
           ],
           "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.id)",
-            "focus": "--focused"
-          },
+          "methods": {},
           "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: display_name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.display_name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: first_name",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.first_name)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: phone_nr",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.phone_nr)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-repeat",
-          "description": "field: skills",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {
-            "repeated-component": "furo-data-display"
-          },
-          "methods": {
-            "bind-data": "--data(*.skills)"
-          },
-          "events": {},
-          "children": []
-        },
-        {
-          "component": "furo-data-display",
-          "description": "field: update_mask",
-          "flags": [
-            "condensed"
-          ],
-          "attributes": {},
-          "methods": {
-            "bind-data": "--data(*.update_mask)"
-          },
-          "events": {},
-          "children": []
+          "children": [
+            {
+              "component": "furo-data-display",
+              "description": "field: name",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.name)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: first_name",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.first_name)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: phone_nr",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.phone_nr)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: skills",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.skills)"
+              },
+              "events": {},
+              "children": []
+            }
+          ]
         }
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text to label the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text for a detailed description",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

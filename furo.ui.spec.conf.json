@@ -1,5 +1,8 @@
 {
-  "spec_dir": "./specs",
+  "spec_dirs": [
+    "./specs",
+    "./node_modules/@furo/specs/_baseTypes"
+  ],
   "ui_spec_out": "./ui_specs",
   "build_output_dir": "./generated_components",
   "generator_template": "./node_modules/@furo/ui-builder/_scripts/templates/lit.js.tmpl",
@@ -19,6 +22,9 @@
     ],
     "type": [
       "node_modules/@furo/ui-builder/_scripts/hook-init-form.js",
+      "node_modules/@furo/ui-builder/_scripts/hook-init-repeat.js",
+      "node_modules/@furo/ui-builder/_scripts/hook-init-map.js",
+      "node_modules/@furo/ui-builder/_scripts/hook-init-map-item.js",
       "node_modules/@furo/ui-builder/_scripts/hook-init-create-form.js",
       "node_modules/@furo/ui-builder/_scripts/hook-init-create-widget.js",
       "node_modules/@furo/ui-builder/_scripts/hook-init-display.js"
@@ -45,6 +51,11 @@
         "id",
         "display_name",
         "update_mask"
+      ]
+    },
+    "hook-init-repeat": {
+      "skip_types": [
+        "google.protobuf.Any"
       ]
     }
   }
