@@ -7,7 +7,7 @@ const { generateSW } = require('rollup-plugin-workbox');
 // if you need to support IE11 use "modern-and-legacy-config" instead.
 const config = [
   createDefaultConfig({
-    input: './index.html',
+    input: 'index.html',
     plugins: {
       workbox: false,
     },
@@ -33,12 +33,18 @@ export default [
           'robots.txt',
         ],
         dest: 'dist',
+
         options: {
           // parents makes sure to preserve the original folder structure
           parents: true,
+          verbose: true,
         },
-      }),
-      generateSW(workboxConfig),
+      })
     ],
+  },
+  // Add plugin to the second config (generateSW when everything is done)
+  {
+    ...config[0],
+    plugins: [...config[0].plugins, generateSW(workboxConfig)],
   },
 ];

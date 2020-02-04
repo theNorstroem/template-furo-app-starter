@@ -36,35 +36,36 @@
     "spec:build": "node_modules/@furo/specs/_scripts/build.js"
   },
   "dependencies": {
-    "@furo/collection": "^0.23.10",
-    "@furo/ui-builder": "^0.5.0",
-    "@furo/specs": "^0.46.0"
+    "@furo/collection": "^0.23.12",
+    "@furo/specs": "^0.47.0",
+    "@furo/ui-builder": "^0.6.0",
+    "workbox-expiration": "^5.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@open-wc/building-rollup": "^0.9.0",
-    "@open-wc/eslint-config": "^1.0.0",
-    "@open-wc/prettier-config": "^0.1.10",
-    "@open-wc/semantic-dom-diff": "^0.15.3",
-    "@open-wc/testing": "^2.0.0",
-    "@open-wc/testing-karma": "^3.1.54",
-    "@open-wc/testing-karma-bs": "^1.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
-    "es-dev-server": "^1.23.1",
-    "eslint": "^6.6.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@open-wc/building-rollup": "^0.20.2",
+    "@open-wc/eslint-config": "^2.0.2",
+    "@open-wc/prettier-config": "^0.1.13",
+    "@open-wc/semantic-dom-diff": "^0.17.0",
+    "@open-wc/testing": "^2.5.2",
+    "@open-wc/testing-karma": "^3.2.37",
+    "@open-wc/testing-karma-bs": "^1.3.37",
+    "@webcomponents/webcomponentsjs": "^2.4.1",
+    "es-dev-server": "^1.38.2",
+    "eslint": "^6.8.0",
     "eslint-plugin-lit": "^1.2.0",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^1.3.0",
     "koa-proxies": "^0.9.0",
-    "lint-staged": "^8.0.0",
-    "mocha": "^6.1.4",
+    "lint-staged": "^10.0.7",
+    "mocha": "^7.0.1",
     "npm-watch": "^0.6.0",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.15.4",
+    "rimraf": "^3.0.1",
+    "rollup": "^1.31.0",
     "rollup-plugin-cpy": "^2.0.1",
-    "rollup-plugin-workbox": "^4.0.0",
+    "rollup-plugin-workbox": "^5.0.1",
     "webpack-merge": "^4.1.5"
   },
   "watch": {
@@ -98,6 +99,7 @@
       "plugin:lit/recommended"
     ],
     "rules": {
+      "import/no-cycle": 1,
       "import/no-extraneous-dependencies": [
         "error",
         {

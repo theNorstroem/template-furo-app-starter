@@ -104,7 +104,6 @@ export class GoogleProtobufAnyRepeat extends FBP(LitElement) {
           label="Type"
           @-value-changed="((park))"
           ƒ-focus="--adderTriggered"
-          ƒ-
         ></furo-text-input>
 
         <!-- It is a good practice to set a description -->

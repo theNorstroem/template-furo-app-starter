@@ -89,16 +89,14 @@ class ViewAuth extends FBP(LitElement) {
                 value="1234"
                 hint="Look under your keyboard or on postit below monitor"
                 label="super secret password"
-                ƒ-make-visible="--showPasswordClicked"
-                ƒ-make-invisible="--hidePasswordClicked"
+                ƒ-toggle-visibility="--togglePasswordClicked"
+                trailing-icon="visibility"
+                @-trailing-icon-clicked="--togglePasswordClicked"
               ></furo-password-input>
             </furo-form-layouter>
             <furo-horizontal-flex space="" slot="action">
               <furo-button primary unelevated>Login</furo-button>
               <furo-empty-spacer></furo-empty-spacer>
-              <furo-button icon="visibility" unelevated @-click="--showPasswordClicked"
-                >Show Password</furo-button
-              >
             </furo-horizontal-flex>
           </furo-card>
           <furo-empty-spacer></furo-empty-spacer>

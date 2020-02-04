@@ -13,7 +13,6 @@ import '../../project_components/string-map.js';
 import '../../project_components/string-repeat.js';
 import '../../project_components/google-protobuf-any-repeat.js';
 
-
 /**
  * `generate-viewer`
  *  viewer for ui builder results

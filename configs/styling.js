@@ -47,7 +47,7 @@ export class Styling {
         --state-disabled: 0.38;
 
         /* Emphasis, used for secondary text,... */
-        --medium-emphasis-surface: 0.6;
+        --medium-emphasis-surface: 0.65;
         --medium-emphasis-primary: 0.74;
 
         /* Input, Forms, Toast*/

@@ -52,9 +52,6 @@ class MainStage extends FBP(LitElement) {
         case 'examplelayout':
           import('./views/view-layout-example.js');
           break;
-        case 'generates':
-          import('./views/view-generates-viewer.js');
-          break;
         default:
       }
     });
@@ -124,7 +121,7 @@ class MainStage extends FBP(LitElement) {
           <view-formsample name="form"></view-formsample>
           <view-somecontent name="somecontent"></view-somecontent>
           <view-layout-example name="examplelayout"></view-layout-example>
-          <view-generates-viewer name="generates"></view-generates-viewer>
+
           <view-404 name="404"></view-404>
         </furo-pages>
       </furo-app-drawer>

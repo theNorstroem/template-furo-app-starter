@@ -24,6 +24,8 @@
   <script>
     window.APPROOT = {rootPath: '/'};
     if ('serviceWorker' in navigator) {
+
+
       window.addEventListener('load', () => {
         navigator.serviceWorker.getRegistration().then((registration) => {
           if (registration) {
@@ -41,23 +43,31 @@
               //                replaced by a newer version
 
               newWorker.addEventListener('statechange', () => {
-                // newWorker.state has changed
-                let obj = {};
-                obj.labelText = "update available...";
-                obj._action = () => {
-                  // reload page
-                  window.location.reload();
-                  console.log("complete")
-                };
-                obj.icon = "clear";
-                obj._dismiss = () => {
-                  console.log("closed without reload...")
-                };
-                obj.actionButtonText = "install";
-                let customEvent = new Event("open-furo-snackbar-requested", {composed: true, bubbles: true});
-                customEvent.detail = obj;
-                this.dispatchEvent(customEvent);
+                switch (newWorker.state) {
+                  case 'installed':
+
+                    // newWorker.state has changed
+                    let obj = {};
+                    obj.labelText = "restart to update";
+                    obj._action = () => {
+                      // reload page
+                      console.log("reload now");
+                      window.location.reload();
+                    };
+                    obj.icon = "clear";
+                    obj._dismiss = () => {
+                      console.log("closed without reload...")
+                    };
+                    obj.actionButtonText = "install";
+                    let customEvent = new Event("open-furo-snackbar-requested", {composed: true, bubbles: true});
+                    customEvent.detail = obj;
+                    this.dispatchEvent(customEvent);
+
+                    break;
+                }
+
               });
+
 
             });
           }
@@ -82,7 +92,8 @@
   </script>
 
   <!-- Load your application shell -->
-  <script type="module" src="/src/app-shell.js"></script>
+  <script type="module" src="src/app-shell.js"></script>
+
 
   <style>
     body {
