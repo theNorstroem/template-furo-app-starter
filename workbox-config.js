@@ -6,8 +6,9 @@ module.exports = {
   globDirectory: path.join( 'dist'),
   navigateFallback: 'index.html',
   cacheId: 'my-app',
-  globPatterns: ['assets/**','**/*.{html,js,json}'],
+  globPatterns: ['assets/**','configs/**','**/*.{html,js,json}'],
   globStrict:true,
-  mode:"Production"
-
+  mode:"Production",
+  cleanupOutdatedCaches:true,
+  //todo: embedd fonts
 };

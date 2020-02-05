@@ -1,8 +1,10 @@
 /* eslint-disable */
 import cpy from 'rollup-plugin-cpy';
-import { createDefaultConfig } from '@open-wc/building-rollup';
+import {createDefaultConfig} from '@open-wc/building-rollup';
+
 const workboxConfig = require('./workbox-config.js');
-const { generateSW } = require('rollup-plugin-workbox');
+const {generateSW} = require('rollup-plugin-workbox');
+
 
 // if you need to support IE11 use "modern-and-legacy-config" instead.
 const config = [
@@ -10,9 +12,10 @@ const config = [
     input: 'index.html',
     plugins: {
       workbox: false,
-    },
-  }),
+    }
+  })
 ];
+
 
 // if you use an array of configs, you don't need the copy task to be executed for both builds.
 // we can add the plugin only to the first rollup config:
@@ -42,9 +45,10 @@ export default [
       })
     ],
   },
-  // Add plugin to the second config (generateSW when everything is done)
+  // Add plugin to the  config (generateSW when everything is done)
   {
     ...config[0],
-    plugins: [...config[0].plugins, generateSW(workboxConfig)],
-  },
+    plugins: [...config[0].plugins,
+      generateSW(workboxConfig)],
+  }
 ];
