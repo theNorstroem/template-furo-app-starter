@@ -38,8 +38,7 @@
   "dependencies": {
     "@furo/collection": "^0.23.12",
     "@furo/specs": "^0.47.0",
-    "@furo/ui-builder": "^0.6.0",
-    "workbox-expiration": "^5.0.0"
+    "@furo/ui-builder": "^0.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -66,7 +65,8 @@
     "rollup": "^1.31.0",
     "rollup-plugin-cpy": "^2.0.1",
     "rollup-plugin-workbox": "^5.0.1",
-    "webpack-merge": "^4.1.5"
+    "webpack-merge": "^4.1.5",
+    "workbox-expiration": "^5.0.0"
   },
   "watch": {
     "uib:generate": {
