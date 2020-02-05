@@ -6,7 +6,7 @@ module.exports = {
   globDirectory: path.join('dist'),
   navigateFallback: 'index.html',
   cacheId: 'my-app',
-  globPatterns: ['assets/**', 'configs/**', '**/*.{html,js,json}'],
+  globPatterns: ['favicon.ico','assets/**', 'configs/**', '**/*.{html,js,json}'],
   globStrict: true,
   mode: 'production',
   cleanupOutdatedCaches: true,

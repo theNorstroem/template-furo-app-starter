@@ -121,7 +121,7 @@ class ViewDashboard extends FBP(LitElement) {
             <p>Click on the button to emmit a unauthorized event.</p>
             <p>
               The unathorized event is catched in the app-shell and triggers an app-flow event which
-              causses the router to navigate to the <strong>/auth</strong> page.
+              causses the router to navigate to the <strong>/auth</strong> page..
             </p>
             <furo-horizontal-flex slot="action">
               <furo-button danger @-click="^^unauthorized">Unauth</furo-button>

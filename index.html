@@ -34,26 +34,23 @@
               //                replaced by a newer version
 
               newWorker.addEventListener('statechange', () => {
-                switch (newWorker.state) {
-                  case 'installed':
-                    // newWorker.state has changed
-                    let obj = {};
-                    obj.labelText = "New update installed.";
-                    obj._action = () => {
-                      // reload page
-                      registration.unregister();
-                      window.location.reload();
+                if (newWorker.state === 'installed') {
+                  const obj = {};
+                  obj.labelText = "New update installed.";
+                  obj._action = () => {
+                    // reload page
+                    registration.unregister();
+                    window.location.reload();
 
-                    };
-                    obj.icon = "clear";
-                    obj._dismiss = () => {
-                      console.log("closed without reload...")
-                    };
-                    obj.actionButtonText = "restart";
-                    let customEvent = new Event("open-furo-snackbar-requested", {composed: true, bubbles: true});
-                    customEvent.detail = obj;
-                    this.dispatchEvent(customEvent);
-                    break;
+                  };
+                  obj.icon = "clear";
+                  obj._dismiss = () => {
+                    console.log("closed without reload...")
+                  };
+                  obj.actionButtonText = "restart";
+                  const customEvent = new Event("open-furo-snackbar-requested", {composed: true, bubbles: true});
+                  customEvent.detail = obj;
+                  this.dispatchEvent(customEvent);
                 }
               });
             });
@@ -63,20 +60,13 @@
 
       // Load and register pre-caching Service Worker
       window.addEventListener('load', function (registration) {
-        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
-          // Registration was successful
-          //console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) {
-          // registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        });
+        navigator.serviceWorker.register('/service-worker.js');
       });
     }
   </script>
 
   <!-- Load your application shell -->
   <script type="module" src="/src/app-shell.js"></script>
-
   <style>
     body {
       margin: 0;
