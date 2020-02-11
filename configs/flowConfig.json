@@ -4,5 +4,5 @@
     ["*", "view-dashboard-requested", "dashboard"],
     ["*", "form-requested", "form"],
     ["*", "search", "EXTERNAL_LINK: https://google.com/"],
-    ["*", "insearch", "INTERNAL_LINK: https://google.com/"]
+    ["*", "searchInNewPage", "EXTERL_LINK_BLANK: https://google.com/"]
 ]

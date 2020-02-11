@@ -13,6 +13,18 @@ module.exports = {
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'google-fonts-stylesheets',
+      },
+    },
+   ]
+};
+
+/**
+ *
+ {
+      urlPattern: /^https:\/\/fonts\.googleapis\.com/,
       handler: 'CacheFirst',
       options: {
         cacheName: 'google-fonts-webfonts',
@@ -21,12 +33,7 @@ module.exports = {
           maxEntries: 30,
         },
       },
-    },
-    {
-      urlPattern: /^https:\/\/fonts\.googleapis\.com/,
-      handler: 'StaleWhileRevalidate',
-      options: {
-        cacheName: 'google-fonts-stylesheets',
-      },
-    }]
-};
+    }
+
+
+ */

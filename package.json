@@ -11,10 +11,8 @@
   "license": "MIT",
   "main": "furo-catalog.js",
   "scripts": {
-    "build:spec": "./node_modules/@furo/specs/_scripts/build.js",
     "start": "es-dev-server --open",
     "start:build": "cd dist && es-dev-server --config es-dev-server-build.config.js --open",
-    "start:polymer": "polymer serve",
     "build:compatibility": "rimraf dist && rollup -c rollup.config.js",
     "build:modern": "rimraf dist && rollup -c rollup.config.modern.js",
     "lint": "npm run lint:eslint && npm run lint:prettier",
@@ -36,9 +34,9 @@
     "spec:build": "node_modules/@furo/specs/_scripts/build.js"
   },
   "dependencies": {
-    "@furo/collection": "^0.23.12",
-    "@furo/specs": "^0.47.0",
-    "@furo/ui-builder": "^0.6.0"
+    "@furo/collection": "^0.23.18",
+    "@furo/specs": "^0.49.0",
+    "@furo/ui-builder": "^0.7.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
