@@ -29,9 +29,9 @@ export default [
           'manifest.json',
           'favicon.ico',
           'assets/**/*',
-          'configs/**/*',
-          'es-dev-server-build.config.js',
-          'robots.txt'
+          'src/configs/**/*',
+          'robots.txt',
+          'api/trees/*.json' // remove this line, this is for demo purposes only
         ],
         dest: 'dist',
 

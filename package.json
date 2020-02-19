@@ -12,7 +12,7 @@
   "main": "furo-catalog.js",
   "scripts": {
     "start": "es-dev-server --open",
-    "start:build": "cd dist && es-dev-server --config es-dev-server-build.config.js --open",
+    "start:build": "cd dist && es-dev-server --config ../es-dev-server-build.config.js --open",
     "build:compatibility": "rimraf dist && rollup -c rollup.config.js",
     "build:modern": "rimraf dist && rollup -c rollup.config.modern.js",
     "lint": "npm run lint:eslint && npm run lint:prettier",

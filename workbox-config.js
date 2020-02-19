@@ -4,7 +4,7 @@ module.exports = {
   swDest: 'dist/service-worker.js',
   globDirectory: 'dist',
   cacheId: 'main-app',
-  globPatterns: ['favicon.ico', 'assets/**', 'configs/**', '**/*.{js,json}', 'index.html'],
+  globPatterns: ['favicon.ico', 'assets/**', 'src/configs/**', '**/*.{js,json}', 'index.html'],
   globStrict: true,
   mode: 'production',
   cleanupOutdatedCaches: true,
