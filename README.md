@@ -6,8 +6,9 @@ Use this template to quickly get a running app.
 run `npm install` to install the dependencies
 
 ### Step 2
+
 Before you start the server you have to generate the API specs.
-To do this, run `npm run build:spec` to generate the needed environment files
+To do this, run `npm run spec:build` to generate the needed environment files
 
 The specs in this demo are pointing to static json files in  **/api**, so you do not need an api server to see the client working.  
 
