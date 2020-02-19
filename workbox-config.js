@@ -3,8 +3,8 @@ module.exports = {
   //                                   https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW
   swDest: 'dist/service-worker.js',
   globDirectory: 'dist',
-  cacheId: 'my-app',
-  globPatterns: ['favicon.ico', 'assets/**', 'configs/**', '**/*.{html,js,json}'],
+  cacheId: 'main-app',
+  globPatterns: ['favicon.ico', 'assets/**', 'configs/**', '**/*.{js,json}', 'index.html'],
   globStrict: true,
   mode: 'production',
   cleanupOutdatedCaches: true,

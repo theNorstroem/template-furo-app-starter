@@ -9,9 +9,9 @@ import '@furo/route/furo-qp-changer.js';
 import '@furo/data/furo-data-object.js';
 
 // import skalar repeater
-import '../../project_components/string-map.js';
-import '../../project_components/string-repeat.js';
-import '../../project_components/google-protobuf-any-repeat.js';
+import '../project_components/string-map.js';
+import '../project_components/string-repeat.js';
+import '../project_components/google-protobuf-any-repeat.js';
 
 /**
  * `generate-viewer`

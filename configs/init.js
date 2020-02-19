@@ -28,7 +28,7 @@ import './my_theme.js';
 
 // -- register generated panels
 // import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
-import '../generated_components/registry.js';
+import '../src/generated_components/registry.js';
 
 // -- register resource bundle i18n
 import { Translations } from './translations.js';

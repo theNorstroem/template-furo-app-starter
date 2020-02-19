@@ -31,8 +31,7 @@ export default [
           'assets/**/*',
           'configs/**/*',
           'es-dev-server-build.config.js',
-          'robots.txt',
-          'auth.html'
+          'robots.txt'
         ],
         dest: 'dist',
 

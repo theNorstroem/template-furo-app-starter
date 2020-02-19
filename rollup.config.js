@@ -29,7 +29,7 @@ export default [
           'assets/**/*',
           'configs/**/*',
           'es-dev-server-build.config.js',
-          'robots.txt',
+          'robots.txt'
         ],
         dest: 'dist',
         options: {
