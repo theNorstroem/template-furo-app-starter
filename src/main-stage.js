@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { FBP } from '@furo/fbp';
 import { Theme } from '@furo/framework/theme.js';
-import { Styling } from '../configs/styling.js';
+import { Styling } from './configs/styling.js';
 
 import '@furo/input/furo-button.js';
 import '@furo/route/furo-location.js';

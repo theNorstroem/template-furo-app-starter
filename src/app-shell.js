@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { FBP } from '@furo/fbp';
-import '../configs/init.js';
+import './configs/init.js';
 import './main-stage.js';
 import '@furo/config/furo-config-loader.js';
 import '@furo/route/furo-app-flow-router.js';
@@ -57,7 +57,7 @@ class AppShell extends FBP(LitElement) {
         @-app-flow="--flowEvent"
       ></furo-app-flow>
       <furo-config-loader
-        src="../configs/flowConfig.json"
+        src="../src/configs/flowConfig.json"
         section="flow"
         @-config-loaded="--flowConfigLoaded"
       ></furo-config-loader>

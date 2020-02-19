@@ -22,13 +22,13 @@ import { ExampleCustomIconset } from './iconset.js';
  * Use the installed spec if you finaly have a seperate spec project (recomended)
  */
 // import {Services, Types} from "/node_modules/YOURspecs/build/data_environment.js"
-import { Services, Types } from '../_specbuild/data_environment.js';
+import { Services, Types } from '../../_specbuild/data_environment.js';
 
 import './my_theme.js';
 
 // -- register generated panels
 // import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
-import '../src/generated_components/registry.js';
+import '../generated_components/registry.js';
 
 // -- register resource bundle i18n
 import { Translations } from './translations.js';

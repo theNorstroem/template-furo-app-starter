@@ -140,7 +140,7 @@ class ViewTree extends FBP(LitElement) {
 
       <!-- Use the --FBPready wire to load the tree data once, --pageActivated will not work on the first time because of lazy loading  -->
       <furo-fetch-json
-        src="/configs/minimalTreeSample.json"
+          src="/api/trees/minimalTreeSample.json"
         ƒ-fetch="--FBPready"
         @-data="--data"
       ></furo-fetch-json>
