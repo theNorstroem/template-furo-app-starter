@@ -1,5 +1,5 @@
-# my-app
-Starter example app
+# Starter template example app
+Use this template to quickly get a running app. 
 
 ## Setup
 ### Step 1
@@ -60,6 +60,28 @@ Many build tools can do this for you.
 ### Pre configured npm commands
 We have configured a lot of commands in the package.json (linter,  formater, test, build, furo spec builder, furo user interface generators,...)
  
+- start
+- start:build
+- build:compatibility
+- build:modern
+- lint
+- lint:eslint
+- lint:prettier
+- format
+- format:eslint
+- format:prettier
+- test
+- test:watch
+- test:update-snapshots
+- test:prune-snapshots
+- test:compatibility
+- test:compatibility:watch
+- test:bs
+- uib:init
+- uib:generate
+- uib:watch
+- spec:build
+
 ### Additional configs
 
 - rollup.config.js
