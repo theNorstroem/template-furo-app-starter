@@ -6,7 +6,7 @@ module.exports = config => {
   config.set(
     merge(createDefaultConfig(config), {
       frameworks: ['mocha', 'chai'],
-      _browsers: ['Chrome'],
+      _browsers: ['Chrome'], // remove the underscore to activate browser tests
       proxies: {
         '/src/configs/flowConfig.json': '/base/src/configs/flowConfig.json',
         '/assets/images/hamburg.jpg': '/base/assets/images/hamburg.jpg',

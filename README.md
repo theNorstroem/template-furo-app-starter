@@ -33,41 +33,15 @@ In this file you can style the app (setting colors and spacing ,...).
 ### - `iconset.js` : 
 In this file you can add your custom icons to the default icon set
 
-
-
 ### Running the tests
-Open `http://127.0.0.1:8000/test/` to run your tests direct in the browser. 
 
 The tests are located in `/test`. Like every other folder, you are free to move them, as long you update the dependencies and configs.
 To run the automated test use `npm run test`. This will take some time... (when you have added your testsuites ;-))
 
-```bash
-npm run test
+Add your browsers in the `karma.config.js`
+ 
 
-Installing and starting Selenium server for local browsers
-Selenium server running on port 50615
-chrome 75                Beginning tests via http://localhost:8001/components/mypack/generated-index.html?cli_browser_id=0
-chrome failed to maximize
-safari 12.1.1            Beginning tests via http://localhost:8001/components/mypack/generated-index.html?cli_browser_id=1
-firefox 67               Beginning tests via http://localhost:8001/components/mypack/generated-index.html?cli_browser_id=2
-safari 12.1.1            Tests passed
-firefox 67               Tests passed
-chrome 75                Tests passed
-
-Test run ended with great success
-
-chrome 75 (9/0/0)                     
-
-=============================== Coverage summary ===============================
-Statements   : 100% ( 6/6 )
-Branches     : 100% ( 2/2 )
-Functions    : 100% ( 5/5 )
-Lines        : 100% ( 6/6 )
-================================================================================
-
-```
-
-> If you are on a windows systems, do not forget to remove safari and add **edge** in the *wct.conf.json*.
+[Read more about testing](https://open-wc.org/testing/testing-karma.html#getting-started)
 
 ## Build
 Build tools take your code and make it production-ready. Among the things you may need build tools to do:
@@ -76,6 +50,24 @@ Build tools take your code and make it production-ready. Among the things you ma
 - Bundle modules together can improve performance by reducing the number of files that need to be transferred.
 - Minify JavaScript, HTML, and CSS.
 
-Many build tools can do this for you. Currently we recommend the Polymer CLI or webpack.
+Many build tools can do this for you. 
+
+[open-wc rollup build](https://open-wc.org/building/) is already [configured](https://open-wc.org/building/building-rollup.html) in this project
 
 [Read more about building your app on the lit-html page...](https://lit-html.polymer-project.org/guide/tools#build)
+
+
+### Pre configured npm commands
+We have configured a lot of commands in the package.json (linter,  formater, test, build, furo spec builder, furo user interface generators,...)
+ 
+### Additional configs
+
+- rollup.config.js
+- rollup.config.modern.js
+- workbox-config.js
+- karma.bs.config.js
+- karma.conf.js
+- furo.spec.conf.json
+- furo.ui.spec.conf.json
+- es-dev-server.config.js
+- es-dev-server-build.config.js
