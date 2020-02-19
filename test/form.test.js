@@ -28,7 +28,7 @@ describe('view-formsample', () => {
   it('should open the form', done => {
     viewForm._FBPAddWireHook('--pageActivated', e => {
       const els = viewForm.shadowRoot.querySelectorAll('*');
-      assert.equal(els.length, 16);
+      assert.equal(els.length, 20);
       assert.equal(e.path, '/form');
       done();
     });

@@ -52,7 +52,7 @@ class MainStage extends FBP(LitElement) {
         case 'examplelayout':
           import('./views/view-layout-example.js');
           break;
-          case 'generates':
+        case 'generates':
           import('./views/view-generates-viewer.js');
           break;
         default:

@@ -72,7 +72,6 @@ class ViewDashboard extends FBP(LitElement) {
           width: 280px;
           float: left;
         }
-        
       `
     );
   }
@@ -126,7 +125,7 @@ class ViewDashboard extends FBP(LitElement) {
             <furo-horizontal-flex slot="action">
               <furo-button danger @-click="^^unauthorized">Unauth</furo-button>
             </furo-horizontal-flex>
-          </furo-card>         
+          </furo-card>
         </div>
       </furo-vertical-flex>
     `;

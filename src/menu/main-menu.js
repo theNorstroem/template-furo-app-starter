@@ -251,7 +251,7 @@ class MainMenu extends FBP(LitElement) {
             <furo-icon icon="list"></furo-icon>
             tree inline</a
           >
-        </li>     
+        </li>
       </ul>
       <div class="label">other stuff</div>
       <ul>

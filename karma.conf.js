@@ -6,9 +6,10 @@ module.exports = config => {
   config.set(
     merge(createDefaultConfig(config), {
       frameworks: ['mocha', 'chai'],
+      _browsers: ['Chrome'],
       proxies: {
-        '/configs/flowConfig.json': '/base/configs/flowConfig.json',
-        '/assets/images/hamburg.png': '/base/assets/images/hamburg.png',
+        '/src/configs/flowConfig.json': '/base/src/configs/flowConfig.json',
+        '/assets/images/hamburg.jpg': '/base/assets/images/hamburg.jpg',
         '/dashboard': '/base/index.html',
       },
       colors: true,
@@ -20,8 +21,10 @@ module.exports = config => {
         // npm run test -- --grep test/bar/*
         { pattern: config.grep ? config.grep : 'test/**/*.test.js', type: 'module' },
       ],
+
       esm: {
         nodeResolve: true,
+        coverageExclude: ['src/generated_components/**/*'],
       },
       coverageIstanbulReporter: {
         thresholds: {

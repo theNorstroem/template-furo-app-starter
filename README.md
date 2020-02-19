@@ -13,13 +13,13 @@ The specs in this demo are pointing to static json files in  **/api**, so you do
 
 
 ## Starting the server
-To start a static server just type `npm run start` or `polymer serve`.
+To start a static server just type `npm run start`.
 
 ## Starting development
 The files for your project are located in `/src`.  The starter pack contains some example views (pages).
 
 ## Configuration
-In `/configs` you will find some config files for a usual app.
+In `/src/configs` you will find some config files for a usual app.
 
 ### - `flowConfig.json` : 
 This ist the configuration for the adaptive "routing".

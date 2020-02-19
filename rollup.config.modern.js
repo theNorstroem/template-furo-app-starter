@@ -31,7 +31,7 @@ export default [
           'assets/**/*',
           'src/configs/**/*',
           'robots.txt',
-          'api/trees/*.json' // remove this line, this is for demo purposes only
+          'api/trees/*.json', // remove this line, this is for demo purposes only
         ],
         dest: 'dist',
 
