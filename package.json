@@ -34,7 +34,7 @@
     "spec:build": "node_modules/@furo/specs/_scripts/build.js"
   },
   "dependencies": {
-    "@furo/collection": "^0.23.18",
+    "@furo/collection": "^0.23.25",
     "@furo/specs": "^0.49.0",
     "@furo/ui-builder": "^0.7.0"
   },
