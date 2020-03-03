@@ -1,6 +1,6 @@
 {
   "spec_dirs": [
-    "./specs",
+    "./specs/api",
     "./node_modules/@furo/specs/_baseTypes"
   ],
   "ui_spec_out": "./specs/ui_specs",
