@@ -26,7 +26,7 @@
     "./google-protobuf-empty-form.js"
   ],
   "component_name": "google-protobuf-empty-repeat",
-  "path": "./ui_specs/google.protobuf/google-protobuf-empty-repeat.u33e",
+  "path": "./specs/ui_specs/google.protobuf/google-protobuf-empty-repeat.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -62,6 +62,18 @@
       "description": "It is a good practice to set a description",
       "flags": [],
       "attributes": {},
+      "methods": {},
+      "events": {},
+      "children": []
+    },
+    {
+      "component": "furo-form",
+      "description": "It is a good practice to set a description",
+      "flags": [],
+      "attributes": {
+        "header-text": "${this.headerText}",
+        "secondary-text": "${this.secondaryText}"
+      },
       "methods": {},
       "events": {},
       "children": []
@@ -118,7 +130,24 @@
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text of the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text of the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

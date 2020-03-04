@@ -27,7 +27,7 @@
     "./spec-field-map.js"
   ],
   "component_name": "spec-type-form",
-  "path": "./ui_specs/spec/spec-type-form.u33e",
+  "path": "./specs/ui_specs/spec/spec-type-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -36,7 +36,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -117,8 +117,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('spec.typeproto.form.header.text')}",
-                "secondary-text": "${i18n.t('spec.typeproto.form.secondary.text')}"
+                "header-text": "${i18n.t('form.spec.type.__proto.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.type.__proto.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.__proto)"
@@ -132,7 +132,10 @@
               "flags": [
                 "full"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.spec.type.fields.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.type.fields.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.fields)"
               },

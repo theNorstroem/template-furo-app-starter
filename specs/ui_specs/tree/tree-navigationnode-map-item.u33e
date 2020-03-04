@@ -26,7 +26,7 @@
     "./tree-navigationnode-form.js"
   ],
   "component_name": "tree-navigationnode-map-item",
-  "path": "./ui_specs/tree/tree-navigationnode-map-item.u33e",
+  "path": "./specs/ui_specs/tree/tree-navigationnode-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

@@ -27,7 +27,7 @@
     "../projectmemberservice/person-person-reference-search.js"
   ],
   "component_name": "task-task-display",
-  "path": "./ui_specs/task/task-task-display.u33e",
+  "path": "./specs/ui_specs/task/task-task-display.u33e",
   "style": {
     "children": {
       ":host": {
@@ -36,7 +36,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

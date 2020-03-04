@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "spec-typeproto-form",
-  "path": "./ui_specs/spec/spec-typeproto-form.u33e",
+  "path": "./specs/ui_specs/spec/spec-typeproto-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -101,7 +101,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.spec.typeproto.imports.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.typeproto.imports.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.imports)"
               },
@@ -115,7 +118,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.spec.typeproto.options.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.typeproto.options.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.options)"
               },

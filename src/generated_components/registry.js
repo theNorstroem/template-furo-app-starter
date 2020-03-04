@@ -1,36 +1,37 @@
-import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
+import {panelRegistry} from "@furo/route/lib/panelRegistry.js";
 
 // import panels
 
-import './authservice/auth-auth-update-panel.js';
-import './personservice/person-person-update-panel.js';
-import './projectservice/project-project-update-panel.js';
-import './specservice/spec-type-update-panel.js';
-import './taskservice/task-task-update-panel.js';
-import './treeservice/tree-tree-update-panel.js';
+import "./authservice/auth-auth-update-panel.js"
+import "./personservice/person-person-update-panel.js"
+import "./projectservice/project-project-update-panel.js"
+import "./specservice/spec-type-update-panel.js"
+import "./taskservice/task-task-update-panel.js"
+import "./treeservice/tree-tree-update-panel.js"
 
 // -- register panels
 
-panelRegistry.registerType('auth.AuthEntity', {
-  edit: 'auth-auth-update-panel',
-});
+panelRegistry.registerType("auth.AuthEntity", {
+     "edit" : "auth-auth-update-panel"
+ });
 
-panelRegistry.registerType('person.PersonEntity', {
-  edit: 'person-person-update-panel',
-});
+panelRegistry.registerType("person.PersonEntity", {
+     "edit" : "person-person-update-panel"
+ });
 
-panelRegistry.registerType('project.ProjectEntity', {
-  edit: 'project-project-update-panel',
-});
+panelRegistry.registerType("project.ProjectEntity", {
+     "edit" : "project-project-update-panel"
+ });
 
-panelRegistry.registerType('spec.SpecEntity', {
-  edit: 'spec-type-update-panel',
-});
+panelRegistry.registerType("spec.SpecEntity", {
+     "edit" : "spec-type-update-panel"
+ });
 
-panelRegistry.registerType('task.TaskEntity', {
-  edit: 'task-task-update-panel',
-});
+panelRegistry.registerType("task.TaskEntity", {
+     "edit" : "task-task-update-panel"
+ });
 
-panelRegistry.registerType('tree.TreeEntity', {
-  edit: 'tree-tree-update-panel',
-});
+panelRegistry.registerType("tree.TreeEntity", {
+     "edit" : "tree-tree-update-panel"
+ });
+

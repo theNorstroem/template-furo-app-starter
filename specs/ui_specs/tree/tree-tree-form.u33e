@@ -26,7 +26,7 @@
     "./tree-navigationnode-form.js"
   ],
   "component_name": "tree-tree-form",
-  "path": "./ui_specs/tree/tree-tree-form.u33e",
+  "path": "./specs/ui_specs/tree/tree-tree-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -103,8 +103,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('tree.navigationnode.form.header.text')}",
-                "secondary-text": "${i18n.t('tree.navigationnode.form.secondary.text')}"
+                "header-text": "${i18n.t('form.tree.tree.root.header.text')}",
+                "secondary-text": "${i18n.t('form.tree.tree.root.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.root)"

@@ -30,7 +30,7 @@
     "./project-project-update-action.js"
   ],
   "component_name": "project-project-update-panel",
-  "path": "./ui_specs/projectservice/project-project-update-panel.u33e",
+  "path": "./specs/ui_specs/projectservice/project-project-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

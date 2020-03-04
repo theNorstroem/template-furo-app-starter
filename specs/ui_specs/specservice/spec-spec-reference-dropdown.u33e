@@ -25,7 +25,7 @@
     "@furo/data-input"
   ],
   "component_name": "spec-spec-reference-dropdown",
-  "path": "./ui_specs/specservice/spec-spec-reference-dropdown.u33e",
+  "path": "./specs/ui_specs/specservice/spec-spec-reference-dropdown.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -58,7 +58,7 @@
         "value-field": "id",
         "display-field": "display_name",
         "subfield": "id",
-        "subfield-display": "display-name",
+        "subfield-display": "display_name",
         "?condensed": "${this.condensed}"
       },
       "methods": {

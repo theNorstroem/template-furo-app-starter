@@ -26,7 +26,7 @@
     "./furo-stringproperty-form.js"
   ],
   "component_name": "furo-stringproperty-map-item",
-  "path": "./ui_specs/furo/furo-stringproperty-map-item.u33e",
+  "path": "./specs/ui_specs/furo/furo-stringproperty-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

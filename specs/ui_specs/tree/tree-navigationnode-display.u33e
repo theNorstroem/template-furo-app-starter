@@ -26,7 +26,7 @@
     "../furo/furo-link-display.js"
   ],
   "component_name": "tree-navigationnode-display",
-  "path": "./ui_specs/tree/tree-navigationnode-display.u33e",
+  "path": "./specs/ui_specs/tree/tree-navigationnode-display.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

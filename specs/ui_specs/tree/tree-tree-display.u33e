@@ -26,7 +26,7 @@
     "./tree-navigationnode-display.js"
   ],
   "component_name": "tree-tree-display",
-  "path": "./ui_specs/tree/tree-tree-display.u33e",
+  "path": "./specs/ui_specs/tree/tree-tree-display.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

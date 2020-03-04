@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "furo-fieldoption-display",
-  "path": "./ui_specs/furo/furo-fieldoption-display.u33e",
+  "path": "./specs/ui_specs/furo/furo-fieldoption-display.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -69,13 +69,27 @@
               "component": "furo-data-display",
               "description": "field: list",
               "flags": [
-                "condensed",
-                "double"
+                "full",
+                "condensed"
               ],
               "attributes": {},
               "methods": {
                 "bind-data": "--data(*.list)",
                 "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-display",
+              "description": "field: flags",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.flags)"
               },
               "events": {},
               "children": []

@@ -26,7 +26,7 @@
     "../person/person-person-repeat.js"
   ],
   "component_name": "project-project-form",
-  "path": "./ui_specs/project/project-project-form.u33e",
+  "path": "./specs/ui_specs/project/project-project-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -116,7 +116,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.project.project.members.header.text')}",
+                "secondary-text": "${i18n.t('form.project.project.members.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.members)"
               },

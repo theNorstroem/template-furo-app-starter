@@ -30,7 +30,7 @@
     "./spec-type-update-action.js"
   ],
   "component_name": "spec-type-update-panel",
-  "path": "./ui_specs/specservice/spec-type-update-panel.u33e",
+  "path": "./specs/ui_specs/specservice/spec-type-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

@@ -27,7 +27,7 @@
     "./furo-fieldconstraint-map.js"
   ],
   "component_name": "furo-metafield-form",
-  "path": "./ui_specs/furo/furo-metafield-form.u33e",
+  "path": "./specs/ui_specs/furo/furo-metafield-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -36,7 +36,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -75,8 +75,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('furo.fieldmeta.form.header.text')}",
-                "secondary-text": "${i18n.t('furo.fieldmeta.form.secondary.text')}"
+                "header-text": "${i18n.t('form.furo.metafield.meta.header.text')}",
+                "secondary-text": "${i18n.t('form.furo.metafield.meta.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.meta)",
@@ -92,7 +92,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.furo.metafield.constraints.header.text')}",
+                "secondary-text": "${i18n.t('form.furo.metafield.constraints.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.constraints)"
               },

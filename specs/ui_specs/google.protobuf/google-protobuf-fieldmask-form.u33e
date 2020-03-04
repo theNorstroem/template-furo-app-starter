@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "google-protobuf-fieldmask-form",
-  "path": "./ui_specs/google.protobuf/google-protobuf-fieldmask-form.u33e",
+  "path": "./specs/ui_specs/google.protobuf/google-protobuf-fieldmask-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -72,7 +72,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.google.protobuf.fieldmask.paths.header.text')}",
+                "secondary-text": "${i18n.t('form.google.protobuf.fieldmask.paths.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.paths)",
                 "focus": "--focused"

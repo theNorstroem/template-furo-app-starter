@@ -22,10 +22,11 @@
   ],
   "imports": [
     "@furo/data",
-    "@furo/data-input"
+    "@furo/data-input",
+    "@furo/timing/furo-de-bounce.js"
   ],
   "component_name": "task-task-reference-search",
-  "path": "./ui_specs/taskservice/task-task-reference-search.u33e",
+  "path": "./specs/ui_specs/taskservice/task-task-reference-search.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -72,6 +73,19 @@
       "children": []
     },
     {
+      "component": "furo-de-bounce",
+      "description": "It is a good practice to set a description",
+      "flags": [],
+      "attributes": {},
+      "methods": {
+        "input-wire": "--term"
+      },
+      "events": {
+        "out": "--debouncedTerm"
+      },
+      "children": []
+    },
+    {
       "component": "furo-collection-agent",
       "description": "It is a good practice to set a description",
       "flags": [],
@@ -80,7 +94,7 @@
       },
       "methods": {
         "hts-in": "--field-injected(*.link._value), --htsUpdated",
-        "search": "--term"
+        "search": "--debouncedTerm"
       },
       "events": {
         "response": "--collection"

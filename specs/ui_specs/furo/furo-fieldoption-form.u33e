@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "furo-fieldoption-form",
-  "path": "./ui_specs/furo/furo-fieldoption-form.u33e",
+  "path": "./specs/ui_specs/furo/furo-fieldoption-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -69,13 +69,33 @@
               "component": "google-protobuf-any-repeat",
               "description": "field: list",
               "flags": [
-                "condensed",
-                "double"
+                "full",
+                "condensed"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.furo.fieldoption.list.header.text')}",
+                "secondary-text": "${i18n.t('form.furo.fieldoption.list.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.list)",
                 "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "bool-map",
+              "description": "field: flags",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {
+                "header-text": "${i18n.t('form.furo.fieldoption.flags.header.text')}",
+                "secondary-text": "${i18n.t('form.furo.fieldoption.flags.secondary.text')}"
+              },
+              "methods": {
+                "bind-data": "--data(*.flags)"
               },
               "events": {},
               "children": []

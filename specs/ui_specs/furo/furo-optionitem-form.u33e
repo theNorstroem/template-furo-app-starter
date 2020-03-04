@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "furo-optionitem-form",
-  "path": "./ui_specs/furo/furo-optionitem-form.u33e",
+  "path": "./specs/ui_specs/furo/furo-optionitem-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -66,6 +66,35 @@
           "events": {},
           "children": [
             {
+              "component": "furo-data-text-input",
+              "description": "field: id",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.id)",
+                "focus": "--focused"
+              },
+              "events": {},
+              "children": []
+            },
+            {
+              "component": "furo-data-text-input",
+              "description": "field: display_name",
+              "flags": [
+                "condensed",
+                "double"
+              ],
+              "attributes": {},
+              "methods": {
+                "bind-data": "--data(*.display_name)"
+              },
+              "events": {},
+              "children": []
+            },
+            {
               "component": "furo-data-checkbox-input",
               "description": "field: selected",
               "flags": [
@@ -74,8 +103,7 @@
               ],
               "attributes": {},
               "methods": {
-                "bind-data": "--data(*.selected)",
-                "focus": "--focused"
+                "bind-data": "--data(*.selected)"
               },
               "events": {},
               "children": []

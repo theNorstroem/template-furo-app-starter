@@ -30,7 +30,7 @@
     "./auth-auth-update-action.js"
   ],
   "component_name": "auth-auth-update-panel",
-  "path": "./ui_specs/authservice/auth-auth-update-panel.u33e",
+  "path": "./specs/ui_specs/authservice/auth-auth-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

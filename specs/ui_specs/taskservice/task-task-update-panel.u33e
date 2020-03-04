@@ -30,7 +30,7 @@
     "./task-task-update-action.js"
   ],
   "component_name": "task-task-update-panel",
-  "path": "./ui_specs/taskservice/task-task-update-panel.u33e",
+  "path": "./specs/ui_specs/taskservice/task-task-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

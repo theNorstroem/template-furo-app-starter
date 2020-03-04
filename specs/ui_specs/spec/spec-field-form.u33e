@@ -28,7 +28,7 @@
     "../furo/furo-fieldconstraint-map.js"
   ],
   "component_name": "spec-field-form",
-  "path": "./ui_specs/spec/spec-field-form.u33e",
+  "path": "./specs/ui_specs/spec/spec-field-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -37,7 +37,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -104,8 +104,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('spec.fieldproto.form.header.text')}",
-                "secondary-text": "${i18n.t('spec.fieldproto.form.secondary.text')}"
+                "header-text": "${i18n.t('form.spec.field.__proto.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.field.__proto.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.__proto)"
@@ -121,8 +121,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('furo.fieldmeta.form.header.text')}",
-                "secondary-text": "${i18n.t('furo.fieldmeta.form.secondary.text')}"
+                "header-text": "${i18n.t('form.spec.field.meta.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.field.meta.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.meta)"
@@ -136,7 +136,10 @@
               "flags": [
                 "full"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.spec.field.constraints.header.text')}",
+                "secondary-text": "${i18n.t('form.spec.field.constraints.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.constraints)"
               },

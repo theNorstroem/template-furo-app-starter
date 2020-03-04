@@ -30,7 +30,7 @@
     "./tree-tree-update-action.js"
   ],
   "component_name": "tree-tree-update-panel",
-  "path": "./ui_specs/treeservice/tree-tree-update-panel.u33e",
+  "path": "./specs/ui_specs/treeservice/tree-tree-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

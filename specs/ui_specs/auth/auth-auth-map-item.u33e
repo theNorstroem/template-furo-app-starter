@@ -26,7 +26,7 @@
     "./auth-auth-form.js"
   ],
   "component_name": "auth-auth-map-item",
-  "path": "./ui_specs/auth/auth-auth-map-item.u33e",
+  "path": "./specs/ui_specs/auth/auth-auth-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

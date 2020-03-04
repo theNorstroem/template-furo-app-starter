@@ -26,7 +26,7 @@
     "./google-type-money-form.js"
   ],
   "component_name": "google-type-money-map-item",
-  "path": "./ui_specs/google.type/google-type-money-map-item.u33e",
+  "path": "./specs/ui_specs/google.type/google-type-money-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

@@ -28,7 +28,7 @@
     "@furo/layout/furo-horizontal-flex.js"
   ],
   "component_name": "tree-navigationnode-create-widget",
-  "path": "./ui_specs/tree/tree-navigationnode-create-widget.u33e",
+  "path": "./specs/ui_specs/tree/tree-navigationnode-create-widget.u33e",
   "style": {
     "children": {
       ":host": {
@@ -37,7 +37,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

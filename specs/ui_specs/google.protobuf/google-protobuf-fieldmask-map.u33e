@@ -26,7 +26,7 @@
     "./google-protobuf-fieldmask-map-item.js"
   ],
   "component_name": "google-protobuf-fieldmask-map",
-  "path": "./ui_specs/google.protobuf/google-protobuf-fieldmask-map.u33e",
+  "path": "./specs/ui_specs/google.protobuf/google-protobuf-fieldmask-map.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -62,7 +62,8 @@
       "description": "It is a good practice to set a description",
       "flags": [],
       "attributes": {
-        "header-text": "${i18n.t('google.protobuf.fieldmask.map.headertext')}"
+        "header-text": "${this.headerText}",
+        "secondary-text": "${this.secondaryText}"
       },
       "methods": {},
       "events": {},
@@ -125,7 +126,24 @@
       ]
     }
   ],
-  "properties": {},
+  "properties": {
+    "headerText": {
+      "type": "String",
+      "description": "Header text of the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "header-text",
+      "defaultValue": null
+    },
+    "secondaryText": {
+      "type": "String",
+      "description": "Secondary text of the form",
+      "reflect": false,
+      "notify": false,
+      "attribute": "secondary-text",
+      "defaultValue": null
+    }
+  },
   "exposedWires": {
     "focus": {
       "name": "focus",

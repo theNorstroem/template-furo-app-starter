@@ -26,7 +26,7 @@
     "./spec-field-form.js"
   ],
   "component_name": "spec-field-map-item",
-  "path": "./ui_specs/spec/spec-field-map-item.u33e",
+  "path": "./specs/ui_specs/spec/spec-field-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

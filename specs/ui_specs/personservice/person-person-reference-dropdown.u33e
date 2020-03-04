@@ -25,7 +25,7 @@
     "@furo/data-input"
   ],
   "component_name": "person-person-reference-dropdown",
-  "path": "./ui_specs/personservice/person-person-reference-dropdown.u33e",
+  "path": "./specs/ui_specs/personservice/person-person-reference-dropdown.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -58,7 +58,7 @@
         "value-field": "id",
         "display-field": "display_name",
         "subfield": "id",
-        "subfield-display": "display-name",
+        "subfield-display": "display_name",
         "?condensed": "${this.condensed}"
       },
       "methods": {

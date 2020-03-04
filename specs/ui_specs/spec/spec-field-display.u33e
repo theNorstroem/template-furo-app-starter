@@ -27,7 +27,7 @@
     "../furo/furo-fieldmeta-display.js"
   ],
   "component_name": "spec-field-display",
-  "path": "./ui_specs/spec/spec-field-display.u33e",
+  "path": "./specs/ui_specs/spec/spec-field-display.u33e",
   "style": {
     "children": {
       ":host": {
@@ -36,7 +36,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

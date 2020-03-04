@@ -25,7 +25,7 @@
     "@furo/form"
   ],
   "component_name": "person-person-form",
-  "path": "./ui_specs/person/person-person-form.u33e",
+  "path": "./specs/ui_specs/person/person-person-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -34,7 +34,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -115,7 +115,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.person.person.skills.header.text')}",
+                "secondary-text": "${i18n.t('form.person.person.skills.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.skills)"
               },

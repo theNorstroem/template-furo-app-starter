@@ -26,7 +26,7 @@
     "./furo-fieldoption-form.js"
   ],
   "component_name": "furo-fieldoption-map-item",
-  "path": "./ui_specs/furo/furo-fieldoption-map-item.u33e",
+  "path": "./specs/ui_specs/furo/furo-fieldoption-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

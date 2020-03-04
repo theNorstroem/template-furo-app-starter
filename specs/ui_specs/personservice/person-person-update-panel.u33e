@@ -30,7 +30,7 @@
     "./person-person-update-action.js"
   ],
   "component_name": "person-person-update-panel",
-  "path": "./ui_specs/personservice/person-person-update-panel.u33e",
+  "path": "./specs/ui_specs/personservice/person-person-update-panel.u33e",
   "style": {
     "children": {
       ":host": {

@@ -27,7 +27,7 @@
     "./tree-navigationnode-repeat.js"
   ],
   "component_name": "tree-navigationnode-form",
-  "path": "./ui_specs/tree/tree-navigationnode-form.u33e",
+  "path": "./specs/ui_specs/tree/tree-navigationnode-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -36,7 +36,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -174,8 +174,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('furo.link.form.header.text')}",
-                "secondary-text": "${i18n.t('furo.link.form.secondary.text')}"
+                "header-text": "${i18n.t('form.tree.navigationnode.link.header.text')}",
+                "secondary-text": "${i18n.t('form.tree.navigationnode.link.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.link)"
@@ -204,7 +204,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.tree.navigationnode.children.header.text')}",
+                "secondary-text": "${i18n.t('form.tree.navigationnode.children.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.children)"
               },

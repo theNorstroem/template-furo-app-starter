@@ -26,7 +26,7 @@
     "./google-protobuf-int32value-form.js"
   ],
   "component_name": "google-protobuf-int32value-map-item",
-  "path": "./ui_specs/google.protobuf/google-protobuf-int32value-map-item.u33e",
+  "path": "./specs/ui_specs/google.protobuf/google-protobuf-int32value-map-item.u33e",
   "style": {
     "children": {
       ":host": {
@@ -35,7 +35,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"

@@ -28,7 +28,7 @@
     "./task-task-repeat.js"
   ],
   "component_name": "task-task-form",
-  "path": "./ui_specs/task/task-task-form.u33e",
+  "path": "./specs/ui_specs/task/task-task-form.u33e",
   "style": {
     "children": {
       ":host": {
@@ -37,7 +37,7 @@
           "display": "block"
         }
       },
-      ":host[hidden]": {
+      ":host([hidden])": {
         "children": {},
         "attributes": {
           "display": "none"
@@ -105,8 +105,8 @@
                 "full"
               ],
               "attributes": {
-                "header-text": "${i18n.t('furo.reference.form.header.text')}",
-                "secondary-text": "${i18n.t('furo.reference.form.secondary.text')}"
+                "header-text": "${i18n.t('form.task.task.owner.header.text')}",
+                "secondary-text": "${i18n.t('form.task.task.owner.secondary.text')}"
               },
               "methods": {
                 "bind-data": "--data(*.owner)"
@@ -121,7 +121,10 @@
                 "condensed",
                 "double"
               ],
-              "attributes": {},
+              "attributes": {
+                "header-text": "${i18n.t('form.task.task.subtasks.header.text')}",
+                "secondary-text": "${i18n.t('form.task.task.subtasks.secondary.text')}"
+              },
               "methods": {
                 "bind-data": "--data(*.subtasks)"
               },
