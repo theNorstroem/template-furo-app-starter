@@ -35,11 +35,11 @@
   },
   "dependencies": {
     "@furo/collection": "^0.24.0",
-    "@furo/spec-basetypes": "^0.1.0",
-    "@furo/specs": "^0.50.0",
-    "@furo/ui-builder": "^0.7.0"
+    "@furo/spec-basetypes": "^0.1.0"
   },
   "devDependencies": {
+    "@furo/specs": "^0.50.0",
+    "@furo/ui-builder": "^0.7.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@open-wc/building-rollup": "^0.20.2",
