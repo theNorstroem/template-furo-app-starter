@@ -4,91 +4,148 @@
   "description": "Task data description",
   "__proto": {
     "package": "task",
+    "targetfile": "task.proto",
     "imports": [
       "furo/reference.proto"
     ],
-    "targetfile": "task.proto"
+    "options": null
   },
   "fields": {
     "id": {
-      "description": "Identity of a task",
       "type": "string",
-      "meta": {
-        "label": "Id",
-        "default": "",
-        "hint": "",
-        "readonly": true
-      },
-      "constraints": {},
+      "description": "Identity of a task",
       "__proto": {
         "number": 1
-      }
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
+      "meta": {
+        "label": "Id",
+        "hint": "",
+        "default": "",
+        "readonly": true,
+        "repeated": false,
+        "options": {
+          "list": [],
+          "flags": null
+        }
+      },
+      "constraints": null
     },
     "display_name": {
-      "description": "Localized String representation of a task",
       "type": "string",
-      "meta": {
-        "label": "task.display_name.label",
-        "default": "",
-        "hint": "task.display_name.hint",
-        "readonly": true
-      },
-      "constraints": {},
+      "description": "Localized String representation of a task",
       "__proto": {
         "number": 2
-      }
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
+      "meta": {
+        "label": "task.display_name.label",
+        "hint": "task.display_name.hint",
+        "default": "",
+        "readonly": true,
+        "repeated": false,
+        "options": {
+          "list": [],
+          "flags": null
+        }
+      },
+      "constraints": null
     },
     "description": {
-      "description": "Short task description",
       "type": "string",
+      "description": "Short task description",
+      "__proto": {
+        "number": 3
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
       "meta": {
         "label": "task.desc.label",
+        "hint": "",
         "default": "",
-        "hint": ""
+        "readonly": false,
+        "repeated": false,
+        "options": {
+          "list": [],
+          "flags": null
+        }
       },
       "constraints": {
         "required": {
           "is": "true",
-          "message":"is required"
+          "message": "is required"
         },
         "max": {
           "is": 180,
           "message": "task.desc.maxlength"
         }
-      },
-      "__proto": {
-        "number": 3
       }
     },
     "estimated_time": {
-      "description": "Estimated time in days",
       "type": "int32",
-      "meta": {
-        "label": "Est. days",
-        "default": "",
-        "hint": ""
-      },
-      "constraints": {},
+      "description": "Estimated time in days",
       "__proto": {
         "number": 4
-      }
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
+      "meta": {
+        "label": "Est. days",
+        "hint": "",
+        "default": "",
+        "readonly": false,
+        "repeated": false,
+        "options": {
+          "list": [],
+          "flags": null
+        }
+      },
+      "constraints": null
     },
     "owner": {
-      "description": "Owner of a task",
       "type": "furo.Reference",
+      "description": "Owner of a task",
+      "__proto": {
+        "number": 5
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
       "meta": {
         "label": "person.type.sex.label",
+        "hint": "",
         "default": {
-          "link":{
+          "link": {
             "rel": "list",
             "href": "/mockdata/persons/list.json",
-            "method": "Get",
+            "method": "GET",
             "type": "person.Person",
             "service": "PersonService"
           }
         },
-        "hint": "",
-        "no_result_hint": "",
+        "readonly": false,
+        "repeated": false,
         "options": {
           "list": [
             {
@@ -109,27 +166,36 @@
               "selected": false,
               "@type": "type.googleapis.com/furo.Optionitem"
             }
-          ]
+          ],
+          "flags": null
         }
       },
-      "constraints": {},
-      "__proto": {
-        "number": 5
-      }
+      "constraints": null
     },
     "subtasks": {
-      "description": "List of subtasks",
       "type": "task.Task",
-      "meta": {
-        "label": "Subtask",
-        "default": "",
-        "hint": "",
-        "repeated": true
-      },
-      "constraints": {},
+      "description": "List of subtasks",
       "__proto": {
         "number": 6
-      }
+      },
+      "__ui": {
+        "component": "",
+        "flags": [],
+        "no_init": false,
+        "no_skip": false
+      },
+      "meta": {
+        "label": "Subtask",
+        "hint": "",
+        "default": "",
+        "readonly": false,
+        "repeated": true,
+        "options": {
+          "list": [],
+          "flags": null
+        }
+      },
+      "constraints": null
     }
   }
 }
