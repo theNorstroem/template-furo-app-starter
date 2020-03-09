@@ -94,3 +94,17 @@ We have configured a lot of commands in the package.json (linter,  formater, tes
 - furo.ui.spec.conf.json
 - es-dev-server.config.js
 - es-dev-server-build.config.js
+
+### Keep your repo in sync with the starter template
+The starter get some updates from time to time. To stay in sync with this changes, you can add the template 
+repository as a remote.
+
+```shell script
+git remote add template git@github.com:theNorstroem/template-furo-app-starter.git
+git fetch --all
+
+# initial merge
+git merge template/master --allow-unrelated-histories
+# resolve the conflicts and merge the changes
+
+```

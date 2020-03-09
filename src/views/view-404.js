@@ -72,7 +72,7 @@ class View404 extends FBP(LitElement) {
     return html`
       <div class="_404">404</div>
       <p>This is an app, you shouldn't see this page with internal navigation.</p>
-      <p>There's really nothing to see here, <a href="/"> please go back to the start</a></p>
+      <p>There's really nothing to see here, <a href="dashboard"> please go back to the start</a></p>
     `;
   }
 }

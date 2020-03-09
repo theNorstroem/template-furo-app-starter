@@ -129,14 +129,14 @@ class ViewTreeInline extends FBP(LitElement) {
 
       <!-- Use the --FBPready wire to load the tree data once, --pageActivated will not work on the first time because of lazy loading  -->
       <furo-fetch-json
-        src="/api/trees/minimalTreeSample.json"
+        src="${window.APPROOT}/api/trees/minimalTreeSample.json"
         ƒ-fetch="--FBPready"
         @-data="--data"
       ></furo-fetch-json>
 
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>
       <furo-location
-        url-space-regex="^/tree-inline"
+        url-space-regex="^${window.APPROOT}/tree-inline"
         @-location-query-changed="--qp"
       ></furo-location>
     `;

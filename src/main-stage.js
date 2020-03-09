@@ -130,7 +130,7 @@ class MainStage extends FBP(LitElement) {
       </furo-app-drawer>
 
       <furo-snackbar-display></furo-snackbar-display>
-      <furo-location @-location-changed="--locationChanged"></furo-location>
+      <furo-location url-space-regex="^${window.APPROOT}" @-location-changed="--locationChanged"></furo-location>
       <furo-app-flow ƒ-emit="" event="response-error"></furo-app-flow>
     `;
   }

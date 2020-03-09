@@ -100,13 +100,13 @@ class ViewDashboard extends FBP(LitElement) {
         </furo-app-bar-top>
         <div flex scroll class="content">
           <furo-card class="selected">
-            <img src="/assets/images/hamburg.jpg" slot="media" alt="" />
+            <img src="assets/images/hamburg.jpg" slot="media" alt="" />
             <h1>${i18n.t('untranslated text')}</h1>
             <p>${i18n.t('lorem')}</p>
           </furo-card>
 
           <furo-card disabled>
-            <img src="/assets/images/hamburg.jpg" slot="media" alt="" />
+            <img src="assets/images/hamburg.jpg" slot="media" alt="" />
             <h1>App-flow...</h1>
             <p>Routing example with app-flow</p>
             <furo-app-flow event="form-requested" ƒ-trigger="--form"></furo-app-flow>

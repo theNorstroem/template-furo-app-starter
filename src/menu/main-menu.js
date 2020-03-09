@@ -235,19 +235,19 @@ class MainMenu extends FBP(LitElement) {
 
       <ul>
         <li>
-          <a href="/dashboard">
+          <a href="dashboard">
             <furo-icon icon="dashboard"></furo-icon>
             dashboard</a
           >
         </li>
         <li>
-          <a href="/tree">
+          <a href="tree">
             <furo-icon icon="list"></furo-icon>
             tree sample</a
           >
         </li>
         <li>
-          <a href="/tree-inline/xxx">
+          <a href="tree-inline/xxx">
             <furo-icon icon="list"></furo-icon>
             tree inline</a
           >
@@ -256,37 +256,37 @@ class MainMenu extends FBP(LitElement) {
       <div class="label">other stuff</div>
       <ul>
         <li>
-          <a href="/form">
+          <a href="form">
             <furo-icon icon="receipt"></furo-icon>
             form sample</a
           >
         </li>
         <li>
-          <a href="/auth">
+          <a href="auth">
             <furo-icon icon="perm-identity"></furo-icon>
             Auth</a
           >
         </li>
         <li>
-          <a href="/unknown">
+          <a href="unknown">
             <furo-icon icon="extension"></furo-icon>
             link to nowhere</a
           >
         </li>
         <li>
-          <a href="/somecontent">
+          <a href="somecontent">
             <furo-icon icon="warning"></furo-icon>
             Blank page</a
           >
         </li>
         <li>
-          <a href="/examplelayout">
+          <a href="examplelayout">
             <furo-icon icon="view-day"></furo-icon>
             layout example</a
           >
         </li>
       </ul>
-      <furo-location @-location-changed="--lc"></furo-location>
+      <furo-location url-space-regex="^${window.APPROOT}" @-location-changed="--lc"></furo-location>
     `;
   }
 }

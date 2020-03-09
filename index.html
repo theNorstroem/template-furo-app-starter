@@ -4,20 +4,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
   <meta name="Description" content="This is a sample demo app to show furos capabilites">
-  <base href="/">
 
-  <link rel="icon" href="/assets/icons/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
   <meta name="theme-color" content="#ffffff">
-  <link rel="manifest" href="/manifest.json">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic&display=swap" rel="stylesheet">
-
+  <link rel="manifest" href="manifest.json">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic&display=swap"
+    rel="stylesheet">
+  <base id="base" href="/">
   <title>My app</title>
 
   <script>
-    window.APPROOT = {rootPath: '/'};
+
+    /**
+     * If you need to work with sub directories, set the regex to the path of your app
+     * The example accepts /any/folder/dist with dist as the deepest folder where your app lies.
+     *
+     * Do not forget to add  **url-space-regex="^${window.APPROOT}"** in your furo-location component
+     */
+    const matches = window.location.pathname.match(/^(.*)dist/);
+    if (matches !== null) {
+      [window.APPROOT] = matches;
+      const b = document.getElementById("base");
+      b.setAttribute("href", `${window.APPROOT}/`);
+    } else {
+      window.APPROOT = "";
+    }
+
     if ('serviceWorker' in navigator) {
 
       window.addEventListener('load', () => {
@@ -60,13 +77,13 @@
 
       // Load and register pre-caching Service Worker
       window.addEventListener('load', function (registration) {
-        navigator.serviceWorker.register('/service-worker.js');
+        navigator.serviceWorker.register('service-worker.js');
       });
     }
   </script>
 
   <!-- Load your application shell -->
-  <script type="module" src="/src/app-shell.js"></script>
+  <script type="module" src="src/app-shell.js"></script>
   <style>
     body {
       margin: 0;
