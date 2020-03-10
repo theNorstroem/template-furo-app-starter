@@ -36,7 +36,16 @@ import { Translations } from './translations.js';
 Init.registerApiServices(Services);
 Init.registerApiTypes(Types);
 
-// -- Attention: Styling is defined in main-stage, this is themeing
+/**
+ * register the API prefix based on the APPROOT.
+ * This information is used for furo-deep-link and furo-reverse-deep-link to resolve the api address.
+ *
+ * We use /api here, because we do not have a dedicated host like api.xxx.com for the api services
+ * @type {string}
+ */
+// Env.api.prefix = `${window.APPROOT}/api`;
+
+// -- Attention: Styling is defined in main-stage, this is theming
 
 i18n.registerResBundle(Translations);
 
