@@ -1,14 +1,17 @@
 /* eslint-disable */
 import cpy from 'rollup-plugin-cpy';
-import { createDefaultConfig } from '@open-wc/building-rollup';
+import {createDefaultConfig} from '@open-wc/building-rollup';
 
 const workboxConfig = require('./workbox-config.js');
-const { generateSW } = require('rollup-plugin-workbox');
+const {generateSW} = require('rollup-plugin-workbox');
 
 // if you need to support IE11 use "modern-and-legacy-config" instead.
 const config = [
   createDefaultConfig({
     input: 'index.html',
+    indexHTMLPlugin: {
+      preload: false // https://github.com/open-wc/open-wc/issues/1418
+    },
     plugins: {
       workbox: false,
     },
