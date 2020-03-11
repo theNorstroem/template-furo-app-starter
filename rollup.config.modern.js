@@ -10,7 +10,7 @@ const config = [
   createDefaultConfig({
     input: 'index.html',
     indexHTMLPlugin: {
-      preload: false // https://github.com/open-wc/open-wc/issues/1418
+      preload: true // https://github.com/open-wc/open-wc/issues/1418
     },
     plugins: {
       workbox: false,
