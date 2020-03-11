@@ -126,7 +126,10 @@ class ViewGeneratesViewer extends FBP(LitElement) {
 
       <furo-data-object type="tree.Tree" @-object-ready="--entityObj"></furo-data-object>
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>
-      <furo-location url-space-regex="^${window.APPROOT}/generates" @-location-query-changed="--qp"></furo-location>
+      <furo-location
+        url-space-regex="^${window.APPROOT}/generates"
+        @-location-query-changed="--qp"
+      ></furo-location>
     `;
   }
 }

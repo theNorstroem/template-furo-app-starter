@@ -6,7 +6,7 @@ module.exports = {
   cacheId: 'my-app',
   globPatterns: ['favicon.ico', 'assets/**', 'src/configs/**', '**/*.{js,json}', 'index.html'],
   globStrict: true,
-  navigationPreload:false,
+  navigationPreload: false,
   mode: 'production',
   cleanupOutdatedCaches: true,
   navigateFallback: 'index.html',

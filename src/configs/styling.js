@@ -45,7 +45,7 @@ export class Styling {
         --state-focus: 0.12;
         --state-focused-hover: 0.18;
         --state-selected-focus: 0.2;
-        --state-selected-focused-hover:0.24;
+        --state-selected-focused-hover: 0.24;
         --state-disabled: 0.38;
 
         /* Emphasis, used for secondary text,... */

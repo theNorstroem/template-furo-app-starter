@@ -44,6 +44,7 @@ Init.registerApiTypes(Types);
  * @type {string}
  */
 // Env.api.prefix = `${window.APPROOT}/api`;
+// Init.applyCustomApiPrefixToServicesAndTypes(Env.api.prefix);
 
 // -- Attention: Styling is defined in main-stage, this is theming
 

@@ -38,22 +38,22 @@ class MainStage extends FBP(LitElement) {
      * DO NOT FORGET TO REGISTER THE LAZY LOADED PARTS IN ~/polymer.json => fragments[...]
      *
      */
-    this._FBPAddWireHook('--locationChanged', e => {
+    this._FBPAddWireHook('--locationChanged', async e => {
       switch (e.pathSegments[0]) {
         case 'tree':
-          import('./views/view-tree.js');
+          await import('./views/view-tree.js');
           break;
         case 'tree-inline':
-          import('./views/view-tree-inline.js');
+          await import('./views/view-tree-inline.js');
           break;
         case 'form':
-          import('./views/view-formsample.js');
+          await import('./views/view-formsample.js');
           break;
         case 'examplelayout':
-          import('./views/view-layout-example.js');
+          await import('./views/view-layout-example.js');
           break;
         case 'generates':
-          import('./views/view-generates-viewer.js');
+          await import('./views/view-generates-viewer.js');
           break;
         default:
       }
@@ -130,7 +130,10 @@ class MainStage extends FBP(LitElement) {
       </furo-app-drawer>
 
       <furo-snackbar-display></furo-snackbar-display>
-      <furo-location url-space-regex="^${window.APPROOT}" @-location-changed="--locationChanged"></furo-location>
+      <furo-location
+        url-space-regex="^${window.APPROOT}"
+        @-location-changed="--locationChanged"
+      ></furo-location>
       <furo-app-flow ƒ-emit="" event="response-error"></furo-app-flow>
     `;
   }
