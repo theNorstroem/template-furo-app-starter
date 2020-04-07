@@ -1,12 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
+import { Theme } from '@furo/framework/src/theme.js';
 import { FBP } from '@furo/fbp';
-import '@furo/layout/furo-split-view.js';
-import { panelRegistry } from '@furo/route/lib/panelRegistry.js';
-import '@furo/navigation/furo-tree.js';
-import '@furo/route/furo-panel-coordinator.js';
-import '@furo/route/furo-qp-changer.js';
-import '@furo/data/furo-data-object.js';
+import '@furo/layout/src/furo-split-view.js';
+import { panelRegistry } from '@furo/route/src/lib/panelRegistry.js';
+import '@furo/navigation/src/furo-tree.js';
+import '@furo/route/src/furo-panel-coordinator.js';
+import '@furo/route/src/furo-qp-changer.js';
+import '@furo/data/src/furo-data-object.js';
 
 // import skalar repeater
 import '../project_components/string-map.js';

@@ -1,14 +1,14 @@
 import { LitElement, html, css } from 'lit-element';
-import { i18n, Theme } from '@furo/framework/furo.js';
+import { i18n, Theme } from '@furo/framework/src/furo.js';
 import { FBP } from '@furo/fbp';
 
-import '@furo/layout/furo-vertical-flex.js';
+import '@furo/layout/src/furo-vertical-flex.js';
 import '@furo/form';
 import '@furo/input';
-import '@furo/app/furo-card.js';
-import '@furo/form/furo-form.js';
-import '@furo/input/furo-icon-button.js';
-import '@furo/notification/furo-snackbar.js';
+import '@furo/app/src/furo-card.js';
+import '@furo/form/src/furo-form.js';
+import '@furo/input/src/furo-icon-button.js';
+import '@furo/notification/src/furo-snackbar.js';
 
 /**
  * `view-dashboard`

@@ -2,9 +2,9 @@ import { LitElement, html, css } from 'lit-element';
 import { FBP } from '@furo/fbp';
 import './configs/init.js';
 import './main-stage.js';
-import '@furo/config/furo-config-loader.js';
-import '@furo/route/furo-app-flow-router.js';
-import '@furo/app/furo-tooltip-display.js';
+import '@furo/config/src/furo-config-loader.js';
+import '@furo/route/src/furo-app-flow-router.js';
+import '@furo/app/src/furo-tooltip-display.js';
 
 /**
  * `main-app`

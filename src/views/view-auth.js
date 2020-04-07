@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
+import { Theme } from '@furo/framework/src/theme.js';
 import { FBP } from '@furo/fbp';
-import '@furo/form/furo-button-bar.js';
+import '@furo/form/src/furo-button-bar.js';
 
 /**
  * `view-auth`

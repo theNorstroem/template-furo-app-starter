@@ -1,11 +1,11 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
+import { Theme } from '@furo/framework/src/theme.js';
 import { FBP } from '@furo/fbp';
 import '@furo/form';
 import '@furo/input';
-import '@furo/form/furo-form.js';
-import '@furo/app/furo-tooltip.js';
-import '@furo/data-input/furo-data-sign-pad.js';
+import '@furo/form/src/furo-form.js';
+import '@furo/app/src/furo-tooltip.js';
+import '@furo/data-input/src/furo-data-sign-pad.js';
 
 /**
  * `sample-form`

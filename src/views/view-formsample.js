@@ -1,13 +1,13 @@
 import { LitElement, html, css } from 'lit-element';
-import { Theme } from '@furo/framework/theme.js';
+import { Theme } from '@furo/framework/src/theme.js';
 import { FBP } from '@furo/fbp';
-import '@furo/layout/furo-vertical-flex.js';
-import '@furo/input/furo-icon-button.js';
-import '@furo/notification/furo-banner-display.js';
-import '@furo/notification/furo-banner.js';
-import '@furo/util/furo-keydown.js';
+import '@furo/layout/src/furo-vertical-flex.js';
+import '@furo/input/src/furo-icon-button.js';
+import '@furo/notification/src/furo-banner-display.js';
+import '@furo/notification/src/furo-banner.js';
+import '@furo/util/src/furo-keydown.js';
 
-import '@furo/app/furo-tooltip.js';
+import '@furo/app/src/furo-tooltip.js';
 import '../formsample/sample-form.js';
 
 /**

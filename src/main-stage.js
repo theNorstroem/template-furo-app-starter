@@ -1,15 +1,15 @@
 import { LitElement, html, css } from 'lit-element';
 import { FBP } from '@furo/fbp';
-import { Theme } from '@furo/framework/theme.js';
+import { Theme } from '@furo/framework/src/theme.js';
 import { Styling } from './configs/styling.js';
 
-import '@furo/input/furo-button.js';
-import '@furo/route/furo-location.js';
-import '@furo/route/furo-pages.js';
-import '@furo/route/furo-app-flow.js';
-import '@furo/app/furo-app-drawer.js';
-import '@furo/app/furo-app-bar-top.js';
-import '@furo/notification/furo-snackbar-display.js';
+import '@furo/input/src/furo-button.js';
+import '@furo/route/src/furo-location.js';
+import '@furo/route/src/furo-pages.js';
+import '@furo/route/src/furo-app-flow.js';
+import '@furo/app/src/furo-app-drawer.js';
+import '@furo/app/src/furo-app-bar-top.js';
+import '@furo/notification/src/furo-snackbar-display.js';
 import './menu/main-menu.js';
 
 /**
