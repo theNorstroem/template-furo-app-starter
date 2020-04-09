@@ -17,11 +17,12 @@
     "build:compatibility": "rimraf dist && rollup -c rollup.config.js",
     "build:modern": "rimraf dist && rollup -c rollup.config.modern.js",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
-    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "lint:eslint": "eslint \"src/**/*.js\" --ignore-path .gitignore",
+    "lint:eslint-fix": "eslint --fix \"src/**/*.js\" --ignore-path .gitignore",
+    "lint:prettier": "prettier \"src/**/*.js\" --check --ignore-path .gitignore",
     "format": "npm run format:eslint && npm run format:prettier",
-    "format:eslint": "eslint --ext .js . --fix --ignore-path .gitignore",
-    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "format:eslint": "eslint \"src/**/*.js\" --fix --ignore-path .gitignore",
+    "format:prettier": "prettier \"src/**/*.js\" --write --ignore-path .gitignore",
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
@@ -36,7 +37,8 @@
   },
   "dependencies": {
     "@furo/collection": "^0.24.4",
-    "@furo/spec-basetypes": "^0.2.0"
+    "@furo/spec-basetypes": "^0.2.0",
+    "lit-element": "^2.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -105,11 +107,9 @@
         {
           "devDependencies": false,
           "optionalDependencies": false,
-          "peerDependencies": false,
-          "packageDir": [
-            "./node_modules/@furo/collection",
-            "./node_modules/@furo/framework"
-          ]
+          "peerDependencies": true,
+          "bundledDependencies": true,
+          "packageDir": ["./","./node_modules/@furo/collection"]
         }
       ]
     }
