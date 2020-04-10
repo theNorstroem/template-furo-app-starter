@@ -10,7 +10,7 @@ describe('view-formsample', () => {
   let viewForm;
 
   beforeEach(async () => {
-    window.APPROOT = "";
+    window.APPROOT = '';
     app = await fixture(html`
       <app-shell style="width: 1200px"></app-shell>
     `);
