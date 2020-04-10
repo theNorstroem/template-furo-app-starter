@@ -11,6 +11,7 @@ describe('my-test', () => {
   let mainMenu;
 
   beforeEach(async () => {
+    window.APPROOT = "";
     app = await fixture(html`
       <app-shell style="width: 1200px"></app-shell>
     `);

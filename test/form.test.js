@@ -10,11 +10,12 @@ describe('view-formsample', () => {
   let viewForm;
 
   beforeEach(async () => {
+    window.APPROOT = "";
     app = await fixture(html`
       <app-shell style="width: 1200px"></app-shell>
     `);
 
-    window.history.pushState(null, 'form', '/dashboard');
+    window.history.pushState(null, 'form', '/form');
     mainStage = app.shadowRoot.querySelector('main-stage');
     await mainStage.updateComplete;
     appDrawer = mainStage.shadowRoot.querySelector('furo-app-drawer');
