@@ -5,7 +5,6 @@ import { panelRegistry } from '@furo/route/src/lib/panelRegistry.js';
 import './authservice/auth-auth-update-panel.js';
 import './personservice/person-person-update-panel.js';
 import './projectservice/project-project-update-panel.js';
-import './specservice/spec-type-update-panel.js';
 import './taskservice/task-task-update-panel.js';
 import './treeservice/tree-tree-update-panel.js';
 
@@ -21,10 +20,6 @@ panelRegistry.registerType('person.PersonEntity', {
 
 panelRegistry.registerType('project.ProjectEntity', {
   edit: 'project-project-update-panel',
-});
-
-panelRegistry.registerType('spec.SpecEntity', {
-  edit: 'spec-type-update-panel',
 });
 
 panelRegistry.registerType('task.TaskEntity', {

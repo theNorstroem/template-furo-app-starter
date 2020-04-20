@@ -74,6 +74,10 @@ export class FuroFieldoptionForm extends FBP(LitElement) {
           display: block;
         }
 
+        :host(.in-repeater) {
+          border-bottom: 1px solid var(--separator, #fafafa);
+        }
+
         :host([hidden]) {
           display: none;
         }
@@ -107,13 +111,13 @@ export class FuroFieldoptionForm extends FBP(LitElement) {
           ></google-protobuf-any-repeat>
 
           <!-- field: flags -->
-          <bool-map
+          <string-repeat
             condensed
             double
             header-text="${i18n.t('form.furo.fieldoption.flags.header.text')}"
             secondary-text="${i18n.t('form.furo.fieldoption.flags.secondary.text')}"
             ƒ-bind-data="--data(*.flags)"
-          ></bool-map>
+          ></string-repeat>
         </furo-form-layouter>
       </furo-form>
     `;

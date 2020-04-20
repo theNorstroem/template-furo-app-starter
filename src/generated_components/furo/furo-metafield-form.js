@@ -76,6 +76,10 @@ export class FuroMetafieldForm extends FBP(LitElement) {
           display: block;
         }
 
+        :host(.in-repeater) {
+          border-bottom: 1px solid var(--separator, #fafafa);
+        }
+
         :host([hidden]) {
           display: none;
         }

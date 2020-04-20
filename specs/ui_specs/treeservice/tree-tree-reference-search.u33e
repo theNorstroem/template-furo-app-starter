@@ -8,7 +8,7 @@
     ],
     [
       "Theme",
-      "@furo/framework/theme.js"
+      "@furo/framework/src/theme.js"
     ],
     [
       "FBP",
@@ -16,14 +16,14 @@
     ],
     [
       "i18n",
-      "@furo/framework/i18n.js",
+      "@furo/framework/src/i18n.js",
       "eslint-disable-next-line no-unused-vars"
     ]
   ],
   "imports": [
     "@furo/data",
     "@furo/data-input",
-    "@furo/timing/furo-de-bounce.js"
+    "@furo/timing/src/furo-de-bounce.js"
   ],
   "component_name": "tree-tree-reference-search",
   "path": "./specs/ui_specs/treeservice/tree-tree-reference-search.u33e",
@@ -121,7 +121,7 @@
     "bindData": {
       "description": " Bind your furo-data-object event @-object-ready\n @public\n @param data",
       "args": "field",
-      "code": "dGhpcy5maWVsZCA9IGZpZWxkOw0KICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgiLS1maWVsZC1pbmplY3RlZCIsIGZpZWxkKTsNCiAgdGhpcy5maWVsZC5hZGRFdmVudExpc3RlbmVyKCJicmFuY2gtdmFsdWUtY2hhbmdlZCIsICgpPT57DQogICAgICBpZiggdGhpcy5maWVsZC5saW5rLl92YWx1ZSAmJg0KICAgICAgICB0aGlzLmZpZWxkLmxpbmsuX3ZhbHVlLmhyZWYgJiYgdGhpcy5maWVsZC5saW5rLl92YWx1ZS5zZXJ2aWNlKSB7DQogICAgICAgIHRoaXMuX0ZCUFRyaWdnZXJXaXJlKCctLWh0c1VwZGF0ZWQnLCB0aGlzLmZpZWxkLmxpbmsuX3ZhbHVlKTsNCiAgICAgIH0NCiAgfSk7"
+      "code": "dGhpcy5maWVsZCA9IGZpZWxkOwogICAgICB0aGlzLl9GQlBUcmlnZ2VyV2lyZSgnLS1maWVsZC1pbmplY3RlZCcsIGZpZWxkKTsKICAgICAgdGhpcy5maWVsZC5hZGRFdmVudExpc3RlbmVyKCdicmFuY2gtdmFsdWUtY2hhbmdlZCcsICgpPT57CiAgICAgICAgaWYoIHRoaXMuZmllbGQubGluay5fdmFsdWUgJiYKICAgICAgICAgIHRoaXMuZmllbGQubGluay5fdmFsdWUuaHJlZiAmJiB0aGlzLmZpZWxkLmxpbmsuX3ZhbHVlLnNlcnZpY2UpIHsKICAgICAgICAgIHRoaXMuX0ZCUFRyaWdnZXJXaXJlKCctLWh0c1VwZGF0ZWQnLCB0aGlzLmZpZWxkLmxpbmsuX3ZhbHVlKTsKICAgICAgICB9CiAgICAgIH0pOw=="
     }
   },
   "keyboardShortcuts": [],
