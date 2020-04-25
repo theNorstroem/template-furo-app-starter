@@ -15,26 +15,31 @@ import { SocialIcons } from '@furo/icon/assets/iconsets/socialIcons.js';
 import { HardwareIcons } from '@furo/icon/assets/iconsets/hardwareIcons.js';
 import { ImageIcons } from '@furo/icon/assets/iconsets/imageIcons.js';
 
+// type is needed for the tree
+import spec from '@furo/navigation/specs/navigation/navigationnode.type.spec.js';
 // Private iconset
 import { ExampleCustomIconset } from './iconset.js';
 
 /**
  * Use the installed spec if you finaly have a seperate spec project (recomended)
  */
-// import {Services, Types} from "/node_modules/YOURspecs/build/data_environment.js"
-import { Services, Types } from './data_environment.js';
+// import {Services, Types} from "/node_modules/your_spec_package/data_environment.js"
+// import { Services, Types } from 'your_spec_package/data_environment.js';
+// register the available types (only needed if you work with @furo/data... components  )
+// Init.registerApiServices(Services);
+// Init.registerApiTypes(Types);
 
 import './my_theme.js';
 
 // -- register generated panels
 // import { panelRegistry } from '@furo/route/src/lib/panelRegistry.js';
-import '../generated_components/registry.js';
+// import '../generated_components/registry.js';
 
 // -- register resource bundle i18n
 import { Translations } from './translations.js';
-// register the available types (only needed if you work with @furo/data... components  )
-Init.registerApiServices(Services);
-Init.registerApiTypes(Types);
+
+// then add / register the type
+Init.addApiTypeSpec('navigation.Navigationnode', spec);
 
 /**
  * register the API prefix based on the APPROOT.

@@ -52,9 +52,6 @@ class MainStage extends FBP(LitElement) {
         case 'examplelayout':
           await import('./views/view-layout-example.js');
           break;
-        case 'generates':
-          await import('./views/view-generates-viewer.js');
-          break;
         default:
       }
     });
@@ -131,7 +128,7 @@ class MainStage extends FBP(LitElement) {
 
       <furo-snackbar-display></furo-snackbar-display>
       <furo-location
-        url-space-regex="^${window.APPROOT}"
+        url-space-regex="/${window.APPROOT}"
         @-location-changed="--locationChanged"
       ></furo-location>
       <furo-app-flow ƒ-emit="" event="response-error"></furo-app-flow>

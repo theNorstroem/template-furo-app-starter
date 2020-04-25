@@ -122,7 +122,7 @@ class ViewTreeInline extends FBP(LitElement) {
 
       <!-- retreive data -->
       <furo-data-object
-        type="tree.Tree"
+        type="navigation.Navigationnode"
         ƒ-inject-raw="--data"
         @-object-ready="--treeObj"
       ></furo-data-object>
