@@ -78,10 +78,7 @@ We have configured a lot of commands in the package.json (linter,  formater, tes
 - test:compatibility
 - test:compatibility:watch
 - test:bs
-- uib:init
-- uib:generate
-- uib:watch
-- spec:build
+
 
 ### Additional configs
 
