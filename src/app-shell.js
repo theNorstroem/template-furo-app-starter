@@ -48,7 +48,7 @@ class AppShell extends FBP(LitElement) {
       <furo-app-flow-router
         ƒ-.config="--flowConfigLoaded"
         ƒ-trigger="--flowEvent"
-        url-space-regex="^${window.APPROOT}"
+        url-space-regex="${window.APPROOT}"
         ƒ-back="--navBack"
       ></furo-app-flow-router>
       <furo-app-flow

@@ -147,7 +147,7 @@ class ViewTree extends FBP(LitElement) {
 
       <furo-qp-changer ƒ-set-qp="--qpchangerequest"></furo-qp-changer>
       <furo-location
-        url-space-regex="^${window.APPROOT}/tree/"
+        url-space-regex="${window.APPROOT}/tree/"
         @-location-query-changed="--qp"
       ></furo-location>
     `;

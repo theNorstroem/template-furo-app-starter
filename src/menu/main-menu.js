@@ -4,9 +4,11 @@ import { FBP } from '@furo/fbp';
 
 /**
  * `main-menu`
- * todo Describe your element
  *
- * @summary todo shortdescription
+ *  This menu was written by hand. You can also use a furo-tree and feed it with the correct data to get the same result :-)
+ *
+ *
+ * @summary hard linked menu
  * @customElement
  * @demo demo-main-menu
  * @appliesMixin FBP
@@ -286,7 +288,7 @@ class MainMenu extends FBP(LitElement) {
           >
         </li>
       </ul>
-      <furo-location url-space-regex="^${window.APPROOT}" @-location-changed="--lc"></furo-location>
+      <furo-location url-space-regex="${window.APPROOT}" @-location-changed="--lc"></furo-location>
     `;
   }
 }
